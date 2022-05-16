@@ -60,6 +60,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\MainMenuUI.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Track.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanelView.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MusicPlayer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Data\SongConfigInfo.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\Blocks\Events.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanel.cs" />
@@ -81,7 +82,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsFinder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\CustomButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MusicPlayer.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\GuitarAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
