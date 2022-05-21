@@ -59,6 +59,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\AudioPreview.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\MainMenuUI.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Track.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\GuitarAnimator.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanelView.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MusicPlayer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Data\SongConfigInfo.cs" />
@@ -82,7 +83,6 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsFinder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\CustomButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\GuitarAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -99,6 +99,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\InternalAssets\Shaders\DefaultWithFog.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
