@@ -83,6 +83,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsFinder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\CustomButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPool.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

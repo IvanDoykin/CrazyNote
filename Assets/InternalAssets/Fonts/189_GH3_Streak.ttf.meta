@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c7d5d91b5d780d34eac057794909c7aa
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - GH3 Streak
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 466d83a0e58805c45a0020d7c5fe735e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
