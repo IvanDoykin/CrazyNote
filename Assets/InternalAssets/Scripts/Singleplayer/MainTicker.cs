@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Singleplayer {
+namespace Game.Singleplayer
+{
     public class MainTicker : MonoBehaviour
     {
         public static MainTicker Instance { get; private set; }
@@ -20,7 +22,7 @@ namespace Game.Singleplayer {
             if (Instance == null)
             {
                 Instance = this;
-                Tick();
+                Tick(0);
             }
             else
             {
@@ -30,11 +32,11 @@ namespace Game.Singleplayer {
 
         private void Update()
         {
-            if (secondsFromLastTick > secondsForOneTick)
+            while (secondsFromLastTick > secondsForOneTick)
             {
                 currentTick++;
                 secondsFromLastTick -= secondsForOneTick;
-                Tick();
+                Tick(currentTick);
             }
 
             secondsFromLastTick += Time.deltaTime;
@@ -43,7 +45,7 @@ namespace Game.Singleplayer {
         private void SetBPM(double bpm)
         {
             BPM = bpm;
-            secondsForOneTick = 1.0 / BPM / Track.Instance.Song.Resolution;
+            secondsForOneTick = 60.0 / BPM / Track.Instance.Song.Resolution;
         }
 
         private void SetTempo(int numerator, int denominator = 2)
@@ -52,28 +54,44 @@ namespace Game.Singleplayer {
             needNotesForTempo = numerator;
         }
 
-        private void Tick()
+        private void Tick(int tick)
         {
-            TickSyncTrack();
-            TickNotes();
+            TickSyncTrack(tick);
+            TickNotes(tick);
         }
 
-        private void TickSyncTrack()
+        private void TickSyncTrack(int tick)
         {
-            for (int i = currentIndex; Track.Instance.SyncTrack.TrackBlock.Infos[i].Position < currentTick; i++)
+            if (Track.Instance.SyncTrack.TrackBlock.Infos.Count <= currentIndex)
             {
+                return;
+            }
+
+            int temp = 0;
+            for (int i = currentIndex; Track.Instance.SyncTrack.TrackBlock.Infos[i].Position <= tick;)
+            {
+                temp++;
                 if (Track.Instance.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.B)
                 {
+                    Debug.Log("Set BPM = " + double.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0);
                     SetBPM(double.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0);
                 }
                 if (Track.Instance.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.TS)
                 {
+                    Debug.Log("Set tempo = " + int.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]));
                     SetTempo(int.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]));
+                }
+
+                i++;
+                if (Track.Instance.SyncTrack.TrackBlock.Infos.Count >= i)
+                {
+                    currentIndex += temp;
+                    return;
                 }
             }
         }
 
-        private void TickNotes()
+        private void TickNotes(int tick)
         {
 
         }
