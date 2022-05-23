@@ -8,27 +8,14 @@ namespace Game.Singleplayer
     {
         private const int poolCount = 100;
 
-        public static ObjectPool Instance { get; private set; }
-
-        private readonly List<GameObject> objects = new List<GameObject>();
+        private static readonly List<GameObject> objects = new List<GameObject>();
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                DontDestroyOnLoad(this);
-                Instance = this;
-            }
-
-            else
-            {
-                Destroy(this);
-            }
-
             Clear();
         }
 
-        public void Clear()
+        public static void Clear()
         {
             for (int i = 0; i < objects.Count; i++)
             {
@@ -37,7 +24,7 @@ namespace Game.Singleplayer
             objects.Clear();
         }
 
-        public GameObject Create<T>(GameObject prefab, Vector3 position, Quaternion rotation) where T : MonoBehaviour
+        public static GameObject Create<T>(GameObject prefab, Vector3 position, Quaternion rotation) where T : MonoBehaviour
         {
             for (int i = 0; i < objects.Count; i++)
             {
@@ -62,7 +49,7 @@ namespace Game.Singleplayer
             return go;
         }
 
-        public void Delete(GameObject go)
+        public static void Delete(GameObject go)
         {
             if (objects.Contains(go))
             {

@@ -53,12 +53,9 @@
     <UnityVersion>2020.3.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\AudioPreview.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\MainMenuUI.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Track.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Track.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\GuitarAnimator.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanelView.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MusicPlayer.cs" />
@@ -82,8 +79,9 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\DifficultyButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsFinder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\CustomButton.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPool.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MainTicker.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -329,12 +327,6 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.8f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.8f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.8f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.8f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
