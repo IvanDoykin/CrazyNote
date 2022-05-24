@@ -13,10 +13,13 @@ namespace Game.Singleplayer
 
         private int currentTick = 0;
         private int currentIndex = 0;
-        private int passedNotesFromLastTempo = 0;
-        private int needNotesForTempo = 0;
+
         private double secondsFromLastTick = 0.0;
         private double secondsForOneTick = 0.0;
+
+        private int needTicksForWide = 0;
+        private int ticksfromLastWide = 0;
+
         private double BPM = 0.0;
 
         private void Awake()
@@ -42,13 +45,14 @@ namespace Game.Singleplayer
                 Tick(currentTick);
             }
 
-            if (passedNotesFromLastTempo >= needNotesForTempo)
+            if (ticksfromLastWide >= needTicksForWide && needTicksForWide != 0)
             {
-                passedNotesFromLastTempo -= needNotesForTempo;
+                ticksfromLastWide -= needTicksForWide;
                 singleplayerScene.CreateWide();
             }
 
             secondsFromLastTick += Time.deltaTime;
+            ticksfromLastWide++;
         }
 
         private void SetBPM(double bpm)
@@ -61,10 +65,10 @@ namespace Game.Singleplayer
         {
             if (currentTick != 0)
             {
-                singleplayerScene.CreateWide();
+                //singleplayerScene.CreateWide();
             }
 
-            needNotesForTempo = numerator;
+            needTicksForWide = Track.Instance.Song.Resolution * numerator;
         }
 
         private void Tick(int tick)
@@ -76,8 +80,9 @@ namespace Game.Singleplayer
         private void TickSyncTrack(int tick)
         {
             Debug.Log("COUNT = " + Track.Instance.SyncTrack.TrackBlock.Infos.Count);
-            if (Track.Instance.SyncTrack.TrackBlock.Infos.Count >= currentIndex - 1)
+            if (Track.Instance.SyncTrack.TrackBlock.Infos.Count <= currentIndex)
             {
+                Debug.LogError("");
                 return;
             }
 
@@ -95,7 +100,7 @@ namespace Game.Singleplayer
                 }
 
                 i++;
-                if (Track.Instance.SyncTrack.TrackBlock.Infos.Count >= i)
+                if (Track.Instance.SyncTrack.TrackBlock.Infos.Count <= i)
                 {
                     return;
                 }
@@ -109,29 +114,20 @@ namespace Game.Singleplayer
                 return;
             }
 
-            int temp = 0;
-            bool hasNote = false;
-            for (int i = currentIndex; Track.Instance.Notes.TrackBlock.Infos[i].Position <= tick;)
+            int temp = currentIndex;
+            for (int i = temp; Track.Instance.Notes.TrackBlock.Infos[i].Position <= tick;)
             {
-                temp++;
+                currentIndex++;
                 
                 if (Track.Instance.Notes.TrackBlock.Infos[i].Code == TypeCode.N)
                 {
-                    hasNote = true;
                 }
 
                 i++;
-                if (Track.Instance.SyncTrack.TrackBlock.Infos.Count >= i)
+                if (Track.Instance.SyncTrack.TrackBlock.Infos.Count <= i)
                 {
-                    currentIndex += temp;
                     return;
                 }
-            }
-
-            if (hasNote && needNotesForTempo != 0)
-            {
-                Debug.Log("Note tick = " + tick);
-                passedNotesFromLastTempo++;
             }
         }
     }
