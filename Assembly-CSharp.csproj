@@ -83,8 +83,14 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\DifficultyButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsFinder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\CustomButton.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPool.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\ObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\SingleplayerScene.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\WideObjectPool.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Wide.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Note.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\NoteObjectPool.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Mover.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
