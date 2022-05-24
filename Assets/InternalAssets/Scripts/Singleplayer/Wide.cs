@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wide : MonoBehaviour
+namespace Game.Singleplayer
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Wide : MonoBehaviour, IPoolable
     {
-        
-    }
+        private WideObjectPool pool;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            pool = FindObjectOfType<WideObjectPool>();
+        }
+
+        public void SetInPool()
+        {
+            pool.Delete(gameObject);
+        }
     }
 }

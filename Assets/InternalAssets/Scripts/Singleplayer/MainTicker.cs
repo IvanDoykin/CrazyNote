@@ -121,6 +121,7 @@ namespace Game.Singleplayer
                 
                 if (Track.Instance.Notes.TrackBlock.Infos[i].Code == TypeCode.N)
                 {
+                    singleplayerScene.CreateNote(int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]));
                 }
 
                 i++;

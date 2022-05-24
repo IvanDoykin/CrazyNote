@@ -60,12 +60,14 @@
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\GuitarAnimator.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\WideObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Mover.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Destroyer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanelView.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MusicPlayer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Data\SongConfigInfo.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\Blocks\Events.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanel.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MainTicker.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\IPoolable.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\NoteObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\Blocks\Song.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Note.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\Data\TypeCode.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\Blocks\Notes.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Parsers\SongBlockParser.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Logger.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Parsers\TrackBlockParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\StartGameButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\TrackEvent.cs" />
@@ -88,6 +91,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\CustomButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\ObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\NoteSpawnPlaces.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

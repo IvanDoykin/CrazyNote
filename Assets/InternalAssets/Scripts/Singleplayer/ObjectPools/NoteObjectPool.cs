@@ -6,16 +6,16 @@ namespace Game.Singleplayer
 {
     public class NoteObjectPool : ObjectPool<Note>
     {
-        [SerializeField] private GameObject note;
+        [SerializeField] private List<GameObject> notes = new List<GameObject>();
 
         private void Awake()
         {
             Clear();
         }
 
-        public GameObject Create(Vector3 position, Quaternion rotation)
+        public GameObject Create(Vector3 position, Quaternion rotation, int id)
         {
-            return base.Create(note, position, rotation);
+            return base.Create(notes[id], position, rotation);
         }
     }
 }

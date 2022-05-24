@@ -4,8 +4,18 @@ using UnityEngine;
 
 namespace Game.Singleplayer
 {
-    public class Note : MonoBehaviour
+    public class Note : MonoBehaviour, IPoolable
     {
-        
+        private NoteObjectPool pool;
+
+        private void Start()
+        {
+            pool = FindObjectOfType<NoteObjectPool>();
+        }
+
+        public void SetInPool()
+        {
+            pool.Delete(gameObject);
+        }
     }
 }
