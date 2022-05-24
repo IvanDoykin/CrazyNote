@@ -8,7 +8,7 @@ namespace Game.Singleplayer
     {
         private void Update()
         {
-            transform.position -= new Vector3(0, 0, 6 * Time.deltaTime);
+            transform.position -= new Vector3(0, 0, 0.667f * 12.356f * Time.deltaTime);
         }
     }
 }
