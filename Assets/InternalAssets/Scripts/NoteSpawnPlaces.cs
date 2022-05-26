@@ -8,6 +8,7 @@ public class NoteSpawnPlaces : MonoBehaviour
 
     public Transform GetPlaceById(int id)
     {
+        Debug.Log("Id = " + id);
         return places[id];
     }
 }

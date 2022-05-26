@@ -1650,12 +1650,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolCount: 100
-  notes:
-  - {fileID: 1109544492602411377, guid: 69b55b532c7d1fe489f9b12a83629d28, type: 3}
-  - {fileID: 2958689225221771228, guid: 51dfef54cf5d5f944be2729e0ad4ef84, type: 3}
-  - {fileID: 8551222324180120675, guid: 39ab5377962576d4daac6c1d86ba56cf, type: 3}
-  - {fileID: 6260806161166215708, guid: bf875b4e4b2f3324e823feba56c854af, type: 3}
-  - {fileID: 3141056276840561719, guid: 03f12102cfa881741bd67e7bf7720ba7, type: 3}
+  _notePrefab: {fileID: 1109544492602411377, guid: 69b55b532c7d1fe489f9b12a83629d28, type: 3}
+  _noteSprites:
+  - {fileID: -3127448798928283936, guid: 57b4eead9b07cba4ebc2b4f189f6d16b, type: 3}
+  - {fileID: -1649669319220892291, guid: 57b4eead9b07cba4ebc2b4f189f6d16b, type: 3}
+  - {fileID: 8794293679310905712, guid: 57b4eead9b07cba4ebc2b4f189f6d16b, type: 3}
+  - {fileID: 9041627313079446052, guid: 57b4eead9b07cba4ebc2b4f189f6d16b, type: 3}
+  - {fileID: -243938744375676594, guid: 57b4eead9b07cba4ebc2b4f189f6d16b, type: 3}
 --- !u!1 &762025029
 GameObject:
   m_ObjectHideFlags: 0

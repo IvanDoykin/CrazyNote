@@ -6,7 +6,8 @@ namespace Game.Singleplayer
 {
     public class NoteObjectPool : ObjectPool<Note>
     {
-        [SerializeField] private List<GameObject> notes = new List<GameObject>();
+        [SerializeField] private GameObject _notePrefab;
+        [SerializeField] private List<Sprite> _noteSprites = new List<Sprite>();
 
         private void Awake()
         {
@@ -15,7 +16,9 @@ namespace Game.Singleplayer
 
         public GameObject Create(Vector3 position, Quaternion rotation, int id)
         {
-            return base.Create(notes[id], position, rotation);
+            GameObject note = base.Create(_notePrefab, position, rotation);
+            note.GetComponent<SpriteRenderer>().sprite = _noteSprites[id];
+            return note;
         }
     }
 }

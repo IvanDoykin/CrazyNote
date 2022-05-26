@@ -82,7 +82,6 @@ namespace Game.Singleplayer
             Debug.Log("COUNT = " + Track.Instance.SyncTrack.TrackBlock.Infos.Count);
             if (Track.Instance.SyncTrack.TrackBlock.Infos.Count <= currentIndex)
             {
-                Debug.LogError("");
                 return;
             }
 
@@ -121,6 +120,7 @@ namespace Game.Singleplayer
                 
                 if (Track.Instance.Notes.TrackBlock.Infos[i].Code == TypeCode.N)
                 {
+                    if (int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]) > 4) return;
                     singleplayerScene.CreateNote(int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]));
                 }
 
