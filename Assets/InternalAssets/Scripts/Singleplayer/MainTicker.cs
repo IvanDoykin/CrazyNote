@@ -21,6 +21,7 @@ namespace Game.Singleplayer
         private int ticksfromLastWide = 0;
 
         private double BPM = 0.0;
+        private bool hasNote = false;
 
         private void Awake()
         {
@@ -45,9 +46,9 @@ namespace Game.Singleplayer
                 Tick(currentTick);
             }
 
-            if (ticksfromLastWide >= needTicksForWide && needTicksForWide != 0)
+            if (ticksfromLastWide >= needTicksForWide && needTicksForWide != 0 && hasNote != false)
             {
-                ticksfromLastWide -= needTicksForWide;
+                ticksfromLastWide = Track.Instance.Song.Resolution - 1;
                 singleplayerScene.CreateWide();
             }
 
@@ -121,6 +122,7 @@ namespace Game.Singleplayer
                 if (Track.Instance.Notes.TrackBlock.Infos[i].Code == TypeCode.N)
                 {
                     if (int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]) > 4) return;
+                    hasNote = true;
                     singleplayerScene.CreateNote(int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]));
                 }
 
