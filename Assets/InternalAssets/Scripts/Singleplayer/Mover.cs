@@ -6,9 +6,22 @@ namespace Game.Singleplayer
 {
     public class Mover : MonoBehaviour
     {
+        private float _clock = 0f;
+
         private void Update()
         {
-            transform.position -= new Vector3(0, 0, 0.667f * 12.356f * Time.deltaTime);
+            transform.position -= new Vector3(0, 0, 0.3f * 13.9f * Time.deltaTime);
+        }
+
+        private void LateUpdate()
+        {
+            _clock += Time.deltaTime;
+        }
+
+        private void OnDisable()
+        {
+            Debug.Log(gameObject.name + " clock = " + _clock);
+            _clock = 0f;
         }
     }
 }
