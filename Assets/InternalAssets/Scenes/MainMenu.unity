@@ -820,7 +820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf3bb7ea2e7d66449c8ff97d2872294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _songsPath: C:/Users/ffcon/Documents/GitHub/CrazyNote/Assets/StreamingAssets
 --- !u!4 &583432550
 Transform:
   m_ObjectHideFlags: 0

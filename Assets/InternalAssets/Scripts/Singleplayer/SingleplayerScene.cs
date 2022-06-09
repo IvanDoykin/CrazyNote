@@ -11,16 +11,8 @@ namespace Game.Singleplayer
         public Transform WidePlace => widePlace;
         public NoteSpawnPlaces NotePlaces => notePlaces;
 
-        private WideObjectPool widePool;
-        private NoteObjectPool notePool;
-
-        private void Awake()
-        {
-            widePool = FindObjectOfType<WideObjectPool>();
-            notePool = FindObjectOfType<NoteObjectPool>();
-
-            notePlaces = FindObjectOfType<NoteSpawnPlaces>();
-        }
+        [SerializeField] private WideObjectPool widePool;
+        [SerializeField] private NoteObjectPool notePool;
 
         public void CreateWide()
         {

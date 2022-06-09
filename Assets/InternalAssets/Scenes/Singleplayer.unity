@@ -2619,6 +2619,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   widePlace: {fileID: 1691435915}
   notePlaces: {fileID: 1528877952}
+  widePool: {fileID: 758934454}
+  notePool: {fileID: 758934456}
 --- !u!1 &1281639468
 GameObject:
   m_ObjectHideFlags: 0

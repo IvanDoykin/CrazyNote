@@ -12,7 +12,8 @@ namespace Game.Singleplayer
         private SingleplayerScene singleplayerScene;
 
         private int currentTick = 0;
-        private int currentIndex = 0;
+        private int currentNoteIndex = 0;
+        private int currentSyncIndex = 0;
 
         private double secondsFromLastTick = 0.0;
         private double secondsForOneTick = 0.0;
@@ -20,7 +21,7 @@ namespace Game.Singleplayer
         private int needTicksForWide = 0;
         private int ticksfromLastWide = 0;
 
-        private double BPM = 0.0;
+        public float BPM { get; private set; } = 0.0f;
         private bool hasNote = false;
 
         private void Awake()
@@ -46,7 +47,7 @@ namespace Game.Singleplayer
                 Tick(currentTick);
             }
 
-            if (ticksfromLastWide >= needTicksForWide && needTicksForWide != 0 && hasNote != false)
+            if (ticksfromLastWide >= needTicksForWide && needTicksForWide != 0 && hasNote)
             {
                 ticksfromLastWide = Track.Instance.Song.Resolution - 1;
                 singleplayerScene.CreateWide();
@@ -56,7 +57,7 @@ namespace Game.Singleplayer
             ticksfromLastWide++;
         }
 
-        private void SetBPM(double bpm)
+        private void SetBPM(float bpm)
         {
             BPM = bpm;
             secondsForOneTick = 60.0 / BPM / Track.Instance.Song.Resolution;
@@ -81,17 +82,20 @@ namespace Game.Singleplayer
         private void TickSyncTrack(int tick)
         {
             Debug.Log("COUNT = " + Track.Instance.SyncTrack.TrackBlock.Infos.Count);
-            if (Track.Instance.SyncTrack.TrackBlock.Infos.Count <= currentIndex)
+            if (Track.Instance.SyncTrack.TrackBlock.Infos.Count <= currentSyncIndex)
             {
                 return;
             }
 
-            for (int i = currentIndex; Track.Instance.SyncTrack.TrackBlock.Infos[i].Position <= tick;)
+            int temp = currentSyncIndex;
+            for (int i = temp; Track.Instance.SyncTrack.TrackBlock.Infos[i].Position <= tick + (int)(1050 * (BPM / 165f));)
             {
+                currentSyncIndex++;
+
                 if (Track.Instance.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.B)
                 {
-                    Debug.Log("Set BPM = " + double.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0);
-                    SetBPM(double.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0);
+                    Debug.Log("Set BPM = " + float.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0f);
+                    SetBPM(float.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0f);
                 }
                 if (Track.Instance.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.TS)
                 {
@@ -109,15 +113,15 @@ namespace Game.Singleplayer
 
         private void TickNotes(int tick)
         {
-            if (Track.Instance.Notes.TrackBlock.Infos.Count <= currentIndex)
+            if (Track.Instance.Notes.TrackBlock.Infos.Count <= currentNoteIndex)
             {
                 return;
             }
 
-            int temp = currentIndex;
-            for (int i = temp; Track.Instance.Notes.TrackBlock.Infos[i].Position <= tick;)
+            int temp = currentNoteIndex;
+            for (int i = temp; Track.Instance.Notes.TrackBlock.Infos[i].Position <= tick + (int)(1050 * (BPM / 165f));)
             {
-                currentIndex++;
+                currentNoteIndex++;
                 
                 if (Track.Instance.Notes.TrackBlock.Infos[i].Code == TypeCode.N)
                 {
