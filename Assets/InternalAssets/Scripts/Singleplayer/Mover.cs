@@ -20,7 +20,7 @@ namespace Game.Singleplayer
 
         private void OnDisable()
         {
-            //Debug.Log(gameObject.name + " clock = " + _clock);
+            Debug.Log(gameObject.name + " clock = " + _clock);
             _clock = 0f;
         }
     }

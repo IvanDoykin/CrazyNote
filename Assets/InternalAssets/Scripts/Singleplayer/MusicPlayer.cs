@@ -23,7 +23,7 @@ namespace Game.Singleplayer
 
         private void Start()
         {
-            Play(2f);
+            Play(1.925f);
         }
 
         public void Play(float delay)
