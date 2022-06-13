@@ -20,7 +20,7 @@ namespace Game.Singleplayer
             _clock += Time.deltaTime;
             if (_material != null)
             {
-                _material.SetTextureOffset("_MainTex", _material.GetTextureOffset("_MainTex") + new Vector2(0f, 0.45f * (MainTicker.Instance.BPM / 165f) * Time.deltaTime));
+                _material.SetTextureOffset("_MainTex", _material.GetTextureOffset("_MainTex") + new Vector2(0f, 0.45f * Time.deltaTime));
 
                 if (_material.GetTextureOffset("_MainTex").y >= 0.5f && kek)
                 {

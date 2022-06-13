@@ -23,6 +23,17 @@ namespace Game.Singleplayer
 
         private void Start()
         {
+            Play(2f);
+        }
+
+        public void Play(float delay)
+        {
+            StartCoroutine(PlayWithDelay(delay));
+        }
+
+        private IEnumerator PlayWithDelay(float time)
+        {
+            yield return new WaitForSeconds(time);
             _audio.Play();
         }
 

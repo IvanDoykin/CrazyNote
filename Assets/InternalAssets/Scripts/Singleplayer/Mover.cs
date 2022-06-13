@@ -10,7 +10,7 @@ namespace Game.Singleplayer
 
         private void Update()
         {
-            transform.position -= new Vector3(0, 0, 0.45f * (MainTicker.Instance.BPM / 165f) * 13.9f * Time.deltaTime);
+            transform.position -= new Vector3(0, 0, 0.45f * 13.9f * Time.deltaTime);
         }
 
         private void LateUpdate()

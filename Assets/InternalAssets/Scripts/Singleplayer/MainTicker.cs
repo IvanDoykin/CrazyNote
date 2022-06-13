@@ -88,7 +88,7 @@ namespace Game.Singleplayer
             }
 
             int temp = currentSyncIndex;
-            for (int i = temp; Track.Instance.SyncTrack.TrackBlock.Infos[i].Position <= tick + (int)(1050 * (BPM / 165f));)
+            for (int i = temp; Track.Instance.SyncTrack.TrackBlock.Infos[i].Position <= tick;)
             {
                 currentSyncIndex++;
 
@@ -119,7 +119,7 @@ namespace Game.Singleplayer
             }
 
             int temp = currentNoteIndex;
-            for (int i = temp; Track.Instance.Notes.TrackBlock.Infos[i].Position <= tick + (int)(1050 * (BPM / 165f));)
+            for (int i = temp; Track.Instance.Notes.TrackBlock.Infos[i].Position <= tick;)
             {
                 currentNoteIndex++;
                 
