@@ -19,7 +19,8 @@ namespace Game.Singleplayer
 
         public void CatchFirstNote()
         {
-            GetFirstNote().Catch();
+            _notes.Remove(GetFirstNote());
+            GetFirstNote()?.Catch();
         }
 
         private void OnTriggerEnter(Collider other)
