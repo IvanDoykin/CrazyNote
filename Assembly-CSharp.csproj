@@ -95,6 +95,11 @@
     <Compile Include="Assets\InternalAssets\Scripts\CustomButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\ObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\GuitarControlRuler.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\NoteDetector.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\GameInput.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\InputData.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\KeyboardInput.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

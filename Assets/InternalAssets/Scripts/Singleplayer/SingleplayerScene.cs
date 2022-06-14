@@ -19,10 +19,11 @@ namespace Game.Singleplayer
             widePool.Create(widePlace.position, widePlace.rotation);
         }
 
-        public void CreateNote(int id)
+        public void CreateNote(int id, int position)
         {
             Transform notePlace = notePlaces.GetPlaceById(id);
-            notePool.Create(notePlace.position, notePlace.rotation, id);
+            GameObject note = notePool.Create(notePlace.position, notePlace.rotation, id);
+            note.GetComponent<Note>().Initialize(position);
         }
     }
 }

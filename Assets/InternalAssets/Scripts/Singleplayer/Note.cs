@@ -6,16 +6,25 @@ namespace Game.Singleplayer
 {
     public class Note : MonoBehaviour, IPoolable
     {
-        private NoteObjectPool pool;
+        public int Position { get; private set; }
+        private bool _hasCaught = false;
+        private NoteObjectPool _pool;
 
-        private void Start()
+        public void Initialize(int position)
         {
-            pool = FindObjectOfType<NoteObjectPool>();
+            _pool = FindObjectOfType<NoteObjectPool>();
+            Position = position;
+        }
+
+        public void Catch()
+        {
+            _hasCaught = true;
+            SetInPool();
         }
 
         public void SetInPool()
         {
-            pool.Delete(gameObject);
+            _pool.Delete(gameObject);
         }
     }
 }
