@@ -13,6 +13,13 @@ namespace Game.Singleplayer
         private int _score = 0;
         [SerializeField] private TextMeshProUGUI _scoreText;
 
+        private string _text = "";
+
+        private string _lastDebug = "";
+        private string _lastInput = "";
+
+        public int kek = 0;
+
         private void Awake()
         {
             _input = GetComponent<GameInput>();
@@ -21,21 +28,40 @@ namespace Game.Singleplayer
         private void Update()
         {
             InputData input = _input.GetInput();
-            bool[] needInput = GetNeedInput();
 
             string debug = "{ ";
+            foreach (var b in input.Notes)
+            {
+                debug += b + " ";
+            }
+            debug += "}";
+
+            if (debug != "{ False False False False False }" && debug != _lastInput)
+            {
+                Debug.Log("input = " + debug);
+                _lastInput = debug;
+            }
+
+
+            bool[] needInput = GetNeedInput();
+
+             debug = "{ ";
             foreach (var b in needInput)
             {
                 debug += b + " ";
             }
             debug += "}";
-            Debug.Log("debug = " + debug);
+
+            if (debug != "{ False False False False False }" && debug != _lastDebug)
+            {
+                Debug.Log("debug = " + debug);
+                _lastDebug = debug;
+            }
 
             for (int i = 0; i < _detectors.Count; i++)
             {
                 if (input.Notes[i] != needInput[i])
                 {
-                    //gg wp
                     return;
                 }
             }
@@ -45,10 +71,19 @@ namespace Game.Singleplayer
                 if (needInput[i])
                 {
                     _detectors[i].CatchFirstNote();
+                    _detectors[i].CatchFirstNote();
+
                     _score++;
                 }
             }
-            _scoreText.text = _score.ToString();
+
+            _scoreText.text = "";
+            foreach (var ch in _score.ToString())
+            {
+                _scoreText.text += "<sprite=" + ch + ">";
+            }
+            _text = _scoreText.text;
+            _scoreText.text = _text + " kek:" + kek;
         }
 
         private bool[] GetNeedInput()

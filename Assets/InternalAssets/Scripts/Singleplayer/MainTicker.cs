@@ -81,7 +81,6 @@ namespace Game.Singleplayer
 
         private void TickSyncTrack(int tick)
         {
-            Debug.Log("COUNT = " + Track.Instance.SyncTrack.TrackBlock.Infos.Count);
             if (Track.Instance.SyncTrack.TrackBlock.Infos.Count <= currentSyncIndex)
             {
                 return;

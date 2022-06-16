@@ -19,8 +19,8 @@ namespace Game.Singleplayer
 
         public void CatchFirstNote()
         {
-            _notes.Remove(GetFirstNote());
             GetFirstNote()?.Catch();
+            _notes.Remove(GetFirstNote());
         }
 
         private void OnTriggerEnter(Collider other)
@@ -37,6 +37,7 @@ namespace Game.Singleplayer
             var note = other.GetComponent<Note>();
             if (note != null)
             {
+                FindObjectOfType<GuitarControlRuler>().kek++;
                 _notes.Remove(note);
                 note.SetInPool();
             }
