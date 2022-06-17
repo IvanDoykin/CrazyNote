@@ -22,17 +22,18 @@ namespace Game.MainMenu.ChartParsing
             {
                 if (line.Contains(nameField))
                 {
-                    name = line.Replace(nameField, "").Trim(new char[3] { ' ', '=', '"' });
+                    name = line.Trim().Replace(nameField, "").Trim(new char[3] { ' ', '=', '"' });
                 }
 
                 if (line.Contains(artistField))
                 {
-                    artist = line.Replace(artistField, "").Trim(new char[3] { ' ', '=', '"' });
+                    artist = line.Trim().Replace(artistField, "").Trim(new char[3] { ' ', '=', '"' });
                 }
 
                 if (line.Contains(resolutionField))
                 {
-                    resolution = Int32.Parse(line.Replace(resolutionField, "").Trim(new char[3] { ' ', '=', '"' }));
+                    Debug.Log(line.Trim());
+                    resolution = Int32.Parse(line.Trim().Replace(resolutionField, "").Trim(new char[3] { ' ', '=', '"' }));
                 }
             }
 
