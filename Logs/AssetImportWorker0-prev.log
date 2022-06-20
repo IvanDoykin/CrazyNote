@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.8f1 (507919d4fff5) revision 5273881'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19044.1706; Version 2009; 64bit' Language: 'ru' Physical Memory: 32678 MB
+OS: 'Windows 10 Pro; OS build 19043.1110; Version 2009; 64bit' Language: 'ru' Physical Memory: 16225 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -11,363 +11,339 @@ C:\Program Files\Unity\Hub\Editor\2020.3.8f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/ffcon/Documents/GitHub/CrazyNote
+C:/Users/1/Documents/CrazyNote
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51937
-Successfully changed project path to: C:/Users/ffcon/Documents/GitHub/CrazyNote
-C:/Users/ffcon/Documents/GitHub/CrazyNote
+57468
+Successfully changed project path to: C:/Users/1/Documents/CrazyNote
+C:/Users/1/Documents/CrazyNote
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 22.61 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 28.87 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/ffcon/Documents/GitHub/CrazyNote/Assets
+[Subsystems] Discovering subsystems at path C:/Users/1/Documents/CrazyNote/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f82)
+    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1c02)
     Vendor:   
-    VRAM:     3962 MB
-    Driver:   30.0.15.1215
+    VRAM:     2988 MB
+    Driver:   27.21.14.6192
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56640
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56744
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001731 seconds.
+Registered in 0.001516 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 23.36 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 29.57 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.958 seconds
+- Completed reload, in  1.733 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000533 seconds.
+Registered in 0.000553 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.699 seconds
+- Completed reload, in  0.929 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1207 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 61.6 MB.
 System memory in use after: 61.7 MB.
 
 Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1653.
-Total: 1.480000 ms (FindLiveObjects: 0.182400 ms CreateObjectMapping: 0.028300 ms MarkObjects: 1.248400 ms  DeleteObjects: 0.020000 ms)
+Total: 1.794100 ms (FindLiveObjects: 0.133500 ms CreateObjectMapping: 0.049500 ms MarkObjects: 1.590500 ms  DeleteObjects: 0.019700 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/InternalAssets
-  artifactKey: Guid(2ce6ffd0bbdd8f9488e6c5e6ae78df6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/InternalAssets using Guid(2ce6ffd0bbdd8f9488e6c5e6ae78df6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23d444a346864815c331ae1cbe5a62a6') in 0.006890 seconds
-  Import took 0.008837 seconds .
+  path: Assets/InternalAssets/Sprites/Gameplay/fretButtons.png
+  artifactKey: Guid(234d11074c5d5a24083e366f157d55c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Sprites/Gameplay/fretButtons.png using Guid(234d11074c5d5a24083e366f157d55c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4881d4a3a991b2da4a062eca2bf5a2c0') in 0.058468 seconds
+  Import took 0.060902 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/StreamingAssets
-  artifactKey: Guid(16fcfc89bd8168043ac2b92143a18f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets using Guid(16fcfc89bd8168043ac2b92143a18f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae356e474023676f542c138c7e6ae969') in 0.007412 seconds
-  Import took 0.009038 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000536 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.644 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1187 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 60.1 MB.
-System memory in use after: 60.2 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1656.
-Total: 1.372500 ms (FindLiveObjects: 0.129200 ms CreateObjectMapping: 0.028400 ms MarkObjects: 1.202000 ms  DeleteObjects: 0.012000 ms)
+  Time since last request: 6.327359 seconds.
+  path: Assets/InternalAssets/Sprites/Gameplay/fretButtons.png
+  artifactKey: Guid(234d11074c5d5a24083e366f157d55c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Sprites/Gameplay/fretButtons.png using Guid(234d11074c5d5a24083e366f157d55c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19cf2dc7da792f5e8ae58ed1fad5b1e3') in 0.006790 seconds
+  Import took 0.009069 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 66.021432 seconds.
-  path: Assets/StreamingAssets/James LaBrie - Letting Go
-  artifactKey: Guid(2b9bb671729ae804ea1d912cb949ed7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/James LaBrie - Letting Go using Guid(2b9bb671729ae804ea1d912cb949ed7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f3ea16c87d26acd3d744d5b2b72777e') in 0.008308 seconds
-  Import took 0.010273 seconds .
+  Time since last request: 28.286961 seconds.
+  path: Assets/InternalAssets/Sprites/Gameplay/fretButtons.png
+  artifactKey: Guid(234d11074c5d5a24083e366f157d55c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Sprites/Gameplay/fretButtons.png using Guid(234d11074c5d5a24083e366f157d55c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '395bcaab91ad798002daadcd511c2270') in 0.095672 seconds
+  Import took 0.098176 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000900 seconds.
-  path: Assets/StreamingAssets/James LaBrie - Letting Go
-  artifactKey: Guid(2b9bb671729ae804ea1d912cb949ed7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/James LaBrie - Letting Go using Guid(2b9bb671729ae804ea1d912cb949ed7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f3ea16c87d26acd3d744d5b2b72777e') in 0.002062 seconds
-  Import took 0.003463 seconds .
+  Time since last request: 714.098796 seconds.
+  path: Assets/InternalAssets/Shaders/Fire.shader
+  artifactKey: Guid(5167ae442bb0ee148886844c79dbb361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Shaders/Fire.shader using Guid(5167ae442bb0ee148886844c79dbb361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a006e8aee0bf4a2b3f340242aefcd0c') in 0.007321 seconds
+  Import took 0.010025 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.915550 seconds.
-  path: Assets/StreamingAssets/Rishloo - Feathergun
-  artifactKey: Guid(0a3b1bf0f9e7ff840a022328cc687766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/Rishloo - Feathergun using Guid(0a3b1bf0f9e7ff840a022328cc687766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2172686aee44ad5010c8bc506bbd4e0b') in 0.006305 seconds
-  Import took 0.008349 seconds .
+  Time since last request: 28.649323 seconds.
+  path: Assets/InternalAssets/Test.mat
+  artifactKey: Guid(3399f5e08fb946f468424015d2e82dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Test.mat using Guid(3399f5e08fb946f468424015d2e82dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eb5e77fbda7d295fc7074166e0da75b') in 0.080807 seconds
+  Import took 0.083777 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 19.561925 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL
-  artifactKey: Guid(812a73d76d1b3b34986e743d7f049fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL using Guid(812a73d76d1b3b34986e743d7f049fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77a9961ef0b4a8ac36c2c19ea512cf90') in 0.006169 seconds
-  Import took 0.008269 seconds .
+  Time since last request: 43.785208 seconds.
+  path: Assets/InternalAssets/Fonts/60_ElementaCyr-Bold Bold SDF.asset
+  artifactKey: Guid(47befa080dea3b149be3c179c50a0bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Fonts/60_ElementaCyr-Bold Bold SDF.asset using Guid(47befa080dea3b149be3c179c50a0bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5abfb0392a8a6419ad6d73c63fcea40') in 0.056399 seconds
+  Import took 0.059526 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.335349 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/guitar.ogg
-  artifactKey: Guid(87f3b4b400605ae4ebe6addf957a3183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/guitar.ogg using Guid(87f3b4b400605ae4ebe6addf957a3183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de6c89ac070e66bdabbef41023fcf606') in 0.024262 seconds
-  Import took 0.026196 seconds .
+  Time since last request: 30.959288 seconds.
+  path: Assets/InternalAssets/Shaders/GHRenderOrder.shader
+  artifactKey: Guid(34f40e05160908140bf30e7334dd7c94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Shaders/GHRenderOrder.shader using Guid(34f40e05160908140bf30e7334dd7c94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78d293f862e187ad218daaa0f2e3c977') in 0.005765 seconds
+  Import took 0.008724 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.459973 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/notes.mid
-  artifactKey: Guid(7aeda6007b8a8764abbe7510a7460033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/notes.mid using Guid(7aeda6007b8a8764abbe7510a7460033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e4d5a20a8e79442afdce84792661c04') in 0.008877 seconds
-  Import took 0.010810 seconds .
+  Time since last request: 92.154220 seconds.
+  path: Assets/InternalAssets/Shaders/Glass.shader
+  artifactKey: Guid(187b50447e2a9414995fe5116f145673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Shaders/Glass.shader using Guid(187b50447e2a9414995fe5116f145673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dd7cd97148a8e247e4b35596cc129f9') in 0.003965 seconds
+  Import took 0.006972 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 35.308917 seconds.
-  path: Assets/StreamingAssets/Amon Amarth - First Kill
-  artifactKey: Guid(34836c872c6ad2949951b8fa30eaaf73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/Amon Amarth - First Kill using Guid(34836c872c6ad2949951b8fa30eaaf73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f93dc6fa6ce99f84230807fee70e18a') in 0.005169 seconds
-  Import took 0.007060 seconds .
+  Time since last request: 61.602157 seconds.
+  path: Assets/InternalAssets/Shaders/UIFast.shader
+  artifactKey: Guid(b1d083ba694e3b74295fec42c32ac3b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Shaders/UIFast.shader using Guid(b1d083ba694e3b74295fec42c32ac3b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b92397e05c5f6d26bc65bb717a65f97') in 0.003027 seconds
+  Import took 0.005886 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.286077 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ogg
-  artifactKey: Guid(87f3b4b400605ae4ebe6addf957a3183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ogg using Guid(87f3b4b400605ae4ebe6addf957a3183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '332ebc0c448ec892439f29404613038b') in 0.005243 seconds
-  Import took 0.007175 seconds .
+  Time since last request: 12.374617 seconds.
+  path: Assets/InternalAssets/Shaders/TextureBlend.shader
+  artifactKey: Guid(62f6932ff0f4ff34ebc3a9457c032f40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Shaders/TextureBlend.shader using Guid(62f6932ff0f4ff34ebc3a9457c032f40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21888be3d0cf2055375930b981744bec') in 0.002877 seconds
+  Import took 0.005173 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 32.653702 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini
-  artifactKey: Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini using Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ded19fb56348287e0e55b6bf6aa26802') in 0.010143 seconds
-  Import took 0.012784 seconds .
+  Time since last request: 5.997272 seconds.
+  path: Assets/InternalAssets/Shaders/Standard.shader
+  artifactKey: Guid(4e9886402278b5c47a03b7f21e7f6dd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Shaders/Standard.shader using Guid(4e9886402278b5c47a03b7f21e7f6dd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '781fbdbd28cd7b3c4c81f2476bdf1009') in 0.003967 seconds
+  Import took 0.006628 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.008827 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini
-  artifactKey: Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini using Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ded19fb56348287e0e55b6bf6aa26802') in 0.003550 seconds
-  Import took 0.006450 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000523 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.636 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1187 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 60.1 MB.
-System memory in use after: 60.2 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1659.
-Total: 1.377300 ms (FindLiveObjects: 0.124000 ms CreateObjectMapping: 0.026000 ms MarkObjects: 1.215900 ms  DeleteObjects: 0.010600 ms)
+  Time since last request: 1.667503 seconds.
+  path: Assets/InternalAssets/Shaders/VerticalAlphaFadeVariable.shader
+  artifactKey: Guid(f652474ff4ee76d4d9df98d5c5b4e197) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Shaders/VerticalAlphaFadeVariable.shader using Guid(f652474ff4ee76d4d9df98d5c5b4e197) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb22c5e4a2793773a91cc58305ce0022') in 0.002807 seconds
+  Import took 0.005219 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 29.805597 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini
-  artifactKey: Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini using Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8efa08c635da6048fea8069f795b6bf') in 0.011418 seconds
-  Import took 0.013340 seconds .
+  Time since last request: 1537.190976 seconds.
+  path: Assets/InternalAssets/Shaders/Sprites-Default-HDR.shader
+  artifactKey: Guid(116b4c11ccc5aee47897b989c6401737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Shaders/Sprites-Default-HDR.shader using Guid(116b4c11ccc5aee47897b989c6401737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6de6173361488b9f8c3da63fd3028fb5') in 0.002841 seconds
+  Import took 0.005496 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.010877 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini
-  artifactKey: Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini using Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8efa08c635da6048fea8069f795b6bf') in 0.002261 seconds
-  Import took 0.004222 seconds .
+  Time since last request: 78.492994 seconds.
+  path: Assets/Art
+  artifactKey: Guid(8a68c110712663b429dbc7fe686b067b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art using Guid(8a68c110712663b429dbc7fe686b067b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d632982009afc50c7137d7c0b80cd57') in 0.001930 seconds
+  Import took 0.004448 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 17.739875 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/notes.chart
-  artifactKey: Guid(83dcc2efbccc38b478368378e1f396da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/notes.chart using Guid(83dcc2efbccc38b478368378e1f396da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1814cc247cb2b0979f7a9a94e47c5a4') in 0.005570 seconds
-  Import took 0.007493 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000603 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.652 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1187 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 60.2 MB.
-System memory in use after: 60.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1662.
-Total: 1.387100 ms (FindLiveObjects: 0.121700 ms CreateObjectMapping: 0.026200 ms MarkObjects: 1.227900 ms  DeleteObjects: 0.010400 ms)
+  Time since last request: 1.402491 seconds.
+  path: Assets/Art/Highway
+  artifactKey: Guid(922364e1086dd914cb9d759da9fe33da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Highway using Guid(922364e1086dd914cb9d759da9fe33da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24406d2ea86edb1dc47cee1ddc0d1612') in 0.001761 seconds
+  Import took 0.003936 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 127.087606 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini
-  artifactKey: Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini using Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa091361ec16c4890c65b31a389e980a') in 0.012129 seconds
-  Import took 0.014111 seconds .
+  Time since last request: 0.095511 seconds.
+  path: Assets/Art/Highway/bg_mask.png
+  artifactKey: Guid(994bd8b7d0fdd9b4e8feb967e70cf50c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Highway/bg_mask.png using Guid(994bd8b7d0fdd9b4e8feb967e70cf50c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f66cca72a7bde545f95ffd76faaa5f74') in 0.019369 seconds
+  Import took 0.021787 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000381 seconds.
-  path: Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini
-  artifactKey: Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StreamingAssets/In The Hall of the Mountain King MIDI FINAL/song.ini using Guid(3f2e770c4740176449d466af7f38254d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa091361ec16c4890c65b31a389e980a') in 0.002265 seconds
-  Import took 0.003902 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000486 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.643 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1187 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 60.2 MB.
-System memory in use after: 60.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1665.
-Total: 1.371200 ms (FindLiveObjects: 0.119400 ms CreateObjectMapping: 0.025900 ms MarkObjects: 1.214100 ms  DeleteObjects: 0.010400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000621 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.646 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1187 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 60.2 MB.
-System memory in use after: 60.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1668.
-Total: 1.487500 ms (FindLiveObjects: 0.145500 ms CreateObjectMapping: 0.029400 ms MarkObjects: 1.300500 ms  DeleteObjects: 0.010800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000597 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.632 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1187 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 60.2 MB.
-System memory in use after: 60.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1671.
-Total: 1.413500 ms (FindLiveObjects: 0.122700 ms CreateObjectMapping: 0.026700 ms MarkObjects: 1.252600 ms  DeleteObjects: 0.010700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000509 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.654 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1187 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 60.2 MB.
-System memory in use after: 60.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1674.
-Total: 1.410400 ms (FindLiveObjects: 0.123200 ms CreateObjectMapping: 0.026400 ms MarkObjects: 1.248800 ms  DeleteObjects: 0.010900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000657 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.639 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1187 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 60.2 MB.
-System memory in use after: 60.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1677.
-Total: 1.402000 ms (FindLiveObjects: 0.122000 ms CreateObjectMapping: 0.027100 ms MarkObjects: 1.238900 ms  DeleteObjects: 0.013100 ms)
+  Time since last request: 15.321570 seconds.
+  path: Assets/Art/Backgrounds
+  artifactKey: Guid(52858e02db0bdf5428e459badba9a796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Backgrounds using Guid(52858e02db0bdf5428e459badba9a796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c630038074931b19936508ff6008738') in 0.001857 seconds
+  Import took 0.004024 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1001.643581 seconds.
-  path: Assets/Resources/Sprites
-  artifactKey: Guid(bb148614596e7ce49a20d27f2058b2b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites using Guid(bb148614596e7ce49a20d27f2058b2b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebceb8d289d264ee95cefd625d880843') in 0.006747 seconds
-  Import took 0.008424 seconds .
+  Time since last request: 0.059246 seconds.
+  path: Assets/Art/Backgrounds/blue-259458_3.jpg
+  artifactKey: Guid(913e0b38ba870844c882a0c9997dde73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Backgrounds/blue-259458_3.jpg using Guid(913e0b38ba870844c882a0c9997dde73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfb058349e8178486491438956330aac') in 0.020868 seconds
+  Import took 0.023275 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.808369 seconds.
+  path: Assets/Art/Backgrounds/Materials
+  artifactKey: Guid(d8daf165f7cf6624b9ccee4e33e87874) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Backgrounds/Materials using Guid(d8daf165f7cf6624b9ccee4e33e87874) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7a428334318fd0108f2a79dbaaab4c7') in 0.002171 seconds
+  Import took 0.004413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 187.208993 seconds.
+  path: Assets/InternalAssets/Fonts/90_Lombardina One Roman.ttf
+  artifactKey: Guid(e3a4fdb24a1194a4183b4fca1aca3f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Fonts/90_Lombardina One Roman.ttf using Guid(e3a4fdb24a1194a4183b4fca1aca3f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dbd19902e609747a03f748b5122fe08') in 0.014207 seconds
+  Import took 0.016705 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/InternalAssets/Fonts/350_IndustryTMC Regular.ttf
+  artifactKey: Guid(ad8fccb9b248cbb45b367c9d35cde323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Fonts/350_IndustryTMC Regular.ttf using Guid(ad8fccb9b248cbb45b367c9d35cde323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d61c788078670356023cd9197361cac') in 0.007525 seconds
+  Import took 0.009545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/InternalAssets/Sprites/Gameplay/Materials/neck_mask.mat
+  artifactKey: Guid(1effeda1d1d645b4da57b78e5bf51ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Sprites/Gameplay/Materials/neck_mask.mat using Guid(1effeda1d1d645b4da57b78e5bf51ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38116a10764648c3601ec4c2809142f2') in 0.006676 seconds
+  Import took 0.008640 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004413 seconds.
+  path: Assets/InternalAssets/Fonts/117_Impact.ttf
+  artifactKey: Guid(d1d6922092a1365429cfa16176f02e30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Fonts/117_Impact.ttf using Guid(d1d6922092a1365429cfa16176f02e30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86d7465c8750bf4292ff9d67e2fb3eaa') in 0.007784 seconds
+  Import took 0.010150 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/InternalAssets/Fonts/76_ProbelC Regular.ttf
+  artifactKey: Guid(60a5894a2a58f2e488962dac46e1235c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Fonts/76_ProbelC Regular.ttf using Guid(60a5894a2a58f2e488962dac46e1235c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3edce79266cb817ce02b9252c3d5d5f') in 0.007352 seconds
+  Import took 0.009484 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/InternalAssets/Sprites/Gameplay/Materials/side_bars.mat
+  artifactKey: Guid(0479d9dc5ab878247ab4cf64873c3794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Sprites/Gameplay/Materials/side_bars.mat using Guid(0479d9dc5ab878247ab4cf64873c3794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ffda99cb5fc980f08a4a745de938347') in 0.006803 seconds
+  Import took 0.008913 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/InternalAssets/Fonts/123_InformC Bold.ttf
+  artifactKey: Guid(e2642a3a36ba66b4d93ac54d1eb2479a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Fonts/123_InformC Bold.ttf using Guid(e2642a3a36ba66b4d93ac54d1eb2479a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29edbc419d71ea6c173f92f67d131614') in 0.008289 seconds
+  Import took 0.010344 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/InternalAssets/Materials/Guitar.mat
+  artifactKey: Guid(b06fe73e7a9365b41afc96a38dd7d790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Materials/Guitar.mat using Guid(b06fe73e7a9365b41afc96a38dd7d790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b86e13bff148abdbb5955d076fddd294') in 0.008387 seconds
+  Import took 0.011005 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '289988fcecf3b00d1602f8d2b589f7dd') in 0.079906 seconds
+  Import took 0.082088 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/InternalAssets/Fonts/70_hooge 05_55_8pt_st.ttf
+  artifactKey: Guid(a06844d7dbafd5143805c921504c1afa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Fonts/70_hooge 05_55_8pt_st.ttf using Guid(a06844d7dbafd5143805c921504c1afa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8ec92a9bad513d6f178104b6bb03852') in 0.007938 seconds
+  Import took 0.009938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca0d2861f60500f05bd29199894f7bb5') in 0.081354 seconds
+  Import took 0.083620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/InternalAssets/Fonts/60_ElementaCyr-Bold Bold.ttf
+  artifactKey: Guid(e750de468051c604888ece3f17fc338a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Fonts/60_ElementaCyr-Bold Bold.ttf using Guid(e750de468051c604888ece3f17fc338a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59a4b03f0109c3732db060dc88c49c9a') in 0.007729 seconds
+  Import took 0.009849 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/InternalAssets/Fonts/256_Bordello-Bold.ttf
+  artifactKey: Guid(0298c7cecc2e65d4d8ce22e8cfdcdc8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternalAssets/Fonts/256_Bordello-Bold.ttf using Guid(0298c7cecc2e65d4d8ce22e8cfdcdc8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84169d44286a1ae41c80edc459781f9a') in 0.008041 seconds
+  Import took 0.010066 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 553.595097 seconds.
+  path: Assets/Mat.mat
+  artifactKey: Guid(fee8cd9cd8c4f214597de17f8de6cddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mat.mat using Guid(fee8cd9cd8c4f214597de17f8de6cddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70989570dba78bfab5b1a7ad3772357b') in 0.008504 seconds
+  Import took 0.011476 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 276.073317 seconds.
+  path: Assets/Art/Backgrounds/Materials/GH_Fade_BG.mat
+  artifactKey: Guid(813a8c2b712f1ae4c9606899aa5d7185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Backgrounds/Materials/GH_Fade_BG.mat using Guid(813a8c2b712f1ae4c9606899aa5d7185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec1b6595b0913522611d43fb29e1abf9') in 0.014643 seconds
+  Import took 0.017619 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Art/Backgrounds/Materials/blue-259458_3.mat
+  artifactKey: Guid(7577225f0c2389b4a8febaab01209797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Backgrounds/Materials/blue-259458_3.mat using Guid(7577225f0c2389b4a8febaab01209797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1db59b1a2321c6746aad7e3de46773d2') in 0.012790 seconds
+  Import took 0.014904 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

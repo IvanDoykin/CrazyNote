@@ -19,6 +19,8 @@ namespace Game.Singleplayer
         private string _lastInput = "";
 
         public int kek = 0;
+        public bool[] checkOnKeysDown = new bool[5];
+        public bool[] testInput;
 
         private void Awake()
         {
@@ -27,7 +29,15 @@ namespace Game.Singleplayer
 
         private void Update()
         {
+            ResetInput();
+
             InputData input = _input.GetInput();
+            testInput = input.Notes;
+
+            for (int i = 0; i < checkOnKeysDown.Length; i++)
+            {
+                if (checkOnKeysDown[i]) return;
+            }
 
             string debug = "{ ";
             foreach (var b in input.Notes)
@@ -41,7 +51,6 @@ namespace Game.Singleplayer
                 Debug.Log("input = " + debug);
                 _lastInput = debug;
             }
-
 
             bool[] needInput = GetNeedInput();
 
@@ -70,6 +79,7 @@ namespace Game.Singleplayer
             {
                 if (needInput[i])
                 {
+                    checkOnKeysDown[i] = true;
                     _detectors[i].CatchFirstNote();
                     _detectors[i].CatchFirstNote();
 
@@ -84,6 +94,21 @@ namespace Game.Singleplayer
             }
             _text = _scoreText.text;
             _scoreText.text = _text + " kek:" + kek;
+
+            ResetInput();
+        }
+
+        private void ResetInput()
+        {
+            var resetInput = _input.ResetInput();
+            for (int i = 0; i < resetInput.Notes.Length; i++)
+            {
+                if (resetInput.Notes[i])
+                {
+                    checkOnKeysDown[i] = false;
+                }
+            }
+
         }
 
         private bool[] GetNeedInput()

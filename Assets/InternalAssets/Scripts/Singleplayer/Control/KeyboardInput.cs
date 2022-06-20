@@ -12,11 +12,26 @@ namespace Game.Singleplayer
             {
                 Notes = new bool[5]
                 {
-                    Input.GetKeyDown(KeyCode.Z),
-                    Input.GetKeyDown(KeyCode.X),
-                    Input.GetKeyDown(KeyCode.C),
-                    Input.GetKeyDown(KeyCode.V),
-                    Input.GetKeyDown(KeyCode.B)
+                    Input.GetKey(KeyCode.Z),
+                    Input.GetKey(KeyCode.X),
+                    Input.GetKey(KeyCode.C),
+                    Input.GetKey(KeyCode.V),
+                    Input.GetKey(KeyCode.B)
+                }
+            };
+        }
+
+        public override ResetInputData ResetInput()
+        {
+            return new ResetInputData
+            {
+                Notes = new bool[5]
+                {
+                    Input.GetKeyUp(KeyCode.Z),
+                    Input.GetKeyUp(KeyCode.X),
+                    Input.GetKeyUp(KeyCode.C),
+                    Input.GetKeyUp(KeyCode.V),
+                    Input.GetKeyUp(KeyCode.B)
                 }
             };
         }
