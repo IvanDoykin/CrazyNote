@@ -17,10 +17,12 @@ namespace Game.Singleplayer
             return null;
         }
 
-        public void CatchFirstNote()
+        public bool CatchFirstNote()
         {
-            GetFirstNote()?.Catch();
+            var note = GetFirstNote();
+            note?.Catch();
             _notes.Remove(GetFirstNote());
+            return note != null;
         }
 
         private void OnTriggerEnter(Collider other)

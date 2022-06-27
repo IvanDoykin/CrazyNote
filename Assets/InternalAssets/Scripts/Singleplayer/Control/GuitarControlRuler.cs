@@ -8,10 +8,12 @@ namespace Game.Singleplayer
     public class GuitarControlRuler : MonoBehaviour
     {
         [SerializeField] private List<NoteDetector> _detectors = new List<NoteDetector>();
+        [SerializeField] private List<FireAnimator> _fireAnimators = new List<FireAnimator>();
         private GameInput _input;
 
         private int _score = 0;
         [SerializeField] private TextMeshProUGUI _scoreText;
+        private bool[] prevInput;
 
         private string _text = "";
 
@@ -25,6 +27,7 @@ namespace Game.Singleplayer
         private void Awake()
         {
             _input = GetComponent<GameInput>();
+            prevInput = new bool[_input.GetInput().Notes.Length];
         }
 
         private void Update()
@@ -34,9 +37,29 @@ namespace Game.Singleplayer
             InputData input = _input.GetInput();
             testInput = input.Notes;
 
-            for (int i = 0; i < checkOnKeysDown.Length; i++)
+            bool checkOnKeys = true;
+            for (int i = 0; i < prevInput.Length; i++)
             {
-                if (checkOnKeysDown[i]) return;
+                if (input.Notes[i] != prevInput[i])
+                {
+                    checkOnKeys = false;
+                    break;
+                }
+            }
+
+            if (checkOnKeys)
+            {
+                for (int i = 0; i < checkOnKeysDown.Length; i++)
+                {
+                    if (checkOnKeysDown[i]) return;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < prevInput.Length; i++)
+                {
+                    prevInput[i] = input.Notes[i];
+                }
             }
 
             string debug = "{ ";
@@ -54,7 +77,7 @@ namespace Game.Singleplayer
 
             bool[] needInput = GetNeedInput();
 
-             debug = "{ ";
+            debug = "{ ";
             foreach (var b in needInput)
             {
                 debug += b + " ";
@@ -80,8 +103,14 @@ namespace Game.Singleplayer
                 if (needInput[i])
                 {
                     checkOnKeysDown[i] = true;
-                    _detectors[i].CatchFirstNote();
-                    _detectors[i].CatchFirstNote();
+
+                    for (int j = 0; j < 2; j++)
+                    {
+                        if (_detectors[i].CatchFirstNote())
+                        {
+                            _fireAnimators[i].Play();
+                        }
+                    }
 
                     _score++;
                 }
