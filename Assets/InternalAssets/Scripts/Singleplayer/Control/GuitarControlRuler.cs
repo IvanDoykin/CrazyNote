@@ -32,8 +32,7 @@ namespace Game.Singleplayer
 
         private void Update()
         {
-            ResetInput();
-
+            //reset only after 200ms delay
             InputData input = _input.GetInput();
             testInput = input.Notes;
 
@@ -104,15 +103,19 @@ namespace Game.Singleplayer
                 {
                     checkOnKeysDown[i] = true;
 
-                    for (int j = 0; j < 2; j++)
-                    {
-                        if (_detectors[i].CatchFirstNote())
-                        {
-                            _fireAnimators[i].Play();
-                        }
-                    }
+                    _fireAnimators[i].Play();
 
-                    _score++;
+                    while (_detectors[i].CatchFirstNote())
+                    {
+                        _score++;
+                        _scoreText.text = "";
+                        foreach (var ch in _score.ToString())
+                        {
+                            _scoreText.text += "<sprite=" + ch + ">";
+                        }
+                        _text = _scoreText.text;
+                        _scoreText.text = _text + " kek:" + kek;
+                    }
                 }
             }
 

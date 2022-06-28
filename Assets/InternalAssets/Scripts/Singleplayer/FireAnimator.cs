@@ -13,14 +13,6 @@ namespace Game.Singleplayer
             _animator = GetComponent<Animator>();
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                Play();
-            }
-        }
-
         public void Play()
         {
             _animator.SetBool("fire", true);
