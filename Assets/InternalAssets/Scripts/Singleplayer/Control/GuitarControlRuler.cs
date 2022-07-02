@@ -16,12 +16,13 @@ namespace Game.Singleplayer
 
         public int kek = 0;
 
-        private bool[] _lastInput;
+        public bool[] _lastInput;
         private float _timer = 0f;
 
         private void Awake()
         {
             _input = GetComponent<GameInput>();
+            _lastInput = new bool[_input.GetInput().Notes.Length];
         }
 
         private void Update()
@@ -30,42 +31,53 @@ namespace Game.Singleplayer
             bool[] needInput = GetNeedInput();
             bool islastInputUpdated = UpdateLastInput(currentInput);
 
+            Debug.Log(islastInputUpdated);
+
             UpdateTimer(islastInputUpdated);
             UpdateLastInputByTimer();
 
-            if (CheckLastInputOnEmpty(_lastInput))
+            if (CheckLastInputOnEmpty())
             {
                 return;
             }
+
+            if (islastInputUpdated)
+            {
+                ResetTimer();
+            }
+
+            if (CheckOnMiss(needInput))
+            {
+                //miss event
+                return;
+            }
+
+            TriggerNotes(needInput);
+            ResetLastInput();
+
+            _scoreText.text = "" + _score + " " + kek;
+        }
+
+        private void TriggerNotes(bool[] needInput)
+        {
+            for (int i = 0; i < needInput.Length; i++)
+            {
+                if (needInput[i])
+                {
+                    _fireAnimators[i].Play();
+                    while (_detectors[i].CatchFirstNote())
+                    {
+                        _score++;
+                    }
+                }
+            }
+        }
+
+        private bool CheckOnMiss(bool[] needInput)
+        {
             for (int i = 0; i < _lastInput.Length; i++)
             {
                 if (_lastInput[i] != needInput[i])
-                {
-                    //miss key
-                    return;
-                }
-            }
-
-
-        }
-
-        private void UpdateLastInputByTimer()
-        {
-            if (_timer > 0.2f)
-            {
-                _timer = 0f;
-                for (int i = 0; i < _lastInput.Length; i++)
-                {
-                    _lastInput[i] = false;
-                }
-            }
-        }
-
-        private bool CheckLastInputOnEmpty(bool[] lastInput)
-        {
-            foreach (var input in lastInput)
-            {
-                if (input)
                 {
                     return true;
                 }
@@ -73,16 +85,53 @@ namespace Game.Singleplayer
             return false;
         }
 
+        private void UpdateLastInputByTimer()
+        {
+            if (_timer > 0.1f)
+            {
+                Debug.Log("reset");
+                ResetTimer();
+                ResetLastInput();
+            }
+        }
+
+        private bool CheckLastInputOnEmpty()
+        {
+            foreach (var input in _lastInput)
+            {
+                if (input)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void UpdateTimer(bool islastInputUpdated)
         {
             if (islastInputUpdated)
             {
-                _timer = 0f;
+                ResetTimer();
             }
             else
             {
+                Debug.Log("Inc timer");
                 _timer += Time.deltaTime;
             }
+        }
+
+        private void ResetLastInput()
+        {
+            Debug.Log("reset last input");
+            for (int i = 0; i < _lastInput.Length; i++)
+            {
+                _lastInput[i] = false;
+            }
+        }
+
+        private void ResetTimer()
+        {
+            _timer = 0f;
         }
 
         private bool UpdateLastInput(bool[] currentInput)
@@ -93,7 +142,10 @@ namespace Game.Singleplayer
                 if (input)
                 {
                     isEverNoteTapped = true;
-                    _lastInput = currentInput;
+                    for (int i = 0; i < _lastInput.Length; i++)
+                    {
+                        _lastInput[i] = currentInput[i];
+                    }
                     break;
                 }
             }
