@@ -13,134 +13,92 @@ namespace Game.Singleplayer
 
         private int _score = 0;
         [SerializeField] private TextMeshProUGUI _scoreText;
-        private bool[] prevInput;
-
-        private string _text = "";
-
-        private string _lastDebug = "";
-        private string _lastInput = "";
 
         public int kek = 0;
-        public bool[] checkOnKeysDown = new bool[5];
-        public bool[] testInput;
+
+        private bool[] _lastInput;
+        private float _timer = 0f;
 
         private void Awake()
         {
             _input = GetComponent<GameInput>();
-            prevInput = new bool[_input.GetInput().Notes.Length];
         }
 
         private void Update()
         {
-            //reset only after 200ms delay
-            InputData input = _input.GetInput();
-            testInput = input.Notes;
-
-            bool checkOnKeys = true;
-            for (int i = 0; i < prevInput.Length; i++)
-            {
-                if (input.Notes[i] != prevInput[i])
-                {
-                    checkOnKeys = false;
-                    break;
-                }
-            }
-
-            if (checkOnKeys)
-            {
-                for (int i = 0; i < checkOnKeysDown.Length; i++)
-                {
-                    if (checkOnKeysDown[i]) return;
-                }
-            }
-            else
-            {
-                for (int i = 0; i < prevInput.Length; i++)
-                {
-                    prevInput[i] = input.Notes[i];
-                }
-            }
-
-            string debug = "{ ";
-            foreach (var b in input.Notes)
-            {
-                debug += b + " ";
-            }
-            debug += "}";
-
-            if (debug != "{ False False False False False }" && debug != _lastInput)
-            {
-                Debug.Log("input = " + debug);
-                _lastInput = debug;
-            }
-
+            bool[] currentInput = _input.GetInput().Notes;
             bool[] needInput = GetNeedInput();
+            bool islastInputUpdated = UpdateLastInput(currentInput);
 
-            debug = "{ ";
-            foreach (var b in needInput)
+            UpdateTimer(islastInputUpdated);
+            UpdateLastInputByTimer();
+
+            if (CheckLastInputOnEmpty(_lastInput))
             {
-                debug += b + " ";
+                return;
             }
-            debug += "}";
-
-            if (debug != "{ False False False False False }" && debug != _lastDebug)
+            for (int i = 0; i < _lastInput.Length; i++)
             {
-                Debug.Log("debug = " + debug);
-                _lastDebug = debug;
-            }
-
-            for (int i = 0; i < _detectors.Count; i++)
-            {
-                if (input.Notes[i] != needInput[i])
+                if (_lastInput[i] != needInput[i])
                 {
+                    //miss key
                     return;
                 }
             }
 
-            for (int i = 0; i < _detectors.Count; i++)
-            {
-                if (needInput[i])
-                {
-                    checkOnKeysDown[i] = true;
 
-                    _fireAnimators[i].Play();
-
-                    while (_detectors[i].CatchFirstNote())
-                    {
-                        _score++;
-                        _scoreText.text = "";
-                        foreach (var ch in _score.ToString())
-                        {
-                            _scoreText.text += "<sprite=" + ch + ">";
-                        }
-                        _text = _scoreText.text;
-                        _scoreText.text = _text + " kek:" + kek;
-                    }
-                }
-            }
-
-            _scoreText.text = "";
-            foreach (var ch in _score.ToString())
-            {
-                _scoreText.text += "<sprite=" + ch + ">";
-            }
-            _text = _scoreText.text;
-            _scoreText.text = _text + " kek:" + kek;
-
-            ResetInput();
         }
 
-        private void ResetInput()
+        private void UpdateLastInputByTimer()
         {
-            var resetInput = _input.ResetInput();
-            for (int i = 0; i < resetInput.Notes.Length; i++)
+            if (_timer > 0.2f)
             {
-                if (resetInput.Notes[i])
+                _timer = 0f;
+                for (int i = 0; i < _lastInput.Length; i++)
                 {
-                    checkOnKeysDown[i] = false;
+                    _lastInput[i] = false;
+                }
+            }
+        }
+
+        private bool CheckLastInputOnEmpty(bool[] lastInput)
+        {
+            foreach (var input in lastInput)
+            {
+                if (input)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void UpdateTimer(bool islastInputUpdated)
+        {
+            if (islastInputUpdated)
+            {
+                _timer = 0f;
+            }
+            else
+            {
+                _timer += Time.deltaTime;
+            }
+        }
+
+        private bool UpdateLastInput(bool[] currentInput)
+        {
+            bool isEverNoteTapped = false;
+            foreach (var input in currentInput)
+            {
+                if (input)
+                {
+                    isEverNoteTapped = true;
+                    _lastInput = currentInput;
+                    break;
                 }
             }
 
+            return isEverNoteTapped;
         }
 
         private bool[] GetNeedInput()

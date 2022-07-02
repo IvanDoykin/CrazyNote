@@ -20,20 +20,5 @@ namespace Game.Singleplayer
                 }
             };
         }
-
-        public override ResetInputData ResetInput()
-        {
-            return new ResetInputData
-            {
-                Notes = new bool[5]
-                {
-                    Input.GetKeyUp(KeyCode.Z),
-                    Input.GetKeyUp(KeyCode.X),
-                    Input.GetKeyUp(KeyCode.C),
-                    Input.GetKeyUp(KeyCode.V),
-                    Input.GetKeyUp(KeyCode.B)
-                }
-            };
-        }
     }
 }
