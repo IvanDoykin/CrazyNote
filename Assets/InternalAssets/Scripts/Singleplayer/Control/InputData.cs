@@ -6,6 +6,7 @@ namespace Game.Singleplayer
 {
     public struct InputData
     {
-        public bool[] Notes;
+        public bool[] PressNotes;
+        public bool[] ReleaseNotes;
     }
 }

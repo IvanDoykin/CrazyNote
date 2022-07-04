@@ -17,17 +17,23 @@ namespace Game.Singleplayer
         public int kek = 0;
 
         public bool[] _lastInput;
+        public bool[] _needReleaseNotes;
         private float _timer = 0f;
 
         private void Awake()
         {
             _input = GetComponent<GameInput>();
-            _lastInput = new bool[_input.GetInput().Notes.Length];
+            _lastInput = new bool[_input.GetInput().PressNotes.Length];
+            _needReleaseNotes = new bool[_input.GetInput().PressNotes.Length];
         }
 
         private void Update()
         {
-            bool[] currentInput = _input.GetInput().Notes;
+            bool[] releaseInput = _input.GetInput().ReleaseNotes;
+            ResetReleaseNotes(releaseInput);
+
+            bool[] currentInput = _input.GetInput().PressNotes;
+
             bool[] needInput = GetNeedInput();
             bool islastInputUpdated = UpdateLastInput(currentInput);
 
@@ -36,7 +42,7 @@ namespace Game.Singleplayer
             UpdateTimer(islastInputUpdated);
             UpdateLastInputByTimer();
 
-            if (CheckLastInputOnEmpty())
+            if (CheckLastInputOnEmpty() || CheckOnNeedReleasedKeys())
             {
                 return;
             }
@@ -52,10 +58,45 @@ namespace Game.Singleplayer
                 return;
             }
 
+            SetReleaseNotes(currentInput);
             TriggerNotes(needInput);
             ResetLastInput();
 
             _scoreText.text = "" + _score + " " + kek;
+        }
+
+        private void SetReleaseNotes(bool[] currentInput)
+        {
+            for (int i = 0; i < _needReleaseNotes.Length; i++)
+            {
+                if (currentInput[i])
+                {
+                    _needReleaseNotes[i] = true;
+                }
+            }
+        }
+
+        private void ResetReleaseNotes(bool[] releaseInput)
+        {
+            for (int i = 0; i < _needReleaseNotes.Length; i++)
+            {
+                if (releaseInput[i])
+                {
+                    _needReleaseNotes[i] = false;
+                }
+            }
+        }
+
+        private bool CheckOnNeedReleasedKeys()
+        {
+            for (int i = 0; i < _needReleaseNotes.Length; i++)
+            {
+                if (_needReleaseNotes[i])
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void TriggerNotes(bool[] needInput)
