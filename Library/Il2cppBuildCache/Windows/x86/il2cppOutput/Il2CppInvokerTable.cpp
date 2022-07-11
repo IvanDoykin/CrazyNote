@@ -6162,29 +6162,42 @@ public:
 struct InputData_t2B243A0AC0292E10CEB999EAA1B759D2454EACC0 
 {
 public:
-	// System.Boolean[] Game.Singleplayer.InputData::Notes
-	BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* ___Notes_0;
+	// System.Boolean[] Game.Singleplayer.InputData::PressNotes
+	BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* ___PressNotes_0;
+	// System.Boolean[] Game.Singleplayer.InputData::ReleaseNotes
+	BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* ___ReleaseNotes_1;
 
 public:
-	inline static int32_t get_offset_of_Notes_0() { return static_cast<int32_t>(offsetof(InputData_t2B243A0AC0292E10CEB999EAA1B759D2454EACC0, ___Notes_0)); }
-	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* get_Notes_0() const { return ___Notes_0; }
-	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C** get_address_of_Notes_0() { return &___Notes_0; }
-	inline void set_Notes_0(BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* value)
+	inline static int32_t get_offset_of_PressNotes_0() { return static_cast<int32_t>(offsetof(InputData_t2B243A0AC0292E10CEB999EAA1B759D2454EACC0, ___PressNotes_0)); }
+	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* get_PressNotes_0() const { return ___PressNotes_0; }
+	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C** get_address_of_PressNotes_0() { return &___PressNotes_0; }
+	inline void set_PressNotes_0(BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* value)
 	{
-		___Notes_0 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___Notes_0), (void*)value);
+		___PressNotes_0 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___PressNotes_0), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_ReleaseNotes_1() { return static_cast<int32_t>(offsetof(InputData_t2B243A0AC0292E10CEB999EAA1B759D2454EACC0, ___ReleaseNotes_1)); }
+	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* get_ReleaseNotes_1() const { return ___ReleaseNotes_1; }
+	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C** get_address_of_ReleaseNotes_1() { return &___ReleaseNotes_1; }
+	inline void set_ReleaseNotes_1(BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* value)
+	{
+		___ReleaseNotes_1 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___ReleaseNotes_1), (void*)value);
 	}
 };
 
 // Native definition for P/Invoke marshalling of Game.Singleplayer.InputData
 struct InputData_t2B243A0AC0292E10CEB999EAA1B759D2454EACC0_marshaled_pinvoke
 {
-	int32_t* ___Notes_0;
+	int32_t* ___PressNotes_0;
+	int32_t* ___ReleaseNotes_1;
 };
 // Native definition for COM marshalling of Game.Singleplayer.InputData
 struct InputData_t2B243A0AC0292E10CEB999EAA1B759D2454EACC0_marshaled_com
 {
-	int32_t* ___Notes_0;
+	int32_t* ___PressNotes_0;
+	int32_t* ___ReleaseNotes_1;
 };
 
 // UnityEngine.XR.InputDevice
@@ -7290,35 +7303,6 @@ public:
 	}
 };
 
-
-// Game.Singleplayer.ResetInputData
-struct ResetInputData_tC3B5A5FCC43935E6808B68C9CA081B04F0A55307 
-{
-public:
-	// System.Boolean[] Game.Singleplayer.ResetInputData::Notes
-	BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* ___Notes_0;
-
-public:
-	inline static int32_t get_offset_of_Notes_0() { return static_cast<int32_t>(offsetof(ResetInputData_tC3B5A5FCC43935E6808B68C9CA081B04F0A55307, ___Notes_0)); }
-	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* get_Notes_0() const { return ___Notes_0; }
-	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C** get_address_of_Notes_0() { return &___Notes_0; }
-	inline void set_Notes_0(BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* value)
-	{
-		___Notes_0 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___Notes_0), (void*)value);
-	}
-};
-
-// Native definition for P/Invoke marshalling of Game.Singleplayer.ResetInputData
-struct ResetInputData_tC3B5A5FCC43935E6808B68C9CA081B04F0A55307_marshaled_pinvoke
-{
-	int32_t* ___Notes_0;
-};
-// Native definition for COM marshalling of Game.Singleplayer.ResetInputData
-struct ResetInputData_tC3B5A5FCC43935E6808B68C9CA081B04F0A55307_marshaled_com
-{
-	int32_t* ___Notes_0;
-};
 
 // System.Resources.ResourceLocator
 struct ResourceLocator_t3D496606F94367D5D6B24DA9DC0A3B46E6B53B11 
@@ -35922,14 +35906,6 @@ void* RuntimeInvoker_TrueRenderTextureDescriptor_t67FF189E1F35AEB5D6C43A2D7103F3
 	return Box(il2cpp_codegen_class_from_type (il2cpp_codegen_method_return_type(methodMetadata)), &ret);
 }
 
-void* RuntimeInvoker_TrueResetInputData_tC3B5A5FCC43935E6808B68C9CA081B04F0A55307 (Il2CppMethodPointer methodPointer, const RuntimeMethod* methodMetadata, void* obj, void** args)
-{
-	typedef ResetInputData_tC3B5A5FCC43935E6808B68C9CA081B04F0A55307  (*Func)(void* obj, const RuntimeMethod* method);
-	ResetInputData_tC3B5A5FCC43935E6808B68C9CA081B04F0A55307  ret;
-	ret = ((Func)methodPointer)(obj, methodMetadata);
-	return Box(il2cpp_codegen_class_from_type (il2cpp_codegen_method_return_type(methodMetadata)), &ret);
-}
-
 void* RuntimeInvoker_TrueResourceLocator_t3D496606F94367D5D6B24DA9DC0A3B46E6B53B11 (Il2CppMethodPointer methodPointer, const RuntimeMethod* methodMetadata, void* obj, void** args)
 {
 	typedef ResourceLocator_t3D496606F94367D5D6B24DA9DC0A3B46E6B53B11  (*Func)(void* obj, const RuntimeMethod* method);
@@ -43846,7 +43822,7 @@ void* RuntimeInvoker_FalseVoid_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5 (Il2Cpp
 }
 
 IL2CPP_EXTERN_C const InvokerMethod g_Il2CppInvokerPointers[];
-const InvokerMethod g_Il2CppInvokerPointers[2801] = 
+const InvokerMethod g_Il2CppInvokerPointers[2800] = 
 {
 	RuntimeInvoker_TrueSByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_RuntimeObject_RuntimeObject_VoidU2A_tC7FFEB695C165BD92A8656A0260E9CBC93892D9A_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_VoidU2A_tC7FFEB695C165BD92A8656A0260E9CBC93892D9A,
 	RuntimeInvoker_TrueSByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_RuntimeObject_RuntimeObject_Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_SByte_t928712DD662DC29BA4FAAE8CE2230AFB23447F0B_VoidU2A_tC7FFEB695C165BD92A8656A0260E9CBC93892D9A,
@@ -45638,7 +45614,6 @@ const InvokerMethod g_Il2CppInvokerPointers[2801] =
 	RuntimeInvoker_TrueRaycastResult_t9EFDE24B29650BD6DC8A49D954A3769E17146BCE,
 	RuntimeInvoker_TrueRect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878,
 	RuntimeInvoker_TrueRenderTextureDescriptor_t67FF189E1F35AEB5D6C43A2D7103F3A8A8CA0B47,
-	RuntimeInvoker_TrueResetInputData_tC3B5A5FCC43935E6808B68C9CA081B04F0A55307,
 	RuntimeInvoker_TrueResourceLocator_t3D496606F94367D5D6B24DA9DC0A3B46E6B53B11,
 	RuntimeInvoker_TrueRichTextTagAttribute_t5686297F46AB107FF79754273CB592F0185ACCC9,
 	RuntimeInvoker_TrueRuntimeClassHandle_t17BD4DFB8076D46569E233713BAD805FBE77A655,

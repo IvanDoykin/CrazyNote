@@ -246,197 +246,222 @@ extern void Destroyer_OnTriggerEnter_m6BBFDA960A21A222D071B5879C1998A3344DE216 (
 extern void Destroyer__ctor_mB6B9CAF8EAF4E3F622BAAD125E30AC21AC467896 (void);
 // 0x00000075 System.Void Game.Singleplayer.IPoolable::SetInPool()
 // 0x00000076 Game.Singleplayer.InputData Game.Singleplayer.GameInput::GetInput()
-// 0x00000077 Game.Singleplayer.ResetInputData Game.Singleplayer.GameInput::ResetInput()
-// 0x00000078 System.Void Game.Singleplayer.GameInput::.ctor()
+// 0x00000077 System.Void Game.Singleplayer.GameInput::.ctor()
 extern void GameInput__ctor_mCA5EE8BD3C426EE589C7FCB4BB41D35D1DA39CAB (void);
-// 0x00000079 System.Void Game.Singleplayer.GuitarControlRuler::Awake()
+// 0x00000078 System.Void Game.Singleplayer.GuitarControlRuler::Awake()
 extern void GuitarControlRuler_Awake_mBF95FDE001F6AAA55A6673BD99FCB82CCD722323 (void);
-// 0x0000007A System.Void Game.Singleplayer.GuitarControlRuler::Update()
+// 0x00000079 System.Void Game.Singleplayer.GuitarControlRuler::Update()
 extern void GuitarControlRuler_Update_mC9A088A7214270063F2CA9C35E3FBA9255338B31 (void);
-// 0x0000007B System.Void Game.Singleplayer.GuitarControlRuler::ResetInput()
-extern void GuitarControlRuler_ResetInput_m5CE1D134EF21FD8B808CABF20964360323FC921B (void);
-// 0x0000007C System.Boolean[] Game.Singleplayer.GuitarControlRuler::GetNeedInput()
+// 0x0000007A System.Void Game.Singleplayer.GuitarControlRuler::SetReleaseNotes(System.Boolean[])
+extern void GuitarControlRuler_SetReleaseNotes_mA026B940A73D4BA541DEDB21467C98A926915A7A (void);
+// 0x0000007B System.Void Game.Singleplayer.GuitarControlRuler::ResetReleaseNotes(System.Boolean[])
+extern void GuitarControlRuler_ResetReleaseNotes_mAF5C75E527DEA33E510B3CC0652B8303B95035A1 (void);
+// 0x0000007C System.Boolean Game.Singleplayer.GuitarControlRuler::CheckOnNeedReleasedKeys()
+extern void GuitarControlRuler_CheckOnNeedReleasedKeys_m1A30CE2DBAD8D47DBC3C34E867FE972A9A95C586 (void);
+// 0x0000007D System.Void Game.Singleplayer.GuitarControlRuler::TriggerNotes(System.Boolean[])
+extern void GuitarControlRuler_TriggerNotes_m1F0C9C2D64F3209B937E52387E0682487014BF0E (void);
+// 0x0000007E System.Boolean Game.Singleplayer.GuitarControlRuler::CheckOnMiss(System.Boolean[])
+extern void GuitarControlRuler_CheckOnMiss_m5ACAFEE49EAAECB88F31441A0B0B8BD26142B60E (void);
+// 0x0000007F System.Void Game.Singleplayer.GuitarControlRuler::UpdateLastInputByTimer()
+extern void GuitarControlRuler_UpdateLastInputByTimer_mD661BF2A90A068DA253A1E34E2A995C8C312324D (void);
+// 0x00000080 System.Boolean Game.Singleplayer.GuitarControlRuler::CheckLastInputOnEmpty()
+extern void GuitarControlRuler_CheckLastInputOnEmpty_mA5D309F28935DED799438FE3CB21D549494A3FEE (void);
+// 0x00000081 System.Void Game.Singleplayer.GuitarControlRuler::UpdateTimer(System.Boolean)
+extern void GuitarControlRuler_UpdateTimer_m1EB63BD6C5625AA02D8C443E33CF08388EA92779 (void);
+// 0x00000082 System.Void Game.Singleplayer.GuitarControlRuler::ResetLastInput()
+extern void GuitarControlRuler_ResetLastInput_m693D05481111559E5D3EC42FABEF8CAC05A2FDDE (void);
+// 0x00000083 System.Void Game.Singleplayer.GuitarControlRuler::ResetTimer()
+extern void GuitarControlRuler_ResetTimer_mDC226F36E35B20187CA7DD766786F940C844B81E (void);
+// 0x00000084 System.Boolean Game.Singleplayer.GuitarControlRuler::UpdateLastInput(System.Boolean[])
+extern void GuitarControlRuler_UpdateLastInput_m735E093B331BA519CE7F0AD8F3A9C6D75A192D9B (void);
+// 0x00000085 System.Boolean[] Game.Singleplayer.GuitarControlRuler::GetNeedInput()
 extern void GuitarControlRuler_GetNeedInput_m32D22BE2BE981CF403068333CBD4B0AF3877303F (void);
-// 0x0000007D System.Void Game.Singleplayer.GuitarControlRuler::.ctor()
+// 0x00000086 System.Void Game.Singleplayer.GuitarControlRuler::.ctor()
 extern void GuitarControlRuler__ctor_m2F29C79E36646F7D3F670C88CC1A10624D7C3DF8 (void);
-// 0x0000007E Game.Singleplayer.InputData Game.Singleplayer.KeyboardInput::GetInput()
+// 0x00000087 Game.Singleplayer.InputData Game.Singleplayer.KeyboardInput::GetInput()
 extern void KeyboardInput_GetInput_m17C0E567C56223C8E825B2B51E761E1A0708ED80 (void);
-// 0x0000007F Game.Singleplayer.ResetInputData Game.Singleplayer.KeyboardInput::ResetInput()
-extern void KeyboardInput_ResetInput_m77340A76ED18CBC06076A61334019A929858DE07 (void);
-// 0x00000080 System.Void Game.Singleplayer.KeyboardInput::.ctor()
+// 0x00000088 System.Void Game.Singleplayer.KeyboardInput::.ctor()
 extern void KeyboardInput__ctor_mEC022FB88B41B6E21E2161CEBA32E4B8452DA344 (void);
-// 0x00000081 Game.Singleplayer.Note Game.Singleplayer.NoteDetector::GetFirstNote()
+// 0x00000089 Game.Singleplayer.Note Game.Singleplayer.NoteDetector::GetFirstNote()
 extern void NoteDetector_GetFirstNote_m6DCB3493CA259750EAB960C9EE429D5191F1A0EF (void);
-// 0x00000082 System.Void Game.Singleplayer.NoteDetector::CatchFirstNote()
-extern void NoteDetector_CatchFirstNote_m9801133FA594F2C982FB5F8847AFEE32F7C20B00 (void);
-// 0x00000083 System.Void Game.Singleplayer.NoteDetector::OnTriggerEnter(UnityEngine.Collider)
+// 0x0000008A System.Boolean Game.Singleplayer.NoteDetector::CatchFirstNote()
+extern void NoteDetector_CatchFirstNote_mE435E298636B1C440D60B7F8D7E6ACA5001E5486 (void);
+// 0x0000008B System.Void Game.Singleplayer.NoteDetector::OnTriggerEnter(UnityEngine.Collider)
 extern void NoteDetector_OnTriggerEnter_m8E358E64F3EF57D06772259E4C6F90493E6AA3FB (void);
-// 0x00000084 System.Void Game.Singleplayer.NoteDetector::OnTriggerExit(UnityEngine.Collider)
+// 0x0000008C System.Void Game.Singleplayer.NoteDetector::OnTriggerExit(UnityEngine.Collider)
 extern void NoteDetector_OnTriggerExit_m9F623C71692679E3AD30266DA432977CEA21A9E6 (void);
-// 0x00000085 System.Void Game.Singleplayer.NoteDetector::.ctor()
+// 0x0000008D System.Void Game.Singleplayer.NoteDetector::.ctor()
 extern void NoteDetector__ctor_m8D1974384EA71299F936C115E3E3A792A5D12797 (void);
-// 0x00000086 System.Void Game.Singleplayer.GuitarAnimator::Start()
+// 0x0000008E System.Void Game.Singleplayer.FireAnimator::Start()
+extern void FireAnimator_Start_m9CC5E7E20FFC3F8ABC8A533CEEB19C0A0E74825D (void);
+// 0x0000008F System.Void Game.Singleplayer.FireAnimator::Play()
+extern void FireAnimator_Play_m8D138EDED9B58755E8298B3E320D9368EA87504C (void);
+// 0x00000090 System.Void Game.Singleplayer.FireAnimator::ResetToIdle()
+extern void FireAnimator_ResetToIdle_mC1D06344B7CB5CD880B959F895F8E4DEF0FA8F49 (void);
+// 0x00000091 System.Void Game.Singleplayer.FireAnimator::.ctor()
+extern void FireAnimator__ctor_mB8EACC50E0E178D18DEE5475BD5E274F6182C333 (void);
+// 0x00000092 System.Void Game.Singleplayer.GuitarAnimator::Start()
 extern void GuitarAnimator_Start_mF759962ABA558E9EE792A7DE75AED23E41F7EEE5 (void);
-// 0x00000087 System.Void Game.Singleplayer.GuitarAnimator::Update()
+// 0x00000093 System.Void Game.Singleplayer.GuitarAnimator::Update()
 extern void GuitarAnimator_Update_m1AF3C710FC969CD32D1AC5DE462CF74021E751EC (void);
-// 0x00000088 System.Void Game.Singleplayer.GuitarAnimator::.ctor()
+// 0x00000094 System.Void Game.Singleplayer.GuitarAnimator::.ctor()
 extern void GuitarAnimator__ctor_mBA5E7960401AE586D4437E7460F45D6DAAE7A885 (void);
-// 0x00000089 Game.Singleplayer.MainTicker Game.Singleplayer.MainTicker::get_Instance()
+// 0x00000095 Game.Singleplayer.MainTicker Game.Singleplayer.MainTicker::get_Instance()
 extern void MainTicker_get_Instance_m40167CB4257997FDFF23EB73510351FC8AFB7367 (void);
-// 0x0000008A System.Void Game.Singleplayer.MainTicker::set_Instance(Game.Singleplayer.MainTicker)
+// 0x00000096 System.Void Game.Singleplayer.MainTicker::set_Instance(Game.Singleplayer.MainTicker)
 extern void MainTicker_set_Instance_m875CD2CF00A9B2027A7FA0680CD5C9BF11FA8930 (void);
-// 0x0000008B System.Single Game.Singleplayer.MainTicker::get_BPM()
+// 0x00000097 System.Single Game.Singleplayer.MainTicker::get_BPM()
 extern void MainTicker_get_BPM_m9BAFE2C4B84D93494F801B4824980B1CE6EA713F (void);
-// 0x0000008C System.Void Game.Singleplayer.MainTicker::set_BPM(System.Single)
+// 0x00000098 System.Void Game.Singleplayer.MainTicker::set_BPM(System.Single)
 extern void MainTicker_set_BPM_m2168E46932C8AFFA5E6740C1D5A75EA7556C3118 (void);
-// 0x0000008D System.Void Game.Singleplayer.MainTicker::Awake()
+// 0x00000099 System.Void Game.Singleplayer.MainTicker::Awake()
 extern void MainTicker_Awake_m30302ABCD0C1A871ADDE21243ADE456073C34F9C (void);
-// 0x0000008E System.Void Game.Singleplayer.MainTicker::Update()
+// 0x0000009A System.Void Game.Singleplayer.MainTicker::Update()
 extern void MainTicker_Update_mAFB81EB5F13879B91F94F54CFC58932458AFA362 (void);
-// 0x0000008F System.Void Game.Singleplayer.MainTicker::SetBPM(System.Single)
+// 0x0000009B System.Void Game.Singleplayer.MainTicker::SetBPM(System.Single)
 extern void MainTicker_SetBPM_m7CDB6634082808EE599E4F93A4B20E15E19BF405 (void);
-// 0x00000090 System.Void Game.Singleplayer.MainTicker::SetTempo(System.Int32,System.Int32)
+// 0x0000009C System.Void Game.Singleplayer.MainTicker::SetTempo(System.Int32,System.Int32)
 extern void MainTicker_SetTempo_m7DD5FF1CE55FE6C943A402E5F6672A85E4905002 (void);
-// 0x00000091 System.Void Game.Singleplayer.MainTicker::Tick(System.Int32)
+// 0x0000009D System.Void Game.Singleplayer.MainTicker::Tick(System.Int32)
 extern void MainTicker_Tick_m6131735B2CCE5B82A1449AD34CDED63299BDAAA2 (void);
-// 0x00000092 System.Void Game.Singleplayer.MainTicker::TickSyncTrack(System.Int32)
+// 0x0000009E System.Void Game.Singleplayer.MainTicker::TickSyncTrack(System.Int32)
 extern void MainTicker_TickSyncTrack_m7F5797C1EBC0454E9A3FB7F829D3B940C1FC3ABB (void);
-// 0x00000093 System.Void Game.Singleplayer.MainTicker::TickNotes(System.Int32)
+// 0x0000009F System.Void Game.Singleplayer.MainTicker::TickNotes(System.Int32)
 extern void MainTicker_TickNotes_m25DB2CB93EF3A2820BDE0214340B7DE814FD08C2 (void);
-// 0x00000094 System.Void Game.Singleplayer.MainTicker::.ctor()
+// 0x000000A0 System.Void Game.Singleplayer.MainTicker::.ctor()
 extern void MainTicker__ctor_m2A75A1106613814D3E94C36DF6E321C05CA3C483 (void);
-// 0x00000095 System.Void Game.Singleplayer.Mover::Update()
+// 0x000000A1 System.Void Game.Singleplayer.Mover::Update()
 extern void Mover_Update_m3ACC32F520E59C0EDBF6139AB62415231BCE53C1 (void);
-// 0x00000096 System.Void Game.Singleplayer.Mover::LateUpdate()
+// 0x000000A2 System.Void Game.Singleplayer.Mover::LateUpdate()
 extern void Mover_LateUpdate_m5FD99EB8F2CAA776D54DF90484F59ED400075367 (void);
-// 0x00000097 System.Void Game.Singleplayer.Mover::OnDisable()
+// 0x000000A3 System.Void Game.Singleplayer.Mover::OnDisable()
 extern void Mover_OnDisable_m90EB1F1C86772006F183C69AD96AEC5BC6418C0A (void);
-// 0x00000098 System.Void Game.Singleplayer.Mover::.ctor()
+// 0x000000A4 System.Void Game.Singleplayer.Mover::.ctor()
 extern void Mover__ctor_m88251E27F7F399373BFF4CCD2B74F490930D12FE (void);
-// 0x00000099 System.Void Game.Singleplayer.MusicPlayer::Awake()
+// 0x000000A5 System.Void Game.Singleplayer.MusicPlayer::Awake()
 extern void MusicPlayer_Awake_m008B3672D1132F51B7FAC83A861D3D937C60B3A1 (void);
-// 0x0000009A System.Void Game.Singleplayer.MusicPlayer::Start()
+// 0x000000A6 System.Void Game.Singleplayer.MusicPlayer::Start()
 extern void MusicPlayer_Start_mBA89561773D4C4D6CE9139F054065F5CE2C3AB2F (void);
-// 0x0000009B System.Void Game.Singleplayer.MusicPlayer::Play(System.Single)
+// 0x000000A7 System.Void Game.Singleplayer.MusicPlayer::Play(System.Single)
 extern void MusicPlayer_Play_m91ED789E6DD5833823C9B98B6EAA309784233F17 (void);
-// 0x0000009C System.Collections.IEnumerator Game.Singleplayer.MusicPlayer::PlayWithDelay(System.Single)
+// 0x000000A8 System.Collections.IEnumerator Game.Singleplayer.MusicPlayer::PlayWithDelay(System.Single)
 extern void MusicPlayer_PlayWithDelay_m5DF4596761424B1090F8F28DEDFFDC880BA036FF (void);
-// 0x0000009D System.Void Game.Singleplayer.MusicPlayer::SetMusic(System.String)
+// 0x000000A9 System.Void Game.Singleplayer.MusicPlayer::SetMusic(System.String)
 extern void MusicPlayer_SetMusic_m878B0AFE21824F7FA1FF52CC590909868B7F66DD (void);
-// 0x0000009E System.Collections.IEnumerator Game.Singleplayer.MusicPlayer::SetAudioRequest(System.String,System.String)
+// 0x000000AA System.Collections.IEnumerator Game.Singleplayer.MusicPlayer::SetAudioRequest(System.String,System.String)
 extern void MusicPlayer_SetAudioRequest_m04DAF56A700D66D5CD5F8ACFB12E6F6F654EB6FE (void);
-// 0x0000009F System.Void Game.Singleplayer.MusicPlayer::.ctor()
+// 0x000000AB System.Void Game.Singleplayer.MusicPlayer::.ctor()
 extern void MusicPlayer__ctor_m2F363BD3EE12F9C61674B0C7995EE487F3E9D95F (void);
-// 0x000000A0 System.Int32 Game.Singleplayer.Note::get_Position()
+// 0x000000AC System.Int32 Game.Singleplayer.Note::get_Position()
 extern void Note_get_Position_mEBAA1426324A419CEAFE6644513A2C904371BB35 (void);
-// 0x000000A1 System.Void Game.Singleplayer.Note::set_Position(System.Int32)
+// 0x000000AD System.Void Game.Singleplayer.Note::set_Position(System.Int32)
 extern void Note_set_Position_mF234CC718FA94D347521602A374C4E44302AB9DB (void);
-// 0x000000A2 System.Void Game.Singleplayer.Note::Initialize(System.Int32)
+// 0x000000AE System.Void Game.Singleplayer.Note::Initialize(System.Int32)
 extern void Note_Initialize_mBC943E5A082DB698713219A4F08A8DFF8C6B0E7B (void);
-// 0x000000A3 System.Void Game.Singleplayer.Note::Catch()
+// 0x000000AF System.Void Game.Singleplayer.Note::Catch()
 extern void Note_Catch_mC9B65B64AA0D659D7F88F27F3D8906E172A83FD2 (void);
-// 0x000000A4 System.Void Game.Singleplayer.Note::SetInPool()
+// 0x000000B0 System.Void Game.Singleplayer.Note::SetInPool()
 extern void Note_SetInPool_m5BA3FEB6EC577B6A3C00D70164521F2E8129D1B8 (void);
-// 0x000000A5 System.Void Game.Singleplayer.Note::.ctor()
+// 0x000000B1 System.Void Game.Singleplayer.Note::.ctor()
 extern void Note__ctor_m5A781D04B0787F3BDEAA3E6E98358160F1F76FE4 (void);
-// 0x000000A6 System.Void Game.Singleplayer.NoteObjectPool::Awake()
+// 0x000000B2 System.Void Game.Singleplayer.NoteObjectPool::Awake()
 extern void NoteObjectPool_Awake_mA27FBF4011C5184C12BA6AD246DD8E96AA549F19 (void);
-// 0x000000A7 UnityEngine.GameObject Game.Singleplayer.NoteObjectPool::Create(UnityEngine.Vector3,UnityEngine.Quaternion,System.Int32)
+// 0x000000B3 UnityEngine.GameObject Game.Singleplayer.NoteObjectPool::Create(UnityEngine.Vector3,UnityEngine.Quaternion,System.Int32)
 extern void NoteObjectPool_Create_mFAA11262ADACDF3DA46438B0A269F1E6B5E281E2 (void);
-// 0x000000A8 System.Void Game.Singleplayer.NoteObjectPool::.ctor()
+// 0x000000B4 System.Void Game.Singleplayer.NoteObjectPool::.ctor()
 extern void NoteObjectPool__ctor_mD2138F748D53EFD7F0F7275E46A4433F5A9A0552 (void);
-// 0x000000A9 System.Void Game.Singleplayer.ObjectPool`1::Awake()
-// 0x000000AA System.Void Game.Singleplayer.ObjectPool`1::Clear()
-// 0x000000AB UnityEngine.GameObject Game.Singleplayer.ObjectPool`1::Create(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
-// 0x000000AC System.Void Game.Singleplayer.ObjectPool`1::Delete(UnityEngine.GameObject)
-// 0x000000AD System.Void Game.Singleplayer.ObjectPool`1::.ctor()
-// 0x000000AE System.Void Game.Singleplayer.WideObjectPool::Awake()
+// 0x000000B5 System.Void Game.Singleplayer.ObjectPool`1::Awake()
+// 0x000000B6 System.Void Game.Singleplayer.ObjectPool`1::Clear()
+// 0x000000B7 UnityEngine.GameObject Game.Singleplayer.ObjectPool`1::Create(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+// 0x000000B8 System.Void Game.Singleplayer.ObjectPool`1::Delete(UnityEngine.GameObject)
+// 0x000000B9 System.Void Game.Singleplayer.ObjectPool`1::.ctor()
+// 0x000000BA System.Void Game.Singleplayer.WideObjectPool::Awake()
 extern void WideObjectPool_Awake_mB87CBCC0E98C61D0040F1C6639548951F081EA63 (void);
-// 0x000000AF UnityEngine.GameObject Game.Singleplayer.WideObjectPool::Create(UnityEngine.Vector3,UnityEngine.Quaternion)
+// 0x000000BB UnityEngine.GameObject Game.Singleplayer.WideObjectPool::Create(UnityEngine.Vector3,UnityEngine.Quaternion)
 extern void WideObjectPool_Create_m83C83E7B8D7F40F6C013E0CDCE529029EA721143 (void);
-// 0x000000B0 System.Void Game.Singleplayer.WideObjectPool::.ctor()
+// 0x000000BC System.Void Game.Singleplayer.WideObjectPool::.ctor()
 extern void WideObjectPool__ctor_mF0A857BE8CB70A7E46B70F3F07C07AEAEC89DDA4 (void);
-// 0x000000B1 UnityEngine.Transform Game.Singleplayer.SingleplayerScene::get_WidePlace()
+// 0x000000BD UnityEngine.Transform Game.Singleplayer.SingleplayerScene::get_WidePlace()
 extern void SingleplayerScene_get_WidePlace_m81545374559826EFA38653FF737351415FBADA0A (void);
-// 0x000000B2 NoteSpawnPlaces Game.Singleplayer.SingleplayerScene::get_NotePlaces()
+// 0x000000BE NoteSpawnPlaces Game.Singleplayer.SingleplayerScene::get_NotePlaces()
 extern void SingleplayerScene_get_NotePlaces_mD3C33C7EE17BF62A5FA68354EB22602798174542 (void);
-// 0x000000B3 System.Void Game.Singleplayer.SingleplayerScene::CreateWide()
+// 0x000000BF System.Void Game.Singleplayer.SingleplayerScene::CreateWide()
 extern void SingleplayerScene_CreateWide_m5FE21F9E80701E561027B4F79B5E7C26C33B0682 (void);
-// 0x000000B4 System.Void Game.Singleplayer.SingleplayerScene::CreateNote(System.Int32,System.Int32)
+// 0x000000C0 System.Void Game.Singleplayer.SingleplayerScene::CreateNote(System.Int32,System.Int32)
 extern void SingleplayerScene_CreateNote_mF4BACD3A41EA63FEED8AA4B143ACFF67FCABD9F5 (void);
-// 0x000000B5 System.Void Game.Singleplayer.SingleplayerScene::.ctor()
+// 0x000000C1 System.Void Game.Singleplayer.SingleplayerScene::.ctor()
 extern void SingleplayerScene__ctor_m177366B89251D85450D857A52CB17FED6ABAB543 (void);
-// 0x000000B6 System.Void Game.Singleplayer.Wide::Start()
+// 0x000000C2 System.Void Game.Singleplayer.Wide::Start()
 extern void Wide_Start_mADD7D90A0324B74ED84C0C7184EAB6B82DAD065B (void);
-// 0x000000B7 System.Void Game.Singleplayer.Wide::SetInPool()
+// 0x000000C3 System.Void Game.Singleplayer.Wide::SetInPool()
 extern void Wide_SetInPool_m04F65AF9693D30C733C14ECDA9244C2BCC65018C (void);
-// 0x000000B8 System.Void Game.Singleplayer.Wide::.ctor()
+// 0x000000C4 System.Void Game.Singleplayer.Wide::.ctor()
 extern void Wide__ctor_mDF27926C62508FFD2E574AEBFB72E408921CE8EF (void);
-// 0x000000B9 System.Void Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::.ctor(System.Int32)
+// 0x000000C5 System.Void Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::.ctor(System.Int32)
 extern void U3CSmoothSetVolumeStateU3Ed__10__ctor_m6B7A458404FCDCBD65FF4E3C7C1E4F38C9B7FC2E (void);
-// 0x000000BA System.Void Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::System.IDisposable.Dispose()
+// 0x000000C6 System.Void Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::System.IDisposable.Dispose()
 extern void U3CSmoothSetVolumeStateU3Ed__10_System_IDisposable_Dispose_m280B2394F80963FC8FB6447B5362DDEB9B8DAAD2 (void);
-// 0x000000BB System.Boolean Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::MoveNext()
+// 0x000000C7 System.Boolean Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::MoveNext()
 extern void U3CSmoothSetVolumeStateU3Ed__10_MoveNext_mA49D3D14C91B869E1F546452A2CE9EF60303EB23 (void);
-// 0x000000BC System.Object Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000000C8 System.Object Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CSmoothSetVolumeStateU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8C79B2DF31BB36559B9FD2B57F047554579AC961 (void);
-// 0x000000BD System.Void Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::System.Collections.IEnumerator.Reset()
+// 0x000000C9 System.Void Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::System.Collections.IEnumerator.Reset()
 extern void U3CSmoothSetVolumeStateU3Ed__10_System_Collections_IEnumerator_Reset_mE1F8D6958C5167A8A2E80DD7C91C2FFC5E739EC1 (void);
-// 0x000000BE System.Object Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::System.Collections.IEnumerator.get_Current()
+// 0x000000CA System.Object Game.MainMenu.AudioPreview/<SmoothSetVolumeState>d__10::System.Collections.IEnumerator.get_Current()
 extern void U3CSmoothSetVolumeStateU3Ed__10_System_Collections_IEnumerator_get_Current_mCE14E1C99AF05401E33CB499D89481242DBCC5F9 (void);
-// 0x000000BF System.Void Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::.ctor(System.Int32)
+// 0x000000CB System.Void Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::.ctor(System.Int32)
 extern void U3CSetAudioRequestU3Ed__12__ctor_mF7CC34161F042109224C0B0B82406A79560DE2E7 (void);
-// 0x000000C0 System.Void Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::System.IDisposable.Dispose()
+// 0x000000CC System.Void Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::System.IDisposable.Dispose()
 extern void U3CSetAudioRequestU3Ed__12_System_IDisposable_Dispose_mD28A66735BA09F6D2A9D496E7702F6849B3C041C (void);
-// 0x000000C1 System.Boolean Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::MoveNext()
+// 0x000000CD System.Boolean Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::MoveNext()
 extern void U3CSetAudioRequestU3Ed__12_MoveNext_m380CD5F2113E10AC4BA7B226E4E3AB65879D6D72 (void);
-// 0x000000C2 System.Void Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::<>m__Finally1()
+// 0x000000CE System.Void Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::<>m__Finally1()
 extern void U3CSetAudioRequestU3Ed__12_U3CU3Em__Finally1_mA121D3B06A7A736A4493C9D0E0D57E4434C6AC9C (void);
-// 0x000000C3 System.Object Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000000CF System.Object Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CSetAudioRequestU3Ed__12_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m885ADE72E49A7031D8474CCF558BC4515520B0AE (void);
-// 0x000000C4 System.Void Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::System.Collections.IEnumerator.Reset()
+// 0x000000D0 System.Void Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::System.Collections.IEnumerator.Reset()
 extern void U3CSetAudioRequestU3Ed__12_System_Collections_IEnumerator_Reset_mD64D7770FC799399404A5B4AC4787EBA756D0AE5 (void);
-// 0x000000C5 System.Object Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::System.Collections.IEnumerator.get_Current()
+// 0x000000D1 System.Object Game.MainMenu.AudioPreview/<SetAudioRequest>d__12::System.Collections.IEnumerator.get_Current()
 extern void U3CSetAudioRequestU3Ed__12_System_Collections_IEnumerator_get_Current_m3D6A558AF7D8801F87584870BDECD36AA2530105 (void);
-// 0x000000C6 System.Void Game.MainMenu.MainMenuUI/<>c::.cctor()
+// 0x000000D2 System.Void Game.MainMenu.MainMenuUI/<>c::.cctor()
 extern void U3CU3Ec__cctor_m9C9B777D09A4268F2555057111BDF38DFFB3D41A (void);
-// 0x000000C7 System.Void Game.MainMenu.MainMenuUI/<>c::.ctor()
+// 0x000000D3 System.Void Game.MainMenu.MainMenuUI/<>c::.ctor()
 extern void U3CU3Ec__ctor_mB6584836727009464A751DB71490DD05BB1F768D (void);
-// 0x000000C8 System.Void Game.MainMenu.MainMenuUI/<>c::<Start>b__0_0(Game.MainMenu.DifficultyButton)
+// 0x000000D4 System.Void Game.MainMenu.MainMenuUI/<>c::<Start>b__0_0(Game.MainMenu.DifficultyButton)
 extern void U3CU3Ec_U3CStartU3Eb__0_0_m77F73DF8EDAEB694E33DA2DDCC83E31EE215B725 (void);
-// 0x000000C9 System.Void Game.MainMenu.MainMenuUI/<>c::<Start>b__0_1(Game.MainMenu.SongSelecting.SongPanelButton)
+// 0x000000D5 System.Void Game.MainMenu.MainMenuUI/<>c::<Start>b__0_1(Game.MainMenu.SongSelecting.SongPanelButton)
 extern void U3CU3Ec_U3CStartU3Eb__0_1_m0EC77742ABC748A49AF4CC6EFA47F3599D84092C (void);
-// 0x000000CA System.Void Game.MainMenu.MainMenuUI/<>c::<Start>b__0_2(Game.MainMenu.SongSelecting.SongPanelButton)
+// 0x000000D6 System.Void Game.MainMenu.MainMenuUI/<>c::<Start>b__0_2(Game.MainMenu.SongSelecting.SongPanelButton)
 extern void U3CU3Ec_U3CStartU3Eb__0_2_mF67620AAE4BA5373CEED6226198D3D0FACD77B95 (void);
-// 0x000000CB System.Void Game.MainMenu.MainMenuUI/<>c::<Start>b__0_3(Game.MainMenu.StartGameButton)
+// 0x000000D7 System.Void Game.MainMenu.MainMenuUI/<>c::<Start>b__0_3(Game.MainMenu.StartGameButton)
 extern void U3CU3Ec_U3CStartU3Eb__0_3_m88BD7817E39647AB3D037F28269F57576F2844DD (void);
-// 0x000000CC System.Void Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::.ctor(System.Int32)
+// 0x000000D8 System.Void Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::.ctor(System.Int32)
 extern void U3CPlayWithDelayU3Ed__7__ctor_m62BDC91D499A1BAA5D89F3FD872ADFE4DBFBAE38 (void);
-// 0x000000CD System.Void Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::System.IDisposable.Dispose()
+// 0x000000D9 System.Void Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::System.IDisposable.Dispose()
 extern void U3CPlayWithDelayU3Ed__7_System_IDisposable_Dispose_m74567C53B790BB12978BF0597FC7A99D73EF34D3 (void);
-// 0x000000CE System.Boolean Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::MoveNext()
+// 0x000000DA System.Boolean Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::MoveNext()
 extern void U3CPlayWithDelayU3Ed__7_MoveNext_mB8E2B5C27D9D447CB2DB746B68489140C54C4376 (void);
-// 0x000000CF System.Object Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000000DB System.Object Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CPlayWithDelayU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0D3227F12DACB58F8F2700C3660AD1E0D4480A42 (void);
-// 0x000000D0 System.Void Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::System.Collections.IEnumerator.Reset()
+// 0x000000DC System.Void Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::System.Collections.IEnumerator.Reset()
 extern void U3CPlayWithDelayU3Ed__7_System_Collections_IEnumerator_Reset_mEC54A42BA4BECBC700A3A92081C76F65582DB42B (void);
-// 0x000000D1 System.Object Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::System.Collections.IEnumerator.get_Current()
+// 0x000000DD System.Object Game.Singleplayer.MusicPlayer/<PlayWithDelay>d__7::System.Collections.IEnumerator.get_Current()
 extern void U3CPlayWithDelayU3Ed__7_System_Collections_IEnumerator_get_Current_m26669D0C5474D2B12FBD3C56FF0B1B1AD12621D9 (void);
-// 0x000000D2 System.Void Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::.ctor(System.Int32)
+// 0x000000DE System.Void Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::.ctor(System.Int32)
 extern void U3CSetAudioRequestU3Ed__9__ctor_m9D5F4FF63E2A239C67A790CE886E913067A7E1A1 (void);
-// 0x000000D3 System.Void Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::System.IDisposable.Dispose()
+// 0x000000DF System.Void Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::System.IDisposable.Dispose()
 extern void U3CSetAudioRequestU3Ed__9_System_IDisposable_Dispose_m83F1AC77F849B15F9C8EE5A3DC0942B1FC7AD1A6 (void);
-// 0x000000D4 System.Boolean Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::MoveNext()
+// 0x000000E0 System.Boolean Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::MoveNext()
 extern void U3CSetAudioRequestU3Ed__9_MoveNext_mD44C3A157D16593F18D917944951F95CB976E0B6 (void);
-// 0x000000D5 System.Void Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::<>m__Finally1()
+// 0x000000E1 System.Void Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::<>m__Finally1()
 extern void U3CSetAudioRequestU3Ed__9_U3CU3Em__Finally1_m1C07E019317D53298DE42061F235D6F4950AB9E5 (void);
-// 0x000000D6 System.Object Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000000E2 System.Object Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CSetAudioRequestU3Ed__9_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mB368F04B897B73D92352D07CFACE5FA86C9E6D54 (void);
-// 0x000000D7 System.Void Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::System.Collections.IEnumerator.Reset()
+// 0x000000E3 System.Void Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::System.Collections.IEnumerator.Reset()
 extern void U3CSetAudioRequestU3Ed__9_System_Collections_IEnumerator_Reset_m46C21452F019DE5042CCF21FD2C1F9CEBCCA9511 (void);
-// 0x000000D8 System.Object Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::System.Collections.IEnumerator.get_Current()
+// 0x000000E4 System.Object Game.Singleplayer.MusicPlayer/<SetAudioRequest>d__9::System.Collections.IEnumerator.get_Current()
 extern void U3CSetAudioRequestU3Ed__9_System_Collections_IEnumerator_get_Current_m3288CD2F547947906FE8775B48405EE493E50638 (void);
-static Il2CppMethodPointer s_methodPointers[216] = 
+static Il2CppMethodPointer s_methodPointers[228] = 
 {
 	Logger_Awake_m19D19AB49D5E03E930440AC53D80FCF1EE17B2CA,
 	Logger__ctor_mF88527BE572C2A025B1844CA31DCAD6607BE379E,
@@ -556,21 +581,33 @@ static Il2CppMethodPointer s_methodPointers[216] =
 	Destroyer__ctor_mB6B9CAF8EAF4E3F622BAAD125E30AC21AC467896,
 	NULL,
 	NULL,
-	NULL,
 	GameInput__ctor_mCA5EE8BD3C426EE589C7FCB4BB41D35D1DA39CAB,
 	GuitarControlRuler_Awake_mBF95FDE001F6AAA55A6673BD99FCB82CCD722323,
 	GuitarControlRuler_Update_mC9A088A7214270063F2CA9C35E3FBA9255338B31,
-	GuitarControlRuler_ResetInput_m5CE1D134EF21FD8B808CABF20964360323FC921B,
+	GuitarControlRuler_SetReleaseNotes_mA026B940A73D4BA541DEDB21467C98A926915A7A,
+	GuitarControlRuler_ResetReleaseNotes_mAF5C75E527DEA33E510B3CC0652B8303B95035A1,
+	GuitarControlRuler_CheckOnNeedReleasedKeys_m1A30CE2DBAD8D47DBC3C34E867FE972A9A95C586,
+	GuitarControlRuler_TriggerNotes_m1F0C9C2D64F3209B937E52387E0682487014BF0E,
+	GuitarControlRuler_CheckOnMiss_m5ACAFEE49EAAECB88F31441A0B0B8BD26142B60E,
+	GuitarControlRuler_UpdateLastInputByTimer_mD661BF2A90A068DA253A1E34E2A995C8C312324D,
+	GuitarControlRuler_CheckLastInputOnEmpty_mA5D309F28935DED799438FE3CB21D549494A3FEE,
+	GuitarControlRuler_UpdateTimer_m1EB63BD6C5625AA02D8C443E33CF08388EA92779,
+	GuitarControlRuler_ResetLastInput_m693D05481111559E5D3EC42FABEF8CAC05A2FDDE,
+	GuitarControlRuler_ResetTimer_mDC226F36E35B20187CA7DD766786F940C844B81E,
+	GuitarControlRuler_UpdateLastInput_m735E093B331BA519CE7F0AD8F3A9C6D75A192D9B,
 	GuitarControlRuler_GetNeedInput_m32D22BE2BE981CF403068333CBD4B0AF3877303F,
 	GuitarControlRuler__ctor_m2F29C79E36646F7D3F670C88CC1A10624D7C3DF8,
 	KeyboardInput_GetInput_m17C0E567C56223C8E825B2B51E761E1A0708ED80,
-	KeyboardInput_ResetInput_m77340A76ED18CBC06076A61334019A929858DE07,
 	KeyboardInput__ctor_mEC022FB88B41B6E21E2161CEBA32E4B8452DA344,
 	NoteDetector_GetFirstNote_m6DCB3493CA259750EAB960C9EE429D5191F1A0EF,
-	NoteDetector_CatchFirstNote_m9801133FA594F2C982FB5F8847AFEE32F7C20B00,
+	NoteDetector_CatchFirstNote_mE435E298636B1C440D60B7F8D7E6ACA5001E5486,
 	NoteDetector_OnTriggerEnter_m8E358E64F3EF57D06772259E4C6F90493E6AA3FB,
 	NoteDetector_OnTriggerExit_m9F623C71692679E3AD30266DA432977CEA21A9E6,
 	NoteDetector__ctor_m8D1974384EA71299F936C115E3E3A792A5D12797,
+	FireAnimator_Start_m9CC5E7E20FFC3F8ABC8A533CEEB19C0A0E74825D,
+	FireAnimator_Play_m8D138EDED9B58755E8298B3E320D9368EA87504C,
+	FireAnimator_ResetToIdle_mC1D06344B7CB5CD880B959F895F8E4DEF0FA8F49,
+	FireAnimator__ctor_mB8EACC50E0E178D18DEE5475BD5E274F6182C333,
 	GuitarAnimator_Start_mF759962ABA558E9EE792A7DE75AED23E41F7EEE5,
 	GuitarAnimator_Update_m1AF3C710FC969CD32D1AC5DE462CF74021E751EC,
 	GuitarAnimator__ctor_mBA5E7960401AE586D4437E7460F45D6DAAE7A885,
@@ -688,22 +725,22 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[15] =
 	{ 0x0600006B, TrackEvent_set_Arguments_mECFC8104AB4186D3081D215EF4BE3BB48BDD9139_AdjustorThunk },
 	{ 0x0600006C, TrackEvent__ctor_m28BFECD66B1D1BB793B31665074E3A0511F24015_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[216] = 
+static const int32_t s_InvokerIndices[228] = 
 {
-	1821,
-	1821,
+	1820,
+	1820,
 	1186,
-	1821,
-	2783,
-	2756,
-	1821,
-	1821,
+	1820,
+	2782,
+	2755,
+	1820,
+	1820,
 	1538,
-	1821,
-	1821,
-	1821,
-	2783,
-	2756,
+	1820,
+	1820,
+	1820,
+	2782,
+	2755,
 	1763,
 	1508,
 	1776,
@@ -714,33 +751,33 @@ static const int32_t s_InvokerIndices[216] =
 	1520,
 	1776,
 	1520,
-	1821,
+	1820,
 	1508,
 	1520,
-	1821,
+	1820,
 	906,
-	1821,
-	1821,
-	1821,
+	1820,
+	1820,
+	1820,
 	1190,
 	1520,
 	675,
-	1821,
+	1820,
 	1763,
-	2783,
-	2756,
-	1821,
-	1821,
-	1821,
-	1821,
-	1821,
-	1821,
-	2783,
-	2756,
-	1821,
-	1821,
-	1821,
-	1821,
+	2782,
+	2755,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
+	2782,
+	2755,
+	1820,
+	1820,
+	1820,
+	1820,
 	1776,
 	1520,
 	1520,
@@ -750,28 +787,28 @@ static const int32_t s_InvokerIndices[216] =
 	1520,
 	909,
 	1776,
-	1821,
+	1820,
 	1391,
 	1390,
 	578,
-	1821,
+	1820,
 	1776,
-	1821,
+	1820,
 	1520,
-	1821,
-	2783,
-	2756,
-	1821,
-	1821,
-	1821,
-	1821,
+	1820,
+	2782,
+	2755,
+	1820,
+	1820,
+	1820,
+	1820,
 	1543,
 	1542,
-	1821,
-	1821,
-	1821,
-	1821,
-	1821,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
 	1776,
 	1520,
 	1520,
@@ -798,113 +835,125 @@ static const int32_t s_InvokerIndices[216] =
 	1776,
 	1520,
 	549,
-	2440,
-	1821,
-	2686,
-	1821,
-	2440,
-	1821,
+	2439,
+	1820,
+	2685,
+	1820,
+	2439,
+	1820,
 	1520,
-	1821,
-	1821,
+	1820,
+	1820,
 	1761,
-	1790,
-	1821,
-	1821,
-	1821,
-	1821,
+	1820,
+	1820,
+	1820,
+	1520,
+	1520,
+	1796,
+	1520,
+	1319,
+	1820,
+	1796,
+	1538,
+	1820,
+	1820,
+	1319,
 	1776,
-	1821,
+	1820,
 	1761,
-	1790,
-	1821,
+	1820,
 	1776,
-	1821,
+	1796,
 	1520,
 	1520,
-	1821,
-	1821,
-	1821,
-	1821,
-	2783,
-	2756,
-	1800,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
+	2782,
+	2755,
+	1799,
 	1541,
-	1821,
-	1821,
+	1820,
+	1820,
 	1541,
 	837,
 	1508,
 	1508,
 	1508,
-	1821,
-	1821,
-	1821,
-	1821,
-	1821,
-	1821,
-	1821,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
+	1820,
 	1541,
 	1191,
 	1520,
 	675,
-	1821,
+	1820,
 	1763,
 	1508,
 	1508,
-	1821,
-	1821,
-	1821,
-	1821,
+	1820,
+	1820,
+	1820,
+	1820,
 	483,
-	1821,
+	1820,
 	-1,
 	-1,
 	-1,
 	-1,
 	-1,
-	1821,
+	1820,
 	681,
-	1821,
+	1820,
 	1776,
 	1776,
-	1821,
+	1820,
 	837,
-	1821,
-	1821,
-	1821,
-	1821,
+	1820,
+	1820,
+	1820,
+	1820,
 	1508,
-	1821,
-	1797,
+	1820,
+	1796,
 	1776,
-	1821,
+	1820,
 	1776,
 	1508,
-	1821,
-	1797,
-	1821,
+	1820,
+	1796,
+	1820,
 	1776,
-	1821,
+	1820,
 	1776,
-	2800,
-	1821,
+	2799,
+	1820,
 	1520,
 	1520,
 	1520,
 	1520,
 	1508,
-	1821,
-	1797,
+	1820,
+	1796,
 	1776,
-	1821,
+	1820,
 	1776,
 	1508,
-	1821,
-	1797,
-	1821,
+	1820,
+	1796,
+	1820,
 	1776,
-	1821,
+	1820,
 	1776,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
@@ -913,8 +962,8 @@ static const Il2CppTokenRangePair s_rgctxIndices[1] =
 };
 static const Il2CppRGCTXDefinition s_rgctxValues[3] = 
 {
-	{ (Il2CppRGCTXDataType)3, 9100 },
-	{ (Il2CppRGCTXDataType)3, 12854 },
+	{ (Il2CppRGCTXDataType)3, 9102 },
+	{ (Il2CppRGCTXDataType)3, 12856 },
 	{ (Il2CppRGCTXDataType)2, 277 },
 };
 extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
@@ -922,7 +971,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	216,
+	228,
 	s_methodPointers,
 	15,
 	s_adjustorThunks,

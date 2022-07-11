@@ -3742,8 +3742,8 @@ MonoBehaviour:
   - {fileID: 1851086941}
   _scoreText: {fileID: 57557030}
   kek: 0
-  checkOnKeysDown: 0000000000
-  testInput: 
+  _lastInput: 
+  _needReleaseNotes: 
 --- !u!4 &1559874491
 Transform:
   m_ObjectHideFlags: 0
