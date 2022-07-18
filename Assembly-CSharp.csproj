@@ -101,6 +101,9 @@
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\ObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\FireAnimator.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ComboCounter.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MultiplayerBox.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\RockHealthLine.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

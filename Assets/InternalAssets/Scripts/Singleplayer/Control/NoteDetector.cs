@@ -41,7 +41,6 @@ namespace Game.Singleplayer
             {
                 FindObjectOfType<GuitarControlRuler>().kek++;
                 _notes.Remove(note);
-                note.SetInPool();
             }
         }
     }
