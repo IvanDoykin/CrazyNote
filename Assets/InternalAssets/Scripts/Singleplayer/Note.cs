@@ -15,12 +15,13 @@ namespace Game.Singleplayer
 
         public void Initialize(int horizontalPosition)
         {
+            Timer = 0f;
+
             if (_pool == null)
             {
                 _pool = FindObjectOfType<NoteObjectPool>();
             }
 
-            Timer = 0f;
             HorizontalPosition = horizontalPosition;
             HasCreated?.Invoke(this);
         }

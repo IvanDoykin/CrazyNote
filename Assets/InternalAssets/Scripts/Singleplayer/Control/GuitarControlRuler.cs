@@ -57,13 +57,20 @@ namespace Game.Singleplayer
 
         private void TriggerNotes(Input input, IEnumerator<Note> notes)
         {
+            List<Note> triggerNotes = new List<Note>();
             while (notes.MoveNext())
             {
                 if (input.ModifiedKeys[notes.Current.HorizontalPosition])
                 {
                     DEBUG_HITS++;
-                    notes.Current.SetInPool();
+                    triggerNotes.Add(notes.Current);
                 }
+            }
+            notes.Reset();
+
+            for (int i = 0; i < triggerNotes.Count; i++)
+            {
+                _detector.TriggerNote(triggerNotes[i]);
             }
         }
     }

@@ -39,12 +39,24 @@ namespace Game.Singleplayer
         {
             for (int i = 0; i < _registredNotes.Count; i++)
             {
-                _registredNotes[i].Tick();
-                if (_registredNotes[i].Timer >= timeToRegister)
+                if (_registredNotes[i].gameObject.activeSelf)
                 {
-                    _availableNotes.Add(_registredNotes[i]);
-                    _registredNotes.Remove(_registredNotes[i]);
+                    _registredNotes[i].Tick();
+                    if (_registredNotes[i].Timer >= timeToRegister)
+                    {
+                        _availableNotes.Add(_registredNotes[i]);
+                        _registredNotes.Remove(_registredNotes[i]);
+                    }
                 }
+            }
+        }
+
+        public void TriggerNote(Note note)
+        {
+            if (_availableNotes.Contains(note))
+            {
+                note.SetInPool();
+                _availableNotes.Remove(note);
             }
         }
 
@@ -53,12 +65,16 @@ namespace Game.Singleplayer
             bool miss = false;
             for (int i = 0; i < _availableNotes.Count; i++)
             {
-                _availableNotes[i].Tick();
-                if (_availableNotes[i].Timer >= timeToDestroy)
+                if (_availableNotes[i].gameObject.activeSelf)
                 {
-                    miss = true;
-                    _availableNotes[i].SetInPool();
-                    _availableNotes.Remove(_availableNotes[i]);
+                    _availableNotes[i].Tick();
+                    if (_availableNotes[i].Timer >= timeToDestroy)
+                    {
+                        miss = true;
+                        var note = _availableNotes[i];
+                        note.SetInPool();
+                        _availableNotes.Remove(note);
+                    }
                 }
             }
 
