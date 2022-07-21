@@ -6,28 +6,37 @@ namespace Game.Singleplayer
 {
     public class KeyboardInput : GameInput
     {
-        public override InputData GetInput()
+        public override RawInput GetRawInput()
         {
-            return new InputData
-            {
-                PressNotes = new bool[5]
+            return new RawInput
+            (
+                new bool[5]
                 {
-                    Input.GetKey(KeyCode.Z),
-                    Input.GetKey(KeyCode.X),
-                    Input.GetKey(KeyCode.C),
-                    Input.GetKey(KeyCode.V),
-                    Input.GetKey(KeyCode.B)
+                    UnityEngine.Input.GetKeyDown(KeyCode.Z),
+                    UnityEngine.Input.GetKeyDown(KeyCode.X),
+                    UnityEngine.Input.GetKeyDown(KeyCode.C),
+                    UnityEngine.Input.GetKeyDown(KeyCode.V),
+                    UnityEngine.Input.GetKeyDown(KeyCode.B)
                 },
 
-                ReleaseNotes = new bool[5]
+                new bool[5]
                 {
-                    Input.GetKeyUp(KeyCode.Z),
-                    Input.GetKeyUp(KeyCode.X),
-                    Input.GetKeyUp(KeyCode.C),
-                    Input.GetKeyUp(KeyCode.V),
-                    Input.GetKeyUp(KeyCode.B)
+                    UnityEngine.Input.GetKey(KeyCode.Z),
+                    UnityEngine.Input.GetKey(KeyCode.X),
+                    UnityEngine.Input.GetKey(KeyCode.C),
+                    UnityEngine.Input.GetKey(KeyCode.V),
+                    UnityEngine.Input.GetKey(KeyCode.B)
+                },
+
+                new bool[5]
+                {
+                    UnityEngine.Input.GetKeyUp(KeyCode.Z),
+                    UnityEngine.Input.GetKeyUp(KeyCode.X),
+                    UnityEngine.Input.GetKeyUp(KeyCode.C),
+                    UnityEngine.Input.GetKeyUp(KeyCode.V),
+                    UnityEngine.Input.GetKeyUp(KeyCode.B)
                 }
-            };
+            );
         }
     }
 }

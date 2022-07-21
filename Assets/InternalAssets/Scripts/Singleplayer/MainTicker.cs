@@ -126,8 +126,7 @@ namespace Game.Singleplayer
                 {
                     if (int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]) > 4) return;
                     hasNote = true;
-                    singleplayerScene.CreateNote(int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]),
-                        Track.Instance.Notes.TrackBlock.Infos[i].Position);
+                    singleplayerScene.CreateNote(int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]));
                 }
 
                 i++;

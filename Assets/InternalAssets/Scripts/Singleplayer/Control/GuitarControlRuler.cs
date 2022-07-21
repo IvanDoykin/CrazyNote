@@ -2,145 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 namespace Game.Singleplayer
 {
     public class GuitarControlRuler : MonoBehaviour
     {
-        [SerializeField] private List<NoteDetector> _detectors = new List<NoteDetector>();
-        [SerializeField] private List<FireAnimator> _fireAnimators = new List<FireAnimator>();
-        private GameInput _input;
+        private int DEBUG_HITS = 0;
+        public int DEBUG_MISSES = 0;
+        [SerializeField] private TextMeshProUGUI DEBUGhitsNmisses;
 
-        private int _score = 0;
-        [SerializeField] private TextMeshProUGUI _scoreText;
-
-        public int kek = 0;
-
-        public bool[] _lastInput;
-        public bool[] _needReleaseNotes;
-        private float _timer = 0f;
+        public static Action<bool[]> InputHasChanged;
+        private InputModifier _input;
+        private NotesDetector _detector;
 
         private void Awake()
         {
-            _input = GetComponent<GameInput>();
-            _lastInput = new bool[_input.GetInput().PressNotes.Length];
-            _needReleaseNotes = new bool[_input.GetInput().PressNotes.Length];
+            _input = GetComponent<InputModifier>();
+            _detector = GetComponent<NotesDetector>();
         }
 
         private void Update()
         {
-            bool[] releaseInput = _input.GetInput().ReleaseNotes;
-            ResetReleaseNotes(releaseInput);
+            Input input = _input.GetModifiedInput();
+            IEnumerator<Note> availableNotes = _detector.AvailableNotes;
 
-            bool[] currentInput = _input.GetInput().PressNotes;
-
-            bool[] needInput = GetNeedInput();
-            bool islastInputUpdated = UpdateLastInput(currentInput);
-
-            Debug.Log(islastInputUpdated);
-
-            UpdateTimer(islastInputUpdated);
-            UpdateLastInputByTimer();
-
-            if (CheckLastInputOnEmpty() || CheckOnNeedReleasedKeys())
+            if (CompareInputWithNotes(input, availableNotes))
             {
-                return;
+                InputHasChanged(input.ModifiedKeys);
+                TriggerNotes(input, availableNotes);
             }
 
-            if (islastInputUpdated)
-            {
-                ResetTimer();
-            }
-
-            if (CheckOnMiss(needInput))
-            {
-                //miss event
-                return;
-            }
-
-            SetReleaseNotes(currentInput);
-            TriggerNotes(needInput);
-            ResetLastInput();
-
-            _scoreText.text = "" + _score + " " + kek;
+            DEBUGhitsNmisses.text = "+" + DEBUG_HITS + " -" + DEBUG_MISSES;
         }
 
-        private void SetReleaseNotes(bool[] currentInput)
+        private bool CompareInputWithNotes(Input input, IEnumerator<Note> notes)
         {
-            for (int i = 0; i < _needReleaseNotes.Length; i++)
+            bool[] canPressedNotes = new bool[input.RawInput.JustPressedKeys.Length];
+            while (notes.MoveNext())
             {
-                if (currentInput[i])
-                {
-                    _needReleaseNotes[i] = true;
-                }
+                canPressedNotes[notes.Current.HorizontalPosition] = true;
             }
-        }
+            notes.Reset();
 
-        private void ResetReleaseNotes(bool[] releaseInput)
-        {
-            for (int i = 0; i < _needReleaseNotes.Length; i++)
+            for (int i = 0; i < input.RawInput.JustPressedKeys.Length; i++)
             {
-                if (releaseInput[i])
-                {
-                    _needReleaseNotes[i] = false;
-                }
-            }
-        }
-
-        private bool CheckOnNeedReleasedKeys()
-        {
-            for (int i = 0; i < _needReleaseNotes.Length; i++)
-            {
-                if (_needReleaseNotes[i])
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private void TriggerNotes(bool[] needInput)
-        {
-            for (int i = 0; i < needInput.Length; i++)
-            {
-                if (needInput[i])
-                {
-                    _fireAnimators[i].Play();
-                    while (_detectors[i].CatchFirstNote())
-                    {
-                        _score++;
-                    }
-                }
-            }
-        }
-
-        private bool CheckOnMiss(bool[] needInput)
-        {
-            for (int i = 0; i < _lastInput.Length; i++)
-            {
-                if (_lastInput[i] != needInput[i])
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private void UpdateLastInputByTimer()
-        {
-            if (_timer > 0.1f)
-            {
-                Debug.Log("reset");
-                ResetTimer();
-                ResetLastInput();
-            }
-        }
-
-        private bool CheckLastInputOnEmpty()
-        {
-            foreach (var input in _lastInput)
-            {
-                if (input)
+                if (input.RawInput.JustPressedKeys[i] != canPressedNotes[i] && input.RawInput.JustPressedKeys[i])
                 {
                     return false;
                 }
@@ -148,80 +55,16 @@ namespace Game.Singleplayer
             return true;
         }
 
-        private void UpdateTimer(bool islastInputUpdated)
+        private void TriggerNotes(Input input, IEnumerator<Note> notes)
         {
-            if (islastInputUpdated)
+            while (notes.MoveNext())
             {
-                ResetTimer();
-            }
-            else
-            {
-                Debug.Log("Inc timer");
-                _timer += Time.deltaTime;
-            }
-        }
-
-        private void ResetLastInput()
-        {
-            Debug.Log("reset last input");
-            for (int i = 0; i < _lastInput.Length; i++)
-            {
-                _lastInput[i] = false;
-            }
-        }
-
-        private void ResetTimer()
-        {
-            _timer = 0f;
-        }
-
-        private bool UpdateLastInput(bool[] currentInput)
-        {
-            bool isEverNoteTapped = false;
-            foreach (var input in currentInput)
-            {
-                if (input)
+                if (input.ModifiedKeys[notes.Current.HorizontalPosition])
                 {
-                    isEverNoteTapped = true;
-                    for (int i = 0; i < _lastInput.Length; i++)
-                    {
-                        _lastInput[i] = currentInput[i];
-                    }
-                    break;
+                    DEBUG_HITS++;
+                    notes.Current.SetInPool();
                 }
             }
-
-            return isEverNoteTapped;
-        }
-
-        private bool[] GetNeedInput()
-        {
-            bool[] needInput = new bool[_detectors.Count];
-            int minPosition = 1024 * 1024 * 1024;
-
-            foreach (var detector in _detectors)
-            {
-                var note = detector.GetFirstNote();
-                if (note == null) continue;
-
-                if (note.Position < minPosition)
-                {
-                    minPosition = note.Position;
-                }
-            }
-
-            for (int i = 0; i < _detectors.Count; i++)
-            {
-                var note = _detectors[i].GetFirstNote();
-                if (note == null) continue;
-
-                if (note.Position == minPosition)
-                {
-                    needInput[i] = true;
-                }
-            }
-
-            return needInput;
         }
     }
 }

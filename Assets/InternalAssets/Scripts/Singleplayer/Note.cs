@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,24 +7,32 @@ namespace Game.Singleplayer
 {
     public class Note : MonoBehaviour, IPoolable
     {
-        public int Position { get; private set; }
-        private bool _hasCaught = false;
+        public static Action<Note> HasCreated;
+        public float Timer { get; private set; }
+
+        public int HorizontalPosition { get; private set; }
         private NoteObjectPool _pool;
 
-        public void Initialize(int position)
+        public void Initialize(int horizontalPosition)
         {
-            _pool = FindObjectOfType<NoteObjectPool>();
-            Position = position;
+            if (_pool == null)
+            {
+                _pool = FindObjectOfType<NoteObjectPool>();
+            }
+
+            Timer = 0f;
+            HorizontalPosition = horizontalPosition;
+            HasCreated?.Invoke(this);
         }
 
-        public void Catch()
+        public void Tick()
         {
-            _hasCaught = true;
-            SetInPool();
+            Timer += Time.deltaTime;
         }
 
         public void SetInPool()
         {
+            Debug.Log("set in pool");
             _pool.Delete(gameObject);
         }
     }

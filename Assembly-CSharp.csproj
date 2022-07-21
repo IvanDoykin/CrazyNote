@@ -67,8 +67,11 @@
     <Compile Include="Assets\InternalAssets\Scripts\Destroyer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanelView.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MusicPlayer.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MultiplayerBox.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\RockHealthLine.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ComboCounter.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Data\SongConfigInfo.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\NoteDetector.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\NotesDetector.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\Blocks\Events.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanel.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MainTicker.cs" />
@@ -80,7 +83,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanelButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\Difficulty.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\SyncTrack.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\InputData.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\RawInput.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongsPanelsCreator.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\Blocks\TrackBlock.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Data\SongAdditionalInfo.cs" />
@@ -101,9 +104,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\ObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\FireAnimator.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ComboCounter.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MultiplayerBox.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\RockHealthLine.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\InputModifier.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

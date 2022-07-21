@@ -6,6 +6,6 @@ namespace Game.Singleplayer
 {
     public abstract class GameInput : MonoBehaviour
     {
-        public abstract InputData GetInput();
+        public abstract RawInput GetRawInput();
     }
 }

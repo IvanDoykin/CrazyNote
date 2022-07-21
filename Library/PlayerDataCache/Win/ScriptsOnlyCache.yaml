@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - Game.MainMenu.SongSelecting.SongsInfoParser
     - Game.MainMenu.SongSelecting.SongsPanelsCreator
     - Game.MainMenu.StartGameButton
+    - Game.Singleplayer.ComboCounter
     - Game.Singleplayer.Destroyer
     - Game.Singleplayer.FireAnimator
     - Game.Singleplayer.GuitarAnimator
@@ -18,10 +19,12 @@ ScriptsOnlyBuild:
     - Game.Singleplayer.KeyboardInput
     - Game.Singleplayer.MainTicker
     - Game.Singleplayer.Mover
+    - Game.Singleplayer.MultiplayerBox
     - Game.Singleplayer.MusicPlayer
     - Game.Singleplayer.Note
     - Game.Singleplayer.NoteDetector
     - Game.Singleplayer.NoteObjectPool
+    - Game.Singleplayer.RockHealthLine
     - Game.Singleplayer.SingleplayerScene
     - Game.Singleplayer.Wide
     - Game.Singleplayer.WideObjectPool
@@ -82,59 +85,59 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1474}
+      Script: {instanceID: 1490}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1532}
     - Class: 114
-      Script: {instanceID: 1544}
+      Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 1546}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 1576}
+      Script: {instanceID: 1592}
     - Class: 114
-      Script: {instanceID: 1722}
+      Script: {instanceID: 1738}
     - Class: 114
-      Script: {instanceID: 1810}
+      Script: {instanceID: 1826}
     - Class: 114
-      Script: {instanceID: 1868}
+      Script: {instanceID: 1888}
     - Class: 114
-      Script: {instanceID: 2066}
+      Script: {instanceID: 2088}
     - Class: 114
-      Script: {instanceID: 2270}
+      Script: {instanceID: 2292}
     - Class: 114
-      Script: {instanceID: 2442}
+      Script: {instanceID: 2464}
     - Class: 114
-      Script: {instanceID: 2514}
+      Script: {instanceID: 2536}
     - Class: 114
-      Script: {instanceID: 2646}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2732}
+      Script: {instanceID: 2754}
     - Class: 114
-      Script: {instanceID: 2778}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 2872}
+      Script: {instanceID: 2894}
     - Class: 114
-      Script: {instanceID: 2918}
+      Script: {instanceID: 2940}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 3006}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3168}
     - Class: 114
-      Script: {instanceID: 3170}
+      Script: {instanceID: 3192}
     - Class: 114
-      Script: {instanceID: 3250}
+      Script: {instanceID: 3272}
     - Class: 114
-      Script: {instanceID: 3348}
+      Script: {instanceID: 3370}
     - Class: 114
-      Script: {instanceID: 3510}
+      Script: {instanceID: 3532}
     - Class: 114
-      Script: {instanceID: 3518}
+      Script: {instanceID: 3540}
     - Class: 114
-      Script: {instanceID: 3544}
+      Script: {instanceID: 3566}
     - Class: 114
-      Script: {instanceID: 3662}
+      Script: {instanceID: 3684}
     - Class: 114
-      Script: {instanceID: 3704}
+      Script: {instanceID: 3726}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -193,51 +196,57 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1532}
     - Class: 114
-      Script: {instanceID: 1550}
+      Script: {instanceID: 1566}
     - Class: 114
-      Script: {instanceID: 1600}
-    - Class: 114
-      Script: {instanceID: 1690}
+      Script: {instanceID: 1616}
     - Class: 114
       Script: {instanceID: 1706}
     - Class: 114
-      Script: {instanceID: 1770}
+      Script: {instanceID: 1722}
     - Class: 114
-      Script: {instanceID: 1782}
+      Script: {instanceID: 1786}
     - Class: 114
-      Script: {instanceID: 1820}
+      Script: {instanceID: 1798}
     - Class: 114
-      Script: {instanceID: 1868}
+      Script: {instanceID: 1836}
     - Class: 114
-      Script: {instanceID: 2000}
+      Script: {instanceID: 1872}
     - Class: 114
-      Script: {instanceID: 2078}
+      Script: {instanceID: 1878}
     - Class: 114
-      Script: {instanceID: 2186}
+      Script: {instanceID: 1888}
     - Class: 114
-      Script: {instanceID: 2188}
+      Script: {instanceID: 1896}
     - Class: 114
-      Script: {instanceID: 2366}
+      Script: {instanceID: 2022}
     - Class: 114
-      Script: {instanceID: 2732}
+      Script: {instanceID: 2100}
     - Class: 114
-      Script: {instanceID: 2918}
+      Script: {instanceID: 2208}
     - Class: 114
-      Script: {instanceID: 2952}
+      Script: {instanceID: 2210}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 2388}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 2754}
     - Class: 114
-      Script: {instanceID: 3170}
+      Script: {instanceID: 2940}
     - Class: 114
-      Script: {instanceID: 3510}
+      Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 3512}
+      Script: {instanceID: 3006}
     - Class: 114
-      Script: {instanceID: 3732}
+      Script: {instanceID: 3168}
+    - Class: 114
+      Script: {instanceID: 3192}
+    - Class: 114
+      Script: {instanceID: 3532}
+    - Class: 114
+      Script: {instanceID: 3534}
+    - Class: 114
+      Script: {instanceID: 3754}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -425,10 +434,28 @@ ScriptsOnlyBuild:
     className: MusicPlayer
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Game.Singleplayer
+    className: MultiplayerBox
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Game.Singleplayer
+    className: RockHealthLine
+  - hash:
+      serializedVersion: 2
       Hash: 300fd99066f8c288e85f5e81ce65fe34
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 0b80251279ac9157e5fefcff2486b891
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Game.Singleplayer
+    className: ComboCounter
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -871,4 +898,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/InternalAssets/Scenes/MainMenu.unity
   - Assets/InternalAssets/Scenes/Singleplayer.unity
-  playerPath: C:/Users/1/Documents/build/CrazyNote.exe
+  playerPath: D:/Desktop/Build/CrazyNote.exe
