@@ -33,7 +33,6 @@ namespace Game.MainMenu.SongSelecting
             if (File.Exists(directory + albumIconName))
             {
                 string[] filePaths = Directory.GetFiles(directory, albumIconName); // Get all files of type .png in this folder
-                Debug.Log(directory + albumIconName);
                 //Converts desired path into byte array
                 byte[] pngBytes = File.ReadAllBytes(filePaths[0]);
 

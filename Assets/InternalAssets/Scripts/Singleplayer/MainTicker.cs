@@ -93,12 +93,10 @@ namespace Game.Singleplayer
 
                 if (Track.Instance.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.B)
                 {
-                    Debug.Log("Set BPM = " + float.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0f);
                     SetBPM(float.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0f);
                 }
                 if (Track.Instance.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.TS)
                 {
-                    Debug.Log("Set tempo = " + int.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]));
                     SetTempo(int.Parse(Track.Instance.SyncTrack.TrackBlock.Infos[i].Arguments[0]));
                 }
 
@@ -126,7 +124,7 @@ namespace Game.Singleplayer
                 {
                     if (int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]) > 4) return;
                     hasNote = true;
-                    singleplayerScene.CreateNote(int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]));
+                    singleplayerScene.CreateNote(int.Parse(Track.Instance.Notes.TrackBlock.Infos[i].Arguments[0]), Track.Instance.Notes.TrackBlock.Infos[i].Position);
                 }
 
                 i++;

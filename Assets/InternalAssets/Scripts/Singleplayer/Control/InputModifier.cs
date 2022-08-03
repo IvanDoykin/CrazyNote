@@ -67,8 +67,8 @@ namespace Game.Singleplayer
                 }
             }
 
-            SetReleasedNotes(input.ReleasedKeys);
             bool[] filterPressedNotes = FilterPressedNotes(input.PressedKeys);
+            SetReleasedNotes(input.ReleasedKeys);
 
             for (int i = 0; i < filterPressedNotes.Length; i++)
             {

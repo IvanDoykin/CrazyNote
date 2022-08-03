@@ -7,23 +7,34 @@ namespace Game.Singleplayer
 {
     public class Note : MonoBehaviour, IPoolable
     {
-        public static Action<Note> HasCreated;
+        public static Action<Note> HasInitialized;
+        public static Action<int, bool> HasHit;
+
         public float Timer { get; private set; }
 
         public int HorizontalPosition { get; private set; }
+        public int VerticalPosition { get; private set; }
+
         private NoteObjectPool _pool;
+        private bool _initialized = false;
 
-        public void Initialize(int horizontalPosition)
+        public void Initialize(int horizontalPosition, int verticalPosition)
         {
-            Timer = 0f;
-
             if (_pool == null)
             {
                 _pool = FindObjectOfType<NoteObjectPool>();
             }
 
             HorizontalPosition = horizontalPosition;
-            HasCreated?.Invoke(this);
+            VerticalPosition = verticalPosition;
+
+            Timer = NotesDetector.TimeToRegister;
+            Invoke(nameof(PostInitialize), NotesDetector.TimeToRegister);
+        }
+
+        private void PostInitialize()
+        {
+            HasInitialized?.Invoke(this);
         }
 
         public void Tick()
@@ -31,9 +42,14 @@ namespace Game.Singleplayer
             Timer += Time.deltaTime;
         }
 
+        public void Remove(bool hit)
+        {
+            HasHit?.Invoke(HorizontalPosition, hit);
+            SetInPool();
+        }
+
         public void SetInPool()
         {
-            Debug.Log("set in pool");
             _pool.Delete(gameObject);
         }
     }

@@ -75,6 +75,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\Blocks\Events.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanel.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\MainTicker.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\InputModifier.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\IPoolable.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\NoteObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\NoteSpawnPlaces.cs" />
@@ -104,7 +105,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\ObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\FireAnimator.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\InputModifier.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\LogExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

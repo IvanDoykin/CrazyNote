@@ -6,21 +6,25 @@ namespace Game.Singleplayer
 {
     public class FireAnimator : MonoBehaviour
     {
-        private Animator _animator;
+         private Animator[] _animators;
 
-        private void Start()
+        private void Awake()
         {
-            _animator = GetComponent<Animator>();
+            _animators = GetComponentsInChildren<Animator>();
+            Note.HasHit += Fire;
         }
 
-        public void Play()
+        private void OnDestroy()
         {
-            _animator.SetBool("fire", true);
+            Note.HasHit -= Fire;
         }
 
-        public void ResetToIdle()
+        public void Fire(int index, bool hit)
         {
-            _animator.SetBool("fire", false);
+            if (hit)
+            {
+                _animators[index].Play("Fire", -1, 0f);
+            }
         }
     }
 }
