@@ -14,7 +14,14 @@ public static class LogExtensions
             StringBuilder elements = new StringBuilder("");
             foreach (T element in loggingMassive)
             {
-                elements.Append("[" + element.ToString() + "] ");
+                if (element != null)
+                {
+                    elements.Append("[" + element.ToString() + "] ");
+                }
+                else
+                {
+                    elements.Append("[NULL]");
+                }
             }
             Debug.Log(elements);
         }
@@ -23,7 +30,14 @@ public static class LogExtensions
         {
             foreach (T element in loggingMassive)
             {
-                Debug.Log(element.ToString());
+                if (element != null)
+                {
+                    Debug.Log("[" + element.ToString() + "]");
+                }
+                else
+                {
+                    Debug.Log("[NULL ELEMENT]");
+                }
             }
         }
     }

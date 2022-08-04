@@ -110,11 +110,12 @@ namespace Game.Singleplayer
 
         private bool[] FilterPressedNotes(bool[] pressedNotes)
         {
-            for (int i = 0; i < pressedNotes.Length; i++)
+            bool[] modifyKeys = new bool[pressedNotes.Length];
+            for (int i = 0; i < modifyKeys.Length; i++)
             {
-                pressedNotes[i] &= !_needReleaseKeys[i];
+                modifyKeys[i] = pressedNotes[i] && !_needReleaseKeys[i];
             }
-            return pressedNotes;
+            return modifyKeys;
         }
     }
 }

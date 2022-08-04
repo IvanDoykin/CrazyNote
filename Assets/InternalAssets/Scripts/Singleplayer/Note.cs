@@ -16,7 +16,6 @@ namespace Game.Singleplayer
         public int VerticalPosition { get; private set; }
 
         private NoteObjectPool _pool;
-        private bool _initialized = false;
 
         public void Initialize(int horizontalPosition, int verticalPosition)
         {

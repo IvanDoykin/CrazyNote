@@ -7,13 +7,13 @@ namespace Game.Singleplayer
 {
     public class NotesDetector : MonoBehaviour
     {
-        public const float TimeToDestroy = 2.15f;
-        public const float TimeToTrigger = 1.9f;
-        public const float TimeToRegister = 1.5f;
+        public const float TimeToDestroy = 2.2f;
+        public const float TimeToTrigger = 1.97f;
+        public const float TimeToRegister = 1.75f;
 
         private readonly List<Note> _registredNotes = new List<Note>();
-        public IEnumerator<Note> AvailableNotes => _registredNotes.Where(note => note.Timer >= TimeToTrigger).GetEnumerator();
-        public IEnumerator<Note> RegistredNotes => _registredNotes.GetEnumerator();
+        public List<Note> AvailableNotes => _registredNotes.Where(note => note.Timer >= TimeToTrigger).ToList();
+        public List<Note> RegistredNotes => _registredNotes;
 
         private void Awake()
         {
@@ -39,7 +39,9 @@ namespace Game.Singleplayer
         public Note[] GetRegistredOneTimeNotes(int verticalPosition)
         {
             Note[] notes = new Note[5];
-            
+            Debug.Log("Note pos = " + verticalPosition);
+            _registredNotes.ToArray().Log();
+
             for (int i = 0; i < _registredNotes.Count; i++)
             {
                 if (_registredNotes[i].VerticalPosition == verticalPosition)
@@ -53,7 +55,7 @@ namespace Game.Singleplayer
 
         public void TriggerNote(Note note)
         {
-            if (_registredNotes.Contains(note))
+            if (_registredNotes.Contains(note) && note.Timer >= TimeToTrigger)
             {
                 note.Remove(true);
                 _registredNotes.Remove(note);
