@@ -34,8 +34,8 @@ namespace Game.Singleplayer
                 Debug.Log("comparing successful");
                 input.RawInput.PressedKeys.Log();
 
-                InputHasChanged(input.ModifiedKeys);
                 TriggerNotes(input, _detector.AvailableNotes);
+                InputHasChanged(input.ModifiedKeys);
             }
 
             DEBUGhitsNmisses.text = "+" + DEBUG_HITS + " -" + DEBUG_MISSES;
@@ -67,9 +67,9 @@ namespace Game.Singleplayer
 
             canPressedNotes.Log();
 
-            for (int i = 0; i < input.RawInput.PressedKeys.Length; i++)
+            for (int i = 0; i < input.ModifiedKeys.Length; i++)
             {
-                if (input.RawInput.PressedKeys[i] != canPressedNotes[i])
+                if (input.ModifiedKeys[i] != canPressedNotes[i])
                 {
                     return false;
                 }
@@ -119,8 +119,8 @@ namespace Game.Singleplayer
         {
             for (int i = 0; i < notes.Length; i++)
             {
-                Debug.LogWarning("Input[" + i + "] = " + input.RawInput.PressedKeys[i].ToString() + " (notes[i] == null) = " + (notes[i] == null));
-                if (input.RawInput.PressedKeys[i] == (notes[i] == null))
+                Debug.LogWarning("Input[" + i + "] = " + input.ModifiedKeys.ToString() + " (notes[i] == null) = " + (notes[i] == null));
+                if (input.ModifiedKeys[i] == (notes[i] == null))
                 {
                     return false;
                 }
