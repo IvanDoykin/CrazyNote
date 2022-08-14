@@ -108,6 +108,11 @@ namespace Game.Singleplayer
                 }
             }
 
+            if (triggerNotes.Count > 0)
+            {
+                DEBUG_HITS++;
+            }
+
             triggerNotes.ToArray().Log();
             for (int i = 0; i < triggerNotes.Count; i++)
             {
