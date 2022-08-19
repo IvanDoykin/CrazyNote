@@ -610,6 +610,7 @@ IL2CPP_EXTERN_C RuntimeClass* EventSystem_t5DC458FCD0355A74CDCCE79287B38B9C4278E
 IL2CPP_EXTERN_C RuntimeClass* Event_tED49F8EC5A2514F6E877E301B1AB7ABE4647253E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* FallbackMaterial_t34F3811743F5B0EEF3F543CCF13DB3B8D467328D_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Func_2_tB6A984E062893AE4E1375B76C22534E5433D9B81_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* GUIUtility_t0730B6D76CF479611ACF80504321B06286D12DE5_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Graphic_tF07D777035055CF93BA5F46F77ED5EDFEFF9AE24_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IDisposable_t099785737FC6A1E3699919A94109383715A8D807_il2cpp_TypeInfo_var;
@@ -8689,6 +8690,22 @@ public:
 	inline void set_m_Ptr_0(intptr_t value)
 	{
 		___m_Ptr_0 = value;
+	}
+};
+
+struct TouchScreenKeyboard_t7964B2E9E52C4E095B14F01C32774B98CA11711E_StaticFields
+{
+public:
+	// System.Boolean UnityEngine.TouchScreenKeyboard::<disableInPlaceEditing>k__BackingField
+	bool ___U3CdisableInPlaceEditingU3Ek__BackingField_1;
+
+public:
+	inline static int32_t get_offset_of_U3CdisableInPlaceEditingU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(TouchScreenKeyboard_t7964B2E9E52C4E095B14F01C32774B98CA11711E_StaticFields, ___U3CdisableInPlaceEditingU3Ek__BackingField_1)); }
+	inline bool get_U3CdisableInPlaceEditingU3Ek__BackingField_1() const { return ___U3CdisableInPlaceEditingU3Ek__BackingField_1; }
+	inline bool* get_address_of_U3CdisableInPlaceEditingU3Ek__BackingField_1() { return &___U3CdisableInPlaceEditingU3Ek__BackingField_1; }
+	inline void set_U3CdisableInPlaceEditingU3Ek__BackingField_1(bool value)
+	{
+		___U3CdisableInPlaceEditingU3Ek__BackingField_1 = value;
 	}
 };
 
@@ -22681,60 +22698,86 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TMP_InputField_get_shouldHideSoftKeyboar
 		L_0 = Application_get_platform_mB22F7F39CDD46667C3EF64507E55BB7DA18F66C4(/*hidden argument*/NULL);
 		V_0 = L_0;
 		int32_t L_1 = V_0;
-		if ((((int32_t)L_1) > ((int32_t)((int32_t)11))))
+		if ((((int32_t)L_1) > ((int32_t)((int32_t)20))))
 		{
-			goto IL_0016;
+			goto IL_001d;
 		}
 	}
 	{
 		int32_t L_2 = V_0;
 		if ((((int32_t)L_2) == ((int32_t)8)))
 		{
-			goto IL_0029;
+			goto IL_003a;
 		}
 	}
 	{
 		int32_t L_3 = V_0;
 		if ((((int32_t)L_3) == ((int32_t)((int32_t)11))))
 		{
-			goto IL_0029;
+			goto IL_003a;
 		}
 	}
-	{
-		goto IL_0030;
-	}
-
-IL_0016:
 	{
 		int32_t L_4 = V_0;
 		if ((!(((uint32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_4, (int32_t)((int32_t)18)))) > ((uint32_t)2))))
 		{
-			goto IL_0029;
+			goto IL_003a;
 		}
 	}
+	{
+		goto IL_0041;
+	}
+
+IL_001d:
 	{
 		int32_t L_5 = V_0;
-		if ((!(((uint32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_5, (int32_t)((int32_t)31)))) > ((uint32_t)1))))
-		{
-			goto IL_0029;
-		}
-	}
-	{
-		int32_t L_6 = V_0;
-		if ((!(((uint32_t)L_6) == ((uint32_t)((int32_t)34)))))
+		if ((((int32_t)L_5) > ((int32_t)((int32_t)32))))
 		{
 			goto IL_0030;
 		}
 	}
-
-IL_0029:
 	{
-		// return m_HideSoftKeyboard;
-		bool L_7 = __this->get_m_HideSoftKeyboard_43();
-		return L_7;
+		int32_t L_6 = V_0;
+		if ((((int32_t)L_6) == ((int32_t)((int32_t)25))))
+		{
+			goto IL_003a;
+		}
+	}
+	{
+		int32_t L_7 = V_0;
+		if ((!(((uint32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_7, (int32_t)((int32_t)31)))) > ((uint32_t)1))))
+		{
+			goto IL_003a;
+		}
+	}
+	{
+		goto IL_0041;
 	}
 
 IL_0030:
+	{
+		int32_t L_8 = V_0;
+		if ((((int32_t)L_8) == ((int32_t)((int32_t)34))))
+		{
+			goto IL_003a;
+		}
+	}
+	{
+		int32_t L_9 = V_0;
+		if ((!(((uint32_t)L_9) == ((uint32_t)((int32_t)38)))))
+		{
+			goto IL_0041;
+		}
+	}
+
+IL_003a:
+	{
+		// return m_HideSoftKeyboard;
+		bool L_10 = __this->get_m_HideSoftKeyboard_43();
+		return L_10;
+	}
+
+IL_0041:
 	{
 		// return true;
 		return (bool)1;
@@ -22756,113 +22799,139 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_InputField_set_shouldHideSoftKeyboar
 		L_0 = Application_get_platform_mB22F7F39CDD46667C3EF64507E55BB7DA18F66C4(/*hidden argument*/NULL);
 		V_0 = L_0;
 		int32_t L_1 = V_0;
-		if ((((int32_t)L_1) > ((int32_t)((int32_t)11))))
+		if ((((int32_t)L_1) > ((int32_t)((int32_t)20))))
 		{
-			goto IL_0016;
+			goto IL_001d;
 		}
 	}
 	{
 		int32_t L_2 = V_0;
 		if ((((int32_t)L_2) == ((int32_t)8)))
 		{
-			goto IL_0029;
+			goto IL_003a;
 		}
 	}
 	{
 		int32_t L_3 = V_0;
 		if ((((int32_t)L_3) == ((int32_t)((int32_t)11))))
 		{
-			goto IL_0029;
+			goto IL_003a;
 		}
 	}
-	{
-		goto IL_0038;
-	}
-
-IL_0016:
 	{
 		int32_t L_4 = V_0;
 		if ((!(((uint32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_4, (int32_t)((int32_t)18)))) > ((uint32_t)2))))
 		{
-			goto IL_0029;
+			goto IL_003a;
 		}
 	}
 	{
+		goto IL_0049;
+	}
+
+IL_001d:
+	{
 		int32_t L_5 = V_0;
-		if ((!(((uint32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_5, (int32_t)((int32_t)31)))) > ((uint32_t)1))))
+		if ((((int32_t)L_5) > ((int32_t)((int32_t)32))))
 		{
-			goto IL_0029;
+			goto IL_0030;
 		}
 	}
 	{
 		int32_t L_6 = V_0;
-		if ((!(((uint32_t)L_6) == ((uint32_t)((int32_t)34)))))
+		if ((((int32_t)L_6) == ((int32_t)((int32_t)25))))
 		{
-			goto IL_0038;
+			goto IL_003a;
+		}
+	}
+	{
+		int32_t L_7 = V_0;
+		if ((!(((uint32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_7, (int32_t)((int32_t)31)))) > ((uint32_t)1))))
+		{
+			goto IL_003a;
+		}
+	}
+	{
+		goto IL_0049;
+	}
+
+IL_0030:
+	{
+		int32_t L_8 = V_0;
+		if ((((int32_t)L_8) == ((int32_t)((int32_t)34))))
+		{
+			goto IL_003a;
+		}
+	}
+	{
+		int32_t L_9 = V_0;
+		if ((!(((uint32_t)L_9) == ((uint32_t)((int32_t)38)))))
+		{
+			goto IL_0049;
 		}
 	}
 
-IL_0029:
+IL_003a:
 	{
 		// SetPropertyUtility.SetStruct(ref m_HideSoftKeyboard, value);
-		bool* L_7 = __this->get_address_of_m_HideSoftKeyboard_43();
-		bool L_8 = ___value0;
-		bool L_9;
-		L_9 = SetPropertyUtility_SetStruct_TisBoolean_t07D1E3F34E4813023D64F584DFF7B34C9D922F37_m846BCA03F323826D80CDD301307B7FF01A717A24((bool*)L_7, L_8, /*hidden argument*/SetPropertyUtility_SetStruct_TisBoolean_t07D1E3F34E4813023D64F584DFF7B34C9D922F37_m846BCA03F323826D80CDD301307B7FF01A717A24_RuntimeMethod_var);
+		bool* L_10 = __this->get_address_of_m_HideSoftKeyboard_43();
+		bool L_11 = ___value0;
+		bool L_12;
+		L_12 = SetPropertyUtility_SetStruct_TisBoolean_t07D1E3F34E4813023D64F584DFF7B34C9D922F37_m846BCA03F323826D80CDD301307B7FF01A717A24((bool*)L_10, L_11, /*hidden argument*/SetPropertyUtility_SetStruct_TisBoolean_t07D1E3F34E4813023D64F584DFF7B34C9D922F37_m846BCA03F323826D80CDD301307B7FF01A717A24_RuntimeMethod_var);
 		// break;
-		goto IL_003f;
+		goto IL_0050;
 	}
 
-IL_0038:
+IL_0049:
 	{
 		// m_HideSoftKeyboard = true;
 		__this->set_m_HideSoftKeyboard_43((bool)1);
 	}
 
-IL_003f:
+IL_0050:
 	{
 		// if (m_HideSoftKeyboard == true && m_SoftKeyboard != null && TouchScreenKeyboard.isSupported && m_SoftKeyboard.active)
-		bool L_10 = __this->get_m_HideSoftKeyboard_43();
-		if (!L_10)
+		bool L_13 = __this->get_m_HideSoftKeyboard_43();
+		if (!L_13)
 		{
-			goto IL_0076;
+			goto IL_0087;
 		}
 	}
 	{
-		TouchScreenKeyboard_t7964B2E9E52C4E095B14F01C32774B98CA11711E * L_11 = __this->get_m_SoftKeyboard_20();
-		if (!L_11)
-		{
-			goto IL_0076;
-		}
-	}
-	{
-		bool L_12;
-		L_12 = TouchScreenKeyboard_get_isSupported_m0DB9F5600113241DD766588D28192A62185C158F(/*hidden argument*/NULL);
-		if (!L_12)
-		{
-			goto IL_0076;
-		}
-	}
-	{
-		TouchScreenKeyboard_t7964B2E9E52C4E095B14F01C32774B98CA11711E * L_13 = __this->get_m_SoftKeyboard_20();
-		NullCheck(L_13);
-		bool L_14;
-		L_14 = TouchScreenKeyboard_get_active_m07DBA2A13D1062188AB6BE05BAA61C90197E55E2(L_13, /*hidden argument*/NULL);
+		TouchScreenKeyboard_t7964B2E9E52C4E095B14F01C32774B98CA11711E * L_14 = __this->get_m_SoftKeyboard_20();
 		if (!L_14)
 		{
-			goto IL_0076;
+			goto IL_0087;
+		}
+	}
+	{
+		bool L_15;
+		L_15 = TouchScreenKeyboard_get_isSupported_m0DB9F5600113241DD766588D28192A62185C158F(/*hidden argument*/NULL);
+		if (!L_15)
+		{
+			goto IL_0087;
+		}
+	}
+	{
+		TouchScreenKeyboard_t7964B2E9E52C4E095B14F01C32774B98CA11711E * L_16 = __this->get_m_SoftKeyboard_20();
+		NullCheck(L_16);
+		bool L_17;
+		L_17 = TouchScreenKeyboard_get_active_m07DBA2A13D1062188AB6BE05BAA61C90197E55E2(L_16, /*hidden argument*/NULL);
+		if (!L_17)
+		{
+			goto IL_0087;
 		}
 	}
 	{
 		// m_SoftKeyboard.active = false;
-		TouchScreenKeyboard_t7964B2E9E52C4E095B14F01C32774B98CA11711E * L_15 = __this->get_m_SoftKeyboard_20();
-		NullCheck(L_15);
-		TouchScreenKeyboard_set_active_m506FA44E4FA49466735258D0257AC14AAC6AC245(L_15, (bool)0, /*hidden argument*/NULL);
+		TouchScreenKeyboard_t7964B2E9E52C4E095B14F01C32774B98CA11711E * L_18 = __this->get_m_SoftKeyboard_20();
+		NullCheck(L_18);
+		TouchScreenKeyboard_set_active_m506FA44E4FA49466735258D0257AC14AAC6AC245(L_18, (bool)0, /*hidden argument*/NULL);
 		// m_SoftKeyboard = null;
 		__this->set_m_SoftKeyboard_20((TouchScreenKeyboard_t7964B2E9E52C4E095B14F01C32774B98CA11711E *)NULL);
 	}
 
-IL_0076:
+IL_0087:
 	{
 		// }
 		return;
@@ -22878,33 +22947,59 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TMP_InputField_isKeyboardUsingEvents_mB0
 		L_0 = Application_get_platform_mB22F7F39CDD46667C3EF64507E55BB7DA18F66C4(/*hidden argument*/NULL);
 		V_0 = L_0;
 		int32_t L_1 = V_0;
-		if ((((int32_t)L_1) == ((int32_t)8)))
+		if ((((int32_t)L_1) > ((int32_t)((int32_t)11))))
 		{
 			goto IL_0016;
 		}
 	}
 	{
 		int32_t L_2 = V_0;
-		if ((((int32_t)L_2) == ((int32_t)((int32_t)11))))
+		if ((((int32_t)L_2) == ((int32_t)8)))
 		{
-			goto IL_0016;
+			goto IL_0027;
 		}
 	}
 	{
 		int32_t L_3 = V_0;
-		if ((!(((uint32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_3, (int32_t)((int32_t)31)))) <= ((uint32_t)1))))
+		if ((((int32_t)L_3) == ((int32_t)((int32_t)11))))
 		{
-			goto IL_0018;
+			goto IL_0027;
 		}
+	}
+	{
+		goto IL_0029;
 	}
 
 IL_0016:
+	{
+		int32_t L_4 = V_0;
+		if ((((int32_t)L_4) == ((int32_t)((int32_t)25))))
+		{
+			goto IL_0027;
+		}
+	}
+	{
+		int32_t L_5 = V_0;
+		if ((!(((uint32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_5, (int32_t)((int32_t)31)))) > ((uint32_t)1))))
+		{
+			goto IL_0027;
+		}
+	}
+	{
+		int32_t L_6 = V_0;
+		if ((!(((uint32_t)L_6) == ((uint32_t)((int32_t)38)))))
+		{
+			goto IL_0029;
+		}
+	}
+
+IL_0027:
 	{
 		// return false;
 		return (bool)0;
 	}
 
-IL_0018:
+IL_0029:
 	{
 		// return true;
 		return (bool)1;
@@ -25957,8 +26052,15 @@ IL_00bb:
 // System.String TMPro.TMP_InputField::get_clipboard()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TMP_InputField_get_clipboard_m1CD65E1A026CC9D7AE1698D4A20AEA261F93BA47 (const RuntimeMethod* method)
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GUIUtility_t0730B6D76CF479611ACF80504321B06286D12DE5_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
 	{
 		// return GUIUtility.systemCopyBuffer;
+		IL2CPP_RUNTIME_CLASS_INIT(GUIUtility_t0730B6D76CF479611ACF80504321B06286D12DE5_il2cpp_TypeInfo_var);
 		String_t* L_0;
 		L_0 = GUIUtility_get_systemCopyBuffer_m64CEF1CB0627F80D3CEEB458BA60DC9C1FA6141E(/*hidden argument*/NULL);
 		return L_0;
@@ -25967,9 +26069,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TMP_InputField_get_clipboard_m1CD65
 // System.Void TMPro.TMP_InputField::set_clipboard(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_InputField_set_clipboard_mFF0BBDC0B742EDF38CFB02ADA734FBD20CA5D754 (String_t* ___value0, const RuntimeMethod* method)
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GUIUtility_t0730B6D76CF479611ACF80504321B06286D12DE5_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
 	{
 		// GUIUtility.systemCopyBuffer = value;
 		String_t* L_0 = ___value0;
+		IL2CPP_RUNTIME_CLASS_INIT(GUIUtility_t0730B6D76CF479611ACF80504321B06286D12DE5_il2cpp_TypeInfo_var);
 		GUIUtility_set_systemCopyBuffer_m1C5EAC38441C94C430AA13DF9942E1786CFCAC95(L_0, /*hidden argument*/NULL);
 		// }
 		return;
@@ -25979,60 +26088,59 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_InputField_set_clipboard_mFF0BBDC0B7
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TMP_InputField_InPlaceEditing_mE166AA1A2806C67A38F1BE67679DB56BFC63051D (TMP_InputField_tD50B4F3E6822EAC2720FAED56B86E98183F61D59 * __this, const RuntimeMethod* method)
 {
 	{
-		// if (m_TouchKeyboardAllowsInPlaceEditing || (TouchScreenKeyboard.isSupported && (Application.platform == RuntimePlatform.WSAPlayerX86 || Application.platform == RuntimePlatform.WSAPlayerX64 || Application.platform == RuntimePlatform.WSAPlayerARM)))
-		bool L_0 = __this->get_m_TouchKeyboardAllowsInPlaceEditing_89();
-		if (L_0)
+		// if (Application.platform == RuntimePlatform.WSAPlayerX86 || Application.platform == RuntimePlatform.WSAPlayerX64 || Application.platform == RuntimePlatform.WSAPlayerARM)
+		int32_t L_0;
+		L_0 = Application_get_platform_mB22F7F39CDD46667C3EF64507E55BB7DA18F66C4(/*hidden argument*/NULL);
+		if ((((int32_t)L_0) == ((int32_t)((int32_t)18))))
 		{
-			goto IL_002a;
+			goto IL_001b;
 		}
 	}
 	{
-		bool L_1;
-		L_1 = TouchScreenKeyboard_get_isSupported_m0DB9F5600113241DD766588D28192A62185C158F(/*hidden argument*/NULL);
-		if (!L_1)
+		int32_t L_1;
+		L_1 = Application_get_platform_mB22F7F39CDD46667C3EF64507E55BB7DA18F66C4(/*hidden argument*/NULL);
+		if ((((int32_t)L_1) == ((int32_t)((int32_t)19))))
 		{
-			goto IL_002c;
+			goto IL_001b;
 		}
 	}
 	{
 		int32_t L_2;
 		L_2 = Application_get_platform_mB22F7F39CDD46667C3EF64507E55BB7DA18F66C4(/*hidden argument*/NULL);
-		if ((((int32_t)L_2) == ((int32_t)((int32_t)18))))
+		if ((!(((uint32_t)L_2) == ((uint32_t)((int32_t)20)))))
 		{
-			goto IL_002a;
-		}
-	}
-	{
-		int32_t L_3;
-		L_3 = Application_get_platform_mB22F7F39CDD46667C3EF64507E55BB7DA18F66C4(/*hidden argument*/NULL);
-		if ((((int32_t)L_3) == ((int32_t)((int32_t)19))))
-		{
-			goto IL_002a;
-		}
-	}
-	{
-		int32_t L_4;
-		L_4 = Application_get_platform_mB22F7F39CDD46667C3EF64507E55BB7DA18F66C4(/*hidden argument*/NULL);
-		if ((!(((uint32_t)L_4) == ((uint32_t)((int32_t)20)))))
-		{
-			goto IL_002c;
+			goto IL_002b;
 		}
 	}
 
-IL_002a:
+IL_001b:
 	{
-		// return true;
+		// return !TouchScreenKeyboard.isSupported || m_TouchKeyboardAllowsInPlaceEditing;
+		bool L_3;
+		L_3 = TouchScreenKeyboard_get_isSupported_m0DB9F5600113241DD766588D28192A62185C158F(/*hidden argument*/NULL);
+		if (!L_3)
+		{
+			goto IL_0029;
+		}
+	}
+	{
+		bool L_4 = __this->get_m_TouchKeyboardAllowsInPlaceEditing_89();
+		return L_4;
+	}
+
+IL_0029:
+	{
 		return (bool)1;
 	}
 
-IL_002c:
+IL_002b:
 	{
 		// if (TouchScreenKeyboard.isSupported && shouldHideSoftKeyboard)
 		bool L_5;
 		L_5 = TouchScreenKeyboard_get_isSupported_m0DB9F5600113241DD766588D28192A62185C158F(/*hidden argument*/NULL);
 		if (!L_5)
 		{
-			goto IL_003d;
+			goto IL_003c;
 		}
 	}
 	{
@@ -26040,7 +26148,7 @@ IL_002c:
 		L_6 = TMP_InputField_get_shouldHideSoftKeyboard_mA683BEA5803670B9E0E09EE589477460D5D99E94(__this, /*hidden argument*/NULL);
 		if (!L_6)
 		{
-			goto IL_003d;
+			goto IL_003c;
 		}
 	}
 	{
@@ -26048,14 +26156,14 @@ IL_002c:
 		return (bool)1;
 	}
 
-IL_003d:
+IL_003c:
 	{
 		// if (TouchScreenKeyboard.isSupported && shouldHideSoftKeyboard == false && shouldHideMobileInput == false)
 		bool L_7;
 		L_7 = TouchScreenKeyboard_get_isSupported_m0DB9F5600113241DD766588D28192A62185C158F(/*hidden argument*/NULL);
 		if (!L_7)
 		{
-			goto IL_0056;
+			goto IL_0055;
 		}
 	}
 	{
@@ -26063,7 +26171,7 @@ IL_003d:
 		L_8 = TMP_InputField_get_shouldHideSoftKeyboard_mA683BEA5803670B9E0E09EE589477460D5D99E94(__this, /*hidden argument*/NULL);
 		if (L_8)
 		{
-			goto IL_0056;
+			goto IL_0055;
 		}
 	}
 	{
@@ -26071,7 +26179,7 @@ IL_003d:
 		L_9 = TMP_InputField_get_shouldHideMobileInput_mD9788AA566AC8D73615D61C3F06DB8E7FD1D7ADC(__this, /*hidden argument*/NULL);
 		if (L_9)
 		{
-			goto IL_0056;
+			goto IL_0055;
 		}
 	}
 	{
@@ -26079,7 +26187,7 @@ IL_003d:
 		return (bool)0;
 	}
 
-IL_0056:
+IL_0055:
 	{
 		// return true;
 		return (bool)1;
@@ -29127,7 +29235,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TMP_InputField_GetScrollPositionRelativ
 		L_13 = Rect_get_height_m42FEF31015A269E6E2B7E6F62E72E5BF6602302A((Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878 *)(&V_0), /*hidden argument*/NULL);
 		// scrollPosition = (int)((scrollPosition * 1000) + 0.5f) / 1000.0f;
 		// return scrollPosition;
-		return ((float)((float)((float)((float)((int32_t)((int32_t)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)((float)((float)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_subtract((float)L_5, (float)L_6)), (float)L_10))/(float)((float)il2cpp_codegen_subtract((float)L_12, (float)L_13)))), (float)(1000.0f))), (float)(0.5f)))))))/(float)(1000.0f)));
+		return ((float)((float)((float)((float)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)((float)((float)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_subtract((float)L_5, (float)L_6)), (float)L_10))/(float)((float)il2cpp_codegen_subtract((float)L_12, (float)L_13)))), (float)(1000.0f))), (float)(0.5f))))))/(float)(1000.0f)));
 	}
 }
 // System.String TMPro.TMP_InputField::GetSelectedString()

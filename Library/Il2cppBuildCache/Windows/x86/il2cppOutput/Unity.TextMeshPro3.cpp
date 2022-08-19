@@ -22967,7 +22967,7 @@ IL_0006:
 		int32_t L_7 = V_1;
 		float L_8;
 		L_8 = powf((16.0f), ((float)((float)((int32_t)il2cpp_codegen_subtract((int32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_6, (int32_t)1)), (int32_t)L_7)))));
-		V_0 = ((int32_t)il2cpp_codegen_add((int32_t)L_0, (int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)L_4, (int32_t)((int32_t)((int32_t)L_8))))));
+		V_0 = ((int32_t)il2cpp_codegen_add((int32_t)L_0, (int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)L_4, (int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(L_8)))));
 		// for (int i = 0; i < s.Length; i++)
 		int32_t L_9 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_9, (int32_t)1));
@@ -25500,7 +25500,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TMPro_ExtensionMethods_Compare_mE7F36F93
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_9 = ___v21;
 		float L_10 = L_9.get_y_3();
 		int32_t L_11 = ___accuracy2;
-		V_0 = (bool)((((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_7, (float)((float)((float)L_8))))))) == ((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_10, (float)((float)((float)L_11))))))))? 1 : 0);
+		V_0 = (bool)((((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_7, (float)((float)((float)L_8)))))) == ((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_10, (float)((float)((float)L_11)))))))? 1 : 0);
 		// bool z = (int)(v1.z * accuracy) == (int)(v2.z * accuracy);
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_12 = ___v10;
 		float L_13 = L_12.get_z_4();
@@ -25508,11 +25508,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TMPro_ExtensionMethods_Compare_mE7F36F93
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_15 = ___v21;
 		float L_16 = L_15.get_z_4();
 		int32_t L_17 = ___accuracy2;
-		V_1 = (bool)((((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_13, (float)((float)((float)L_14))))))) == ((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_16, (float)((float)((float)L_17))))))))? 1 : 0);
+		V_1 = (bool)((((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_13, (float)((float)((float)L_14)))))) == ((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_16, (float)((float)((float)L_17)))))))? 1 : 0);
 		// return x && y && z;
 		bool L_18 = V_0;
 		bool L_19 = V_1;
-		return (bool)((int32_t)((int32_t)((int32_t)((int32_t)((((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_1, (float)((float)((float)L_2))))))) == ((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_4, (float)((float)((float)L_5))))))))? 1 : 0)&(int32_t)L_18))&(int32_t)L_19));
+		return (bool)((int32_t)((int32_t)((int32_t)((int32_t)((((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_1, (float)((float)((float)L_2)))))) == ((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_4, (float)((float)((float)L_5)))))))? 1 : 0)&(int32_t)L_18))&(int32_t)L_19));
 	}
 }
 // System.Boolean TMPro.TMPro_ExtensionMethods::Compare(UnityEngine.Quaternion,UnityEngine.Quaternion,System.Int32)
@@ -25536,7 +25536,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TMPro_ExtensionMethods_Compare_mEA4CA9AF
 		Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4  L_9 = ___q21;
 		float L_10 = L_9.get_y_1();
 		int32_t L_11 = ___accuracy2;
-		V_0 = (bool)((((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_7, (float)((float)((float)L_8))))))) == ((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_10, (float)((float)((float)L_11))))))))? 1 : 0);
+		V_0 = (bool)((((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_7, (float)((float)((float)L_8)))))) == ((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_10, (float)((float)((float)L_11)))))))? 1 : 0);
 		// bool z = (int)(q1.z * accuracy) == (int)(q2.z * accuracy);
 		Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4  L_12 = ___q10;
 		float L_13 = L_12.get_z_2();
@@ -25544,7 +25544,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TMPro_ExtensionMethods_Compare_mEA4CA9AF
 		Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4  L_15 = ___q21;
 		float L_16 = L_15.get_z_2();
 		int32_t L_17 = ___accuracy2;
-		V_1 = (bool)((((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_13, (float)((float)((float)L_14))))))) == ((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_16, (float)((float)((float)L_17))))))))? 1 : 0);
+		V_1 = (bool)((((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_13, (float)((float)((float)L_14)))))) == ((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_16, (float)((float)((float)L_17)))))))? 1 : 0);
 		// bool w = (int)(q1.w * accuracy) == (int)(q2.w * accuracy);
 		Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4  L_18 = ___q10;
 		float L_19 = L_18.get_w_3();
@@ -25552,12 +25552,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TMPro_ExtensionMethods_Compare_mEA4CA9AF
 		Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4  L_21 = ___q21;
 		float L_22 = L_21.get_w_3();
 		int32_t L_23 = ___accuracy2;
-		V_2 = (bool)((((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_19, (float)((float)((float)L_20))))))) == ((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_22, (float)((float)((float)L_23))))))))? 1 : 0);
+		V_2 = (bool)((((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_19, (float)((float)((float)L_20)))))) == ((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_22, (float)((float)((float)L_23)))))))? 1 : 0);
 		// return x && y && z && w;
 		bool L_24 = V_0;
 		bool L_25 = V_1;
 		bool L_26 = V_2;
-		return (bool)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_1, (float)((float)((float)L_2))))))) == ((int32_t)((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_4, (float)((float)((float)L_5))))))))? 1 : 0)&(int32_t)L_24))&(int32_t)L_25))&(int32_t)L_26));
+		return (bool)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_1, (float)((float)((float)L_2)))))) == ((int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_4, (float)((float)((float)L_5)))))))? 1 : 0)&(int32_t)L_24))&(int32_t)L_25))&(int32_t)L_26));
 	}
 }
 #ifdef __clang__
@@ -35004,7 +35004,7 @@ IL_1b67:
 		float L_883 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSize_73();
 		float L_884 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSizeMin_86();
 		float L_885;
-		L_885 = Mathf_Max_m4CE510E1F1013B33275F01543731A51A58BA0775(((float)((float)((float)((float)((int32_t)((int32_t)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_883, (float)(20.0f))), (float)(0.5f)))))))/(float)(20.0f))), L_884, /*hidden argument*/NULL);
+		L_885 = Mathf_Max_m4CE510E1F1013B33275F01543731A51A58BA0775(((float)((float)((float)((float)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_883, (float)(20.0f))), (float)(0.5f))))))/(float)(20.0f))), L_884, /*hidden argument*/NULL);
 		((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->set_m_fontSize_73(L_885);
 		// return;
 		return;
@@ -35618,7 +35618,7 @@ IL_206b:
 		float L_999 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSize_73();
 		float L_1000 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSizeMin_86();
 		float L_1001;
-		L_1001 = Mathf_Max_m4CE510E1F1013B33275F01543731A51A58BA0775(((float)((float)((float)((float)((int32_t)((int32_t)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_999, (float)(20.0f))), (float)(0.5f)))))))/(float)(20.0f))), L_1000, /*hidden argument*/NULL);
+		L_1001 = Mathf_Max_m4CE510E1F1013B33275F01543731A51A58BA0775(((float)((float)((float)((float)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_999, (float)(20.0f))), (float)(0.5f))))))/(float)(20.0f))), L_1000, /*hidden argument*/NULL);
 		((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->set_m_fontSize_73(L_1001);
 		// return;
 		return;
@@ -35877,7 +35877,7 @@ IL_2279:
 		float L_1060 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSize_73();
 		float L_1061 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSizeMin_86();
 		float L_1062;
-		L_1062 = Mathf_Max_m4CE510E1F1013B33275F01543731A51A58BA0775(((float)((float)((float)((float)((int32_t)((int32_t)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_1060, (float)(20.0f))), (float)(0.5f)))))))/(float)(20.0f))), L_1061, /*hidden argument*/NULL);
+		L_1062 = Mathf_Max_m4CE510E1F1013B33275F01543731A51A58BA0775(((float)((float)((float)((float)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_1060, (float)(20.0f))), (float)(0.5f))))))/(float)(20.0f))), L_1061, /*hidden argument*/NULL);
 		((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->set_m_fontSize_73(L_1062);
 		// return;
 		return;
@@ -36239,7 +36239,7 @@ IL_2596:
 		float L_1138 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSize_73();
 		float L_1139 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSizeMin_86();
 		float L_1140;
-		L_1140 = Mathf_Max_m4CE510E1F1013B33275F01543731A51A58BA0775(((float)((float)((float)((float)((int32_t)((int32_t)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_1138, (float)(20.0f))), (float)(0.5f)))))))/(float)(20.0f))), L_1139, /*hidden argument*/NULL);
+		L_1140 = Mathf_Max_m4CE510E1F1013B33275F01543731A51A58BA0775(((float)((float)((float)((float)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_1138, (float)(20.0f))), (float)(0.5f))))))/(float)(20.0f))), L_1139, /*hidden argument*/NULL);
 		((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->set_m_fontSize_73(L_1140);
 		// return;
 		return;
@@ -39195,7 +39195,7 @@ IL_3c65:
 		float L_1873 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSize_73();
 		float L_1874 = ((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->get_m_fontSizeMax_87();
 		float L_1875;
-		L_1875 = Mathf_Min_mD28BD5C9012619B74E475F204F96603193E99B14(((float)((float)((float)((float)((int32_t)((int32_t)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_1873, (float)(20.0f))), (float)(0.5f)))))))/(float)(20.0f))), L_1874, /*hidden argument*/NULL);
+		L_1875 = Mathf_Min_mD28BD5C9012619B74E475F204F96603193E99B14(((float)((float)((float)((float)il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)L_1873, (float)(20.0f))), (float)(0.5f))))))/(float)(20.0f))), L_1874, /*hidden argument*/NULL);
 		((TMP_Text_t86179C97C713E1A6B3751B48DC7A16C874A7B262 *)__this)->set_m_fontSize_73(L_1875);
 		// return;
 		return;
@@ -41449,10 +41449,10 @@ IL_54a4:
 		V_172 = L_2891;
 		// float dx = (int)x0;
 		float L_2892 = V_169;
-		V_173 = ((float)((float)((int32_t)((int32_t)L_2892))));
+		V_173 = ((float)((float)il2cpp_codegen_cast_double_to_int<int32_t>(L_2892)));
 		// float dy = (int)y0;
 		float L_2893 = V_170;
-		V_174 = ((float)((float)((int32_t)((int32_t)L_2893))));
+		V_174 = ((float)((float)il2cpp_codegen_cast_double_to_int<int32_t>(L_2893)));
 		// x0 = x0 - dx;
 		float L_2894 = V_169;
 		float L_2895 = V_173;

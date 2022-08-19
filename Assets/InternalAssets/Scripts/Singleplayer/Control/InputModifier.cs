@@ -23,6 +23,7 @@ namespace Game.Singleplayer
     {
         private GameInput _input;
         private bool[] _needReleaseKeys;
+        private bool[] _lastInputKeys;
 
         [SerializeField] private List<Image> rawInputImages;
         [SerializeField] private List<Image> rawInputNeedUpImages;
@@ -32,6 +33,7 @@ namespace Game.Singleplayer
         {
             _input = GetComponent<GameInput>();
             _needReleaseKeys = new bool[_input.GetRawInput().PressedKeys.Length];
+            _lastInputKeys = new bool[_input.GetRawInput().PressedKeys.Length];
             GuitarControlRuler.InputHasChanged += ChangeNeedReleasedKeys;
         }
 
@@ -51,9 +53,28 @@ namespace Game.Singleplayer
             }
         }
 
+        private bool CompareOnPositiveChanges(RawInput currentInput)
+        {
+            for (int i = 0; i < currentInput.PressedKeys.Length; i++)
+            {
+                if (!_lastInputKeys[i] && currentInput.PressedKeys[i])
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public Input GetModifiedInput()
         {
             RawInput input = _input.GetRawInput();
+
+            if (CompareOnPositiveChanges(input))
+            {
+                SetReleasedNotes(input.PressedKeys);
+            }
+
+            _lastInputKeys = input.PressedKeys;
 
             for (int i = 0; i < input.PressedKeys.Length; i++)
             {

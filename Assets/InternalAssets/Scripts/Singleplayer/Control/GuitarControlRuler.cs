@@ -48,8 +48,9 @@ namespace Game.Singleplayer
                 return false;
             }
 
+            bool[] shouldPressedNotes = new bool[input.RawInput.PressedKeys.Length];
             bool[] canPressedNotes = new bool[input.RawInput.PressedKeys.Length];
-            int closestVerticalPos = 1000000000;
+            int closestVerticalPos = int.MaxValue;
             foreach (var note in notes.Where(note => note.VerticalPosition < closestVerticalPos))
             {
                 closestVerticalPos = note.VerticalPosition;
@@ -61,6 +62,11 @@ namespace Game.Singleplayer
             {
                 if (registredNote.VerticalPosition == closestVerticalPos)
                 {
+                    shouldPressedNotes[registredNote.HorizontalPosition] = true;
+                }
+
+                if (registredNote.VerticalPosition <= closestVerticalPos + 10)
+                {
                     canPressedNotes[registredNote.HorizontalPosition] = true;
                 }
             }
@@ -69,7 +75,7 @@ namespace Game.Singleplayer
 
             for (int i = 0; i < input.ModifiedKeys.Length; i++)
             {
-                if (input.ModifiedKeys[i] != canPressedNotes[i])
+                if ((input.ModifiedKeys[i] != shouldPressedNotes[i]) && (input.ModifiedKeys[i] != canPressedNotes[i]))
                 {
                     return false;
                 }

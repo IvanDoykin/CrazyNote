@@ -7,9 +7,10 @@
       "Outputs": [],
       "TargetDirectories": [],
       "PassIndex": 0,
-      "Deps": [
+      "ToBuildDependencies": [
         1
       ],
+      "ToUseDependencies": [],
       "OverwriteOutputs": true,
       "FrontendResponseFiles": [],
       "AllowUnexpectedOutput": true,
@@ -18,7 +19,7 @@
     },
     {
       "Annotation": "Il2Cpp C:/Users/1/Documents/CrazyNote/Library/Il2cppBuildCache/Windows/x86/Native/GameAssembly.dll",
-      "Action": "\"C:\\Program Files\\Unity\\Hub\\Editor\\2020.3.8f1\\Editor\\Data\\il2cpp/build/deploy/netcoreapp3.1/il2cpp.exe\" --convert-to-cpp --emit-null-checks --enable-array-bounds-check --dotnetprofile=\"unityaot\" --compile-cpp --libil2cpp-static --platform=\"WindowsDesktop\" --architecture=\"x86\" --configuration=\"Release\" --outputpath=\"C:\\Users\\1\\Documents\\CrazyNote\\Library/Il2cppBuildCache/Windows/x86\\Native\\GameAssembly.dll\" --cachedirectory=\"C:\\Users\\1\\Documents\\CrazyNote\\Assets\\..\\Library/il2cpp_cache\" --baselib-directory=\"C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport\\Variations\\win32_nondevelopment_il2cpp\" --avoid-dynamic-library-copy --incremental-g-c-time-slice=3 --profiler-report --map-file-parser=\"C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Tools/MapFileParser/MapFileParser.exe\" --directory=C:/Users/1/Documents/CrazyNote/Temp/StagingArea/Data/Managed --generatedcppdir=C:/Users/1/Documents/CrazyNote/Library/Il2cppBuildCache/Windows/x86/il2cppOutput",
+      "Action": "\"C:\\Program Files\\Unity\\Hub\\Editor\\2020.3.32f1\\Editor\\Data\\il2cpp/build/deploy/netcoreapp3.1/il2cpp.exe\" --convert-to-cpp --emit-null-checks --enable-array-bounds-check --dotnetprofile=\"unityaot\" --compile-cpp --libil2cpp-static --platform=\"WindowsDesktop\" --architecture=\"x86\" --configuration=\"Release\" --outputpath=\"C:\\Users\\1\\Documents\\CrazyNote\\Library/Il2cppBuildCache/Windows/x86\\Native\\GameAssembly.dll\" --cachedirectory=\"C:\\Users\\1\\Documents\\CrazyNote\\Assets\\..\\Library/il2cpp_cache\" --baselib-directory=\"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport\\Variations\\win32_nondevelopment_il2cpp\" --avoid-dynamic-library-copy --incremental-g-c-time-slice=3 --profiler-report --map-file-parser=\"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Tools/MapFileParser/MapFileParser.exe\" --directory=C:/Users/1/Documents/CrazyNote/Temp/StagingArea/Data/Managed --generatedcppdir=C:/Users/1/Documents/CrazyNote/Library/Il2cppBuildCache/Windows/x86/il2cppOutput --stats-output-dir=C:/Users/1/Documents/CrazyNote/Library/Il2cppBuildCache/Windows/x86/il2cppStats",
       "Inputs": [
         "C:/Users/1/Documents/CrazyNote/Temp/StagingArea/Data/Managed",
         "C:/Users/1/Documents/CrazyNote/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll",
@@ -62,16 +63,18 @@
         "C:/Users/1/Documents/CrazyNote/Temp/StagingArea/Data/Managed/UnityEngine.VFXModule.dll",
         "C:/Users/1/Documents/CrazyNote/Temp/StagingArea/Data/Managed/UnityEngine.VideoModule.dll",
         "C:/Users/1/Documents/CrazyNote/Temp/StagingArea/Data/Managed/UnityEngine.VRModule.dll",
-        "C:/Users/1/Documents/CrazyNote/Temp/StagingArea/Data/Managed/UnityEngine.XRModule.dll"
+        "C:/Users/1/Documents/CrazyNote/Temp/StagingArea/Data/Managed/UnityEngine.XRModule.dll",
+        "C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Tools/MapFileParser/MapFileParser.exe",
+        "C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win32_nondevelopment_il2cpp/baselib.dll.lib",
+        "\"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/il2cpp/build/deploy/netcoreapp3.1/il2cpp.exe\""
       ],
       "Outputs": [
         "C:/Users/1/Documents/CrazyNote/Library/Il2cppBuildCache/Windows/x86/Native/GameAssembly.dll"
       ],
-      "TargetDirectories": [
-        "C:/Users/1/Documents/CrazyNote/Library/Il2cppBuildCache/Windows/x86/il2cppOutput"
-      ],
+      "TargetDirectories": [],
       "PassIndex": 0,
-      "Deps": [],
+      "ToBuildDependencies": [],
+      "ToUseDependencies": [],
       "OverwriteOutputs": false,
       "FrontendResponseFiles": [],
       "AllowUnexpectedOutput": true,
@@ -80,6 +83,9 @@
     }
   ],
   "FileSignatures": [
+    {
+      "File": "../../../../../../../../Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win32_nondevelopment_il2cpp"
+    },
     {
       "File": "../../../../Temp/StagingArea/Data/Managed"
     },
@@ -96,6 +102,10 @@
   "GlobSignatures": [
     {
       "Path": "../../../../Temp/StagingArea/Data/Managed"
+    },
+    {
+      "Path": "../../../../../../../../Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win32_nondevelopment_il2cpp",
+      "Recurse": 1
     }
   ],
   "ContentDigestExtensions": [
@@ -116,6 +126,7 @@
   "ScanCacheFileNameTmp": "artifacts/tundra.scancache.tmp",
   "DigestCacheFileName": "artifacts/tundra.digestcache",
   "DigestCacheFileNameTmp": "artifacts/tundra.digestcache.tmp",
+  "DirectoriesCausingImplicitDependencies": [],
         "NamedNodes": {
           "all_tundra_nodes": 0
         }

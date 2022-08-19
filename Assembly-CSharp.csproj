@@ -68,7 +68,9 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanel.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\InputModifier.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\NoteObjectPool.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Settings\ButtonPanel.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\Blocks\Song.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Settings\DefaultSettingsInitializer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\UI\SongPanelButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\SyncTrack.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\RawInput.cs" />
@@ -78,9 +80,12 @@
     <Compile Include="Assets\InternalAssets\Scripts\Data\TypeCode.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Parsers\SongBlockParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\GameInput.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Settings\PlayerPrefsSettings.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\ChartParsing\Data\TrackEvent.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Exit.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\Control\GuitarControlRuler.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\CustomButton.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Settings\GeneralSettings.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsInfoParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\FireAnimator.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\AudioPreview.cs" />
@@ -106,12 +111,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\DifficultyButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\SongSelecting\Parsers\SongsFinder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Singleplayer\ObjectPools\ObjectPool.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Exit.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Settings\ButtonPanel.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Settings\DefaultSettingsInitializer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Settings\KeyboardInputSet.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Settings\PlayerPrefsSettings.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\MainMenu\Settings\GeneralSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
