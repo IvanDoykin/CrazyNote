@@ -7,7 +7,7 @@ namespace Game.Singleplayer
 {
     public class NotesDetector : MonoBehaviour
     {
-        public const float TimeToDestroy = 2.2f;
+        public const float TimeToDestroy = 2.13f;
         public const float TimeToTrigger = 2.0f;
         public const float TimeToRegister = 1.75f;
 
