@@ -29,6 +29,8 @@ namespace Game.Singleplayer
         [SerializeField] private List<Image> rawInputNeedUpImages;
         [SerializeField] private List<Image> modifiedImages;
 
+        public bool[] LastFilteredInput { get; private set; }
+
         private void Awake()
         {
             _input = GetComponent<GameInput>();
@@ -90,6 +92,7 @@ namespace Game.Singleplayer
 
             bool[] filterPressedNotes = FilterPressedNotes(input.PressedKeys);
             SetReleasedNotes(input.ReleasedKeys);
+            LastFilteredInput = filterPressedNotes;
 
             for (int i = 0; i < filterPressedNotes.Length; i++)
             {

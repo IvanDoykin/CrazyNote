@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637960227166339838
+      ticks: 637969818650681856
     m_Hash: 2579487231
   m_LockFileStatus:
     m_FilePath: C:/Users/1/Documents/CrazyNote/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637960227239321479
+      ticks: 637969818658086155
     m_Hash: 155030858
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
