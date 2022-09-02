@@ -1,0 +1,118 @@
+using UnityEngine;
+
+namespace InternalAssets.Scripts
+{
+    public class MainTicker : MonoBehaviour
+    {
+        [SerializeField] private DynamicObjectsFactory _dynamicObjectsFactory;
+
+        private Track _track;
+        
+        private int _currentNoteIndex;
+        private int _currentSyncIndex;
+
+        private int _currentTick;
+        private bool _hasNote;
+
+        private int _needTicksForWide;
+        private double _secondsForOneTick;
+
+        private double _secondsFromLastTick;
+        private int _ticksfromLastWide;
+        
+        public float Bpm { get; private set; }
+        
+        public void Initialize(Track track)
+        {
+            _track = track;
+            Tick(0);
+        }
+
+        private void Update()
+        {
+            if (_track == null)
+            {
+                return;
+            }
+
+            while (_secondsFromLastTick >= _secondsForOneTick)
+            {
+                _currentTick++;
+                _secondsFromLastTick -= _secondsForOneTick;
+                Tick(_currentTick);
+            }
+
+            if (_ticksfromLastWide >= _needTicksForWide && _needTicksForWide != 0 && _hasNote)
+            {
+                _ticksfromLastWide = _track.Song.Resolution - 1;
+                //dynamicObjectsFactory.CreateWide();
+            }
+
+            _secondsFromLastTick += Time.deltaTime;
+            _ticksfromLastWide++;
+        }
+
+        private void SetBpm(float bpm)
+        {
+            Bpm = bpm;
+            _secondsForOneTick = 60.0 / Bpm / _track.Song.Resolution;
+        }
+
+        private void SetTempo(int numerator, int denominator = 2)
+        {
+            if (_currentTick != 0)
+            {
+                //singleplayerScene.CreateWide();
+            }
+
+            _needTicksForWide = _track.Song.Resolution * numerator;
+        }
+
+        private void Tick(int tick)
+        {
+            TickSyncTrack(tick);
+            TickNotes(tick);
+        }
+
+        private void TickSyncTrack(int tick)
+        {
+            if (_track.SyncTrack.TrackBlock.Infos.Count <= _currentSyncIndex) return;
+
+            var temp = _currentSyncIndex;
+            for (var i = temp; _track.SyncTrack.TrackBlock.Infos[i].Position <= tick;)
+            {
+                _currentSyncIndex++;
+
+                if (_track.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.B)
+                    SetBpm(float.Parse(_track.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0f);
+                if (_track.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.TS)
+                    SetTempo(int.Parse(_track.SyncTrack.TrackBlock.Infos[i].Arguments[0]));
+
+                i++;
+                if (_track.SyncTrack.TrackBlock.Infos.Count <= i) return;
+            }
+        }
+
+        private void TickNotes(int tick)
+        {
+            if (_track.Notes.TrackBlock.Infos.Count <= _currentNoteIndex) return;
+
+            var temp = _currentNoteIndex;
+            for (var i = temp; _track.Notes.TrackBlock.Infos[i].Position <= tick;)
+            {
+                _currentNoteIndex++;
+
+                if (_track.Notes.TrackBlock.Infos[i].Code == TypeCode.N)
+                {
+                    if (int.Parse(_track.Notes.TrackBlock.Infos[i].Arguments[0]) > 4) return;
+                    _hasNote = true;
+                    _dynamicObjectsFactory.CreateNote(int.Parse(_track.Notes.TrackBlock.Infos[i].Arguments[0]),
+                        _track.Notes.TrackBlock.Infos[i].Position);
+                }
+
+                i++;
+                if (_track.SyncTrack.TrackBlock.Infos.Count <= i) return;
+            }
+        }
+    }
+}

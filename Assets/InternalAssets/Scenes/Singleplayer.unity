@@ -1774,6 +1774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe5ae6b993e9945901ff3fb1c0a5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
 --- !u!1 &627571997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,7 +2192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolCount: 10
-  wide: {fileID: 6292810856645054877, guid: 64bebbc32b750b444811865ca966a19c, type: 3}
+  _wide: {fileID: 0}
 --- !u!114 &758934455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,6 +2205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66a64172746f764e83a8dcc6b4079ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dynamicObjectsFactory: {fileID: 1270973000}
 --- !u!114 &758934456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,6 +2334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63959dcca4f4ecb4ea485b0f864d845c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 762025031}
 --- !u!1 &769976244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,6 +3352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270972999}
   - component: {fileID: 1270973000}
+  - component: {fileID: 1270973001}
   m_Layer: 0
   m_Name: '[SCENE]'
   m_TagString: Untagged
@@ -3385,13 +3389,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1270972998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a34cb9a9a4e93cb4da8f70e017b48124, type: 3}
+  m_Script: {fileID: 11500000, guid: 4585182786d87cd45b93746832d2c928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  widePlace: {fileID: 1691435915}
-  notePlaces: {fileID: 1528877952}
-  widePool: {fileID: 758934454}
-  notePool: {fileID: 758934456}
+  _widePlace: {fileID: 1691435915}
+  _notePlaces: {fileID: 1528877952}
+  _widePool: {fileID: 758934454}
+  _notePool: {fileID: 758934456}
+--- !u!114 &1270973001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270972998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038c978233944ff4799438f55e5ba2db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _music: {fileID: 1955495132}
+  _ticker: {fileID: 758934455}
 --- !u!1 &1279553833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,7 +4128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b556770ed8bcc734ab628bc5f691a551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  places:
+  _places:
   - {fileID: 887057632}
   - {fileID: 256616855}
   - {fileID: 1691634087}
@@ -4148,19 +4166,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a04d99a4c0c7304f8346c7e12130728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawInputImages:
+  _control: {fileID: 1559874493}
+  _rawInputImages:
   - {fileID: 1325833337}
   - {fileID: 1784708355}
   - {fileID: 745395737}
   - {fileID: 2138242887}
   - {fileID: 460674756}
-  rawInputNeedUpImages:
+  _rawInputNeedUpImages:
   - {fileID: 279116162}
   - {fileID: 946670607}
   - {fileID: 1746642441}
   - {fileID: 139733853}
   - {fileID: 1664565258}
-  modifiedImages:
+  _modifiedImages:
   - {fileID: 1483088131}
   - {fileID: 901337251}
   - {fileID: 1490047401}
@@ -4204,8 +4223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cebaeabb3b4544c8c22d290c6501ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEBUG_MISSES: 0
   DEBUGhitsNmisses: {fileID: 57557030}
+  _detector: {fileID: 1559874494}
+  _input: {fileID: 1559874490}
+  DEBUG_MISSES: 0
 --- !u!114 &1559874494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5176,6 +5197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71760885bceb10140812ecf920741972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio: {fileID: 1955495133}
 --- !u!82 &1955495133
 AudioSource:
   m_ObjectHideFlags: 0

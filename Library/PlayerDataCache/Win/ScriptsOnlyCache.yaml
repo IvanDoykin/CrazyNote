@@ -1,39 +1,32 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Game.KeyboardInputSet
-    - Game.MainMenu.AudioPreview
-    - Game.MainMenu.ButtonPanel
-    - Game.MainMenu.DifficultyButton
-    - Game.MainMenu.Exit
-    - Game.MainMenu.MainMenuUI
-    - Game.MainMenu.SongSelecting.SongPanel
-    - Game.MainMenu.SongSelecting.SongPanelButton
-    - Game.MainMenu.SongSelecting.SongPanelView
-    - Game.MainMenu.SongSelecting.SongsFinder
-    - Game.MainMenu.SongSelecting.SongsInfoParser
-    - Game.MainMenu.SongSelecting.SongsPanelsCreator
-    - Game.MainMenu.StartGameButton
-    - Game.Singleplayer.ComboCounter
-    - Game.Singleplayer.DefaultSettingsInitializer
-    - Game.Singleplayer.FireAnimator
-    - Game.Singleplayer.GuitarAnimator
-    - Game.Singleplayer.GuitarControlRuler
-    - Game.Singleplayer.InputModifier
-    - Game.Singleplayer.KeyboardInput
-    - Game.Singleplayer.MainTicker
-    - Game.Singleplayer.Mover
-    - Game.Singleplayer.MultiplayerBox
-    - Game.Singleplayer.MusicPlayer
-    - Game.Singleplayer.Note
-    - Game.Singleplayer.NoteObjectPool
-    - Game.Singleplayer.NotesDetector
-    - Game.Singleplayer.RockHealthLine
-    - Game.Singleplayer.SingleplayerScene
-    - Game.Singleplayer.Wide
-    - Game.Singleplayer.WideObjectPool
-    - Game.Track
-    - Logger
+    - InternalAssets.Scripts.AudioPreview
+    - InternalAssets.Scripts.ComboCounter
+    - InternalAssets.Scripts.FireAnimator
+    - InternalAssets.Scripts.FretsAnimator
+    - InternalAssets.Scripts.GuitarAnimator
+    - InternalAssets.Scripts.GuitarControlRuler
+    - InternalAssets.Scripts.InputModifier
+    - InternalAssets.Scripts.KeyboardInput
+    - InternalAssets.Scripts.KeyboardInputPanel
+    - InternalAssets.Scripts.KeyboardSettingsHandler
+    - InternalAssets.Scripts.MainMenuUI
+    - InternalAssets.Scripts.MainTicker
+    - InternalAssets.Scripts.Mover
+    - InternalAssets.Scripts.MultiplayerBox
+    - InternalAssets.Scripts.MusicPlayer
+    - InternalAssets.Scripts.Note
+    - InternalAssets.Scripts.NoteObjectPool
+    - InternalAssets.Scripts.NotesDetector
+    - InternalAssets.Scripts.RockHealthLine
+    - InternalAssets.Scripts.SceneLoader
+    - InternalAssets.Scripts.SingleplayerScene
+    - InternalAssets.Scripts.SongPanel
+    - InternalAssets.Scripts.SongPanelView
+    - InternalAssets.Scripts.SongsPanelsCreator
+    - InternalAssets.Scripts.Wide
+    - InternalAssets.Scripts.WideObjectPool
     - NoteSpawnPlaces
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -65,6 +58,61 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
+    Assets/InternalAssets/Scenes/Core.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1646}
+    - Class: 114
+      Script: {instanceID: 1894}
+    - Class: 114
+      Script: {instanceID: 2188}
+    - Class: 114
+      Script: {instanceID: 2508}
+    - Class: 114
+      Script: {instanceID: 2624}
+    - Class: 114
+      Script: {instanceID: 2672}
+    - Class: 114
+      Script: {instanceID: 2806}
+    - Class: 114
+      Script: {instanceID: 3000}
+    - Class: 114
+      Script: {instanceID: 3752}
+    - Class: 114
+      Script: {instanceID: 4074}
+    - Class: 114
+      Script: {instanceID: 4350}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/InternalAssets/Scenes/MainMenu.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -78,8 +126,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -89,67 +135,43 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1506}
+      Script: {instanceID: 1646}
     - Class: 114
-      Script: {instanceID: 1524}
+      Script: {instanceID: 1664}
     - Class: 114
-      Script: {instanceID: 1544}
+      Script: {instanceID: 1894}
     - Class: 114
-      Script: {instanceID: 1756}
+      Script: {instanceID: 2024}
     - Class: 114
-      Script: {instanceID: 1886}
+      Script: {instanceID: 2156}
     - Class: 114
-      Script: {instanceID: 2018}
+      Script: {instanceID: 2508}
     - Class: 114
-      Script: {instanceID: 2050}
+      Script: {instanceID: 2602}
     - Class: 114
-      Script: {instanceID: 2206}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 2228}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 2372}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 2466}
+      Script: {instanceID: 3000}
     - Class: 114
-      Script: {instanceID: 2488}
+      Script: {instanceID: 3092}
     - Class: 114
-      Script: {instanceID: 2536}
+      Script: {instanceID: 3222}
     - Class: 114
-      Script: {instanceID: 2670}
+      Script: {instanceID: 3254}
     - Class: 114
-      Script: {instanceID: 2768}
+      Script: {instanceID: 3362}
     - Class: 114
-      Script: {instanceID: 2866}
-    - Class: 114
-      Script: {instanceID: 2960}
-    - Class: 114
-      Script: {instanceID: 2976}
-    - Class: 114
-      Script: {instanceID: 3090}
-    - Class: 114
-      Script: {instanceID: 3122}
-    - Class: 114
-      Script: {instanceID: 3230}
-    - Class: 114
-      Script: {instanceID: 3288}
-    - Class: 114
-      Script: {instanceID: 3708}
+      Script: {instanceID: 3420}
     - Class: 114
       Script: {instanceID: 3842}
     - Class: 114
-      Script: {instanceID: 3940}
+      Script: {instanceID: 3976}
     - Class: 114
-      Script: {instanceID: 4214}
-    - Class: 114
-      Script: {instanceID: 4280}
-    - Class: 114
-      Script: {instanceID: 4344}
-    - Class: 114
-      Script: {instanceID: 4452}
-    - Class: 114
-      Script: {instanceID: 4470}
-    - Class: 114
-      Script: {instanceID: 4594}
+      Script: {instanceID: 4726}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -206,57 +228,61 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1506}
+      Script: {instanceID: 1646}
     - Class: 114
-      Script: {instanceID: 1562}
+      Script: {instanceID: 1702}
     - Class: 114
-      Script: {instanceID: 1634}
+      Script: {instanceID: 1774}
     - Class: 114
-      Script: {instanceID: 1648}
+      Script: {instanceID: 1788}
     - Class: 114
-      Script: {instanceID: 1726}
+      Script: {instanceID: 1864}
     - Class: 114
-      Script: {instanceID: 1750}
+      Script: {instanceID: 1888}
     - Class: 114
-      Script: {instanceID: 1756}
+      Script: {instanceID: 1894}
     - Class: 114
-      Script: {instanceID: 1910}
+      Script: {instanceID: 2048}
     - Class: 114
-      Script: {instanceID: 1984}
+      Script: {instanceID: 2122}
     - Class: 114
-      Script: {instanceID: 2372}
+      Script: {instanceID: 2508}
     - Class: 114
-      Script: {instanceID: 2488}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 2536}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 2670}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 2866}
+      Script: {instanceID: 3000}
     - Class: 114
-      Script: {instanceID: 2868}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 2986}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3126}
+      Script: {instanceID: 3258}
     - Class: 114
-      Script: {instanceID: 3260}
+      Script: {instanceID: 3392}
     - Class: 114
-      Script: {instanceID: 3316}
+      Script: {instanceID: 3448}
     - Class: 114
-      Script: {instanceID: 3336}
+      Script: {instanceID: 3468}
     - Class: 114
-      Script: {instanceID: 3430}
+      Script: {instanceID: 3562}
     - Class: 114
-      Script: {instanceID: 3476}
+      Script: {instanceID: 3608}
     - Class: 114
-      Script: {instanceID: 3544}
+      Script: {instanceID: 3676}
     - Class: 114
-      Script: {instanceID: 3664}
+      Script: {instanceID: 3798}
     - Class: 114
-      Script: {instanceID: 4050}
+      Script: {instanceID: 4176}
     - Class: 114
-      Script: {instanceID: 4214}
+      Script: {instanceID: 4186}
+    - Class: 114
+      Script: {instanceID: 4350}
+    - Class: 114
+      Script: {instanceID: 24530}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -294,9 +320,9 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: f0b548ecee4fb91530c6f682a4d5a84c
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu
+    namespaceName: InternalAssets.Scripts
     className: MainMenuUI
   - hash:
       serializedVersion: 2
@@ -308,13 +334,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game
-    className: Track
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: KeyboardInput
   - hash:
       serializedVersion: 2
@@ -338,7 +358,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: GuitarAnimator
   - hash:
       serializedVersion: 2
@@ -350,7 +370,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: b572750d6d13c7a1de20863b1558003c
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: WideObjectPool
   - hash:
       serializedVersion: 2
@@ -366,12 +386,6 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
-    className: Destroyer
-  - hash:
-      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -380,13 +394,13 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: MusicPlayer
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: MultiplayerBox
   - hash:
       serializedVersion: 2
@@ -396,21 +410,21 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: e31ad2b10dfc8b2161984b270225f7fc
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu.SongSelecting
+    namespaceName: InternalAssets.Scripts
     className: SongPanel
   - hash:
       serializedVersion: 2
       Hash: cd4ba277e3a66956bfd467599ffdcc24
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: InputModifier
   - hash:
       serializedVersion: 2
       Hash: 55246a059d0ccf56124da5c1c5ff86a7
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: NoteObjectPool
   - hash:
       serializedVersion: 2
@@ -420,10 +434,10 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 8ee191fb4b84c3e738138b5fac22f19f
+      Hash: 9466b07dfc3f66c9ce9fdba327d134e9
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu
-    className: ButtonPanel
+    namespaceName: InternalAssets.Scripts
+    className: KeyboardInputPanel
   - hash:
       serializedVersion: 2
       Hash: 800c50acba124432abb4cf0d47202e06
@@ -450,18 +464,6 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
-    className: DefaultSettingsInitializer
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu.SongSelecting
-    className: SongPanelButton
-  - hash:
-      serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -470,7 +472,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: c921a824d4a4961ccb03f4f96ec494cc
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu.SongSelecting
+    namespaceName: InternalAssets.Scripts
     className: SongsPanelsCreator
   - hash:
       serializedVersion: 2
@@ -500,7 +502,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu.ChartParsing
+    namespaceName: InternalAssets.Scripts
     className: BlockParser
   - hash:
       serializedVersion: 2
@@ -530,7 +532,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu.ChartParsing
+    namespaceName: InternalAssets.Scripts
     className: SongBlockParser
   - hash:
       serializedVersion: 2
@@ -558,12 +560,6 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu
-    className: Exit
-  - hash:
-      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -572,7 +568,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 8e649feac8ec781f4a098f96d4046425
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: GuitarControlRuler
   - hash:
       serializedVersion: 2
@@ -612,15 +608,9 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: b836f0f413eb2216c92768bfafb72a45
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu.SongSelecting
-    className: SongsInfoParser
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: FireAnimator
   - hash:
       serializedVersion: 2
@@ -632,7 +622,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu
+    namespaceName: InternalAssets.Scripts
     className: AudioPreview
   - hash:
       serializedVersion: 2
@@ -644,7 +634,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: Wide
   - hash:
       serializedVersion: 2
@@ -674,7 +664,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: Mover
   - hash:
       serializedVersion: 2
@@ -686,19 +676,19 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 6d587daeec8032ecaa4c8567a330286f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu.SongSelecting
+    namespaceName: InternalAssets.Scripts
     className: SongPanelView
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: RockHealthLine
   - hash:
       serializedVersion: 2
       Hash: 0b80251279ac9157e5fefcff2486b891
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: ComboCounter
   - hash:
       serializedVersion: 2
@@ -740,13 +730,13 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: NotesDetector
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: MainTicker
   - hash:
       serializedVersion: 2
@@ -780,6 +770,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: 14b3b119784ae971b6737773fd2d2a34
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InternalAssets.Scripts
+    className: SceneLoader
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -788,7 +784,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: Note
   - hash:
       serializedVersion: 2
@@ -846,9 +842,15 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
+      Hash: 68a88fb4c2e36d9d8d0afde4aeec869e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InternalAssets.Scripts
+    className: FretsAnimator
+  - hash:
+      serializedVersion: 2
       Hash: 2e4ceb700dcc94c8397313369b89db5b
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.Singleplayer
+    namespaceName: InternalAssets.Scripts
     className: SingleplayerScene
   - hash:
       serializedVersion: 2
@@ -870,34 +872,10 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 0d7d35aaa4958f7930711c0d987cbf96
+      Hash: 9ade690d1e9b3062e86cd352285ee320
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
+    namespaceName: InternalAssets.Scripts
     className: Logger
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu.ChartParsing
-    className: TrackBlockParser
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu
-    className: StartGameButton
-  - hash:
-      serializedVersion: 2
-      Hash: 810e48f6831af4c748a220714646f3d4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu
-    className: DifficultyButton
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Game.MainMenu.SongSelecting
-    className: SongsFinder
   - hash:
       serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
@@ -924,12 +902,13 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 01d43dd1d1f3d70f2510da5e07473708
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Game
-    className: KeyboardInputSet
+    namespaceName: InternalAssets.Scripts
+    className: KeyboardSettingsHandler
   platform: 5
   scenePathNames:
+  - Assets/InternalAssets/Scenes/Core.unity
   - Assets/InternalAssets/Scenes/MainMenu.unity
   - Assets/InternalAssets/Scenes/Singleplayer.unity
   playerPath: D:/Desktop/Build/CrazyNote.exe

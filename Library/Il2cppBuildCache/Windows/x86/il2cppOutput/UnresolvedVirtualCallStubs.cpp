@@ -1650,19 +1650,19 @@ public:
 };
 
 
-// Game.Singleplayer.RawInput
-struct RawInput_t7615B6631EB0DDF778DDB547FA1EC8B870794466 
+// InternalAssets.Scripts.RawInput
+struct RawInput_t57525FE36CCA5B96579367086AA8A8553154D41D 
 {
 public:
-	// System.Boolean[] Game.Singleplayer.RawInput::<JustPressedKeys>k__BackingField
+	// System.Boolean[] InternalAssets.Scripts.RawInput::<JustPressedKeys>k__BackingField
 	BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* ___U3CJustPressedKeysU3Ek__BackingField_0;
-	// System.Boolean[] Game.Singleplayer.RawInput::<PressedKeys>k__BackingField
+	// System.Boolean[] InternalAssets.Scripts.RawInput::<PressedKeys>k__BackingField
 	BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* ___U3CPressedKeysU3Ek__BackingField_1;
-	// System.Boolean[] Game.Singleplayer.RawInput::<ReleasedKeys>k__BackingField
+	// System.Boolean[] InternalAssets.Scripts.RawInput::<ReleasedKeys>k__BackingField
 	BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* ___U3CReleasedKeysU3Ek__BackingField_2;
 
 public:
-	inline static int32_t get_offset_of_U3CJustPressedKeysU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(RawInput_t7615B6631EB0DDF778DDB547FA1EC8B870794466, ___U3CJustPressedKeysU3Ek__BackingField_0)); }
+	inline static int32_t get_offset_of_U3CJustPressedKeysU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(RawInput_t57525FE36CCA5B96579367086AA8A8553154D41D, ___U3CJustPressedKeysU3Ek__BackingField_0)); }
 	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* get_U3CJustPressedKeysU3Ek__BackingField_0() const { return ___U3CJustPressedKeysU3Ek__BackingField_0; }
 	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C** get_address_of_U3CJustPressedKeysU3Ek__BackingField_0() { return &___U3CJustPressedKeysU3Ek__BackingField_0; }
 	inline void set_U3CJustPressedKeysU3Ek__BackingField_0(BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* value)
@@ -1671,7 +1671,7 @@ public:
 		Il2CppCodeGenWriteBarrier((void**)(&___U3CJustPressedKeysU3Ek__BackingField_0), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_U3CPressedKeysU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(RawInput_t7615B6631EB0DDF778DDB547FA1EC8B870794466, ___U3CPressedKeysU3Ek__BackingField_1)); }
+	inline static int32_t get_offset_of_U3CPressedKeysU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(RawInput_t57525FE36CCA5B96579367086AA8A8553154D41D, ___U3CPressedKeysU3Ek__BackingField_1)); }
 	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* get_U3CPressedKeysU3Ek__BackingField_1() const { return ___U3CPressedKeysU3Ek__BackingField_1; }
 	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C** get_address_of_U3CPressedKeysU3Ek__BackingField_1() { return &___U3CPressedKeysU3Ek__BackingField_1; }
 	inline void set_U3CPressedKeysU3Ek__BackingField_1(BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* value)
@@ -1680,7 +1680,7 @@ public:
 		Il2CppCodeGenWriteBarrier((void**)(&___U3CPressedKeysU3Ek__BackingField_1), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_U3CReleasedKeysU3Ek__BackingField_2() { return static_cast<int32_t>(offsetof(RawInput_t7615B6631EB0DDF778DDB547FA1EC8B870794466, ___U3CReleasedKeysU3Ek__BackingField_2)); }
+	inline static int32_t get_offset_of_U3CReleasedKeysU3Ek__BackingField_2() { return static_cast<int32_t>(offsetof(RawInput_t57525FE36CCA5B96579367086AA8A8553154D41D, ___U3CReleasedKeysU3Ek__BackingField_2)); }
 	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* get_U3CReleasedKeysU3Ek__BackingField_2() const { return ___U3CReleasedKeysU3Ek__BackingField_2; }
 	inline BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C** get_address_of_U3CReleasedKeysU3Ek__BackingField_2() { return &___U3CReleasedKeysU3Ek__BackingField_2; }
 	inline void set_U3CReleasedKeysU3Ek__BackingField_2(BooleanU5BU5D_tEC7BAF93C44F875016DAADC8696EE3A465644D3C* value)
@@ -1690,15 +1690,15 @@ public:
 	}
 };
 
-// Native definition for P/Invoke marshalling of Game.Singleplayer.RawInput
-struct RawInput_t7615B6631EB0DDF778DDB547FA1EC8B870794466_marshaled_pinvoke
+// Native definition for P/Invoke marshalling of InternalAssets.Scripts.RawInput
+struct RawInput_t57525FE36CCA5B96579367086AA8A8553154D41D_marshaled_pinvoke
 {
 	int32_t* ___U3CJustPressedKeysU3Ek__BackingField_0;
 	int32_t* ___U3CPressedKeysU3Ek__BackingField_1;
 	int32_t* ___U3CReleasedKeysU3Ek__BackingField_2;
 };
-// Native definition for COM marshalling of Game.Singleplayer.RawInput
-struct RawInput_t7615B6631EB0DDF778DDB547FA1EC8B870794466_marshaled_com
+// Native definition for COM marshalling of InternalAssets.Scripts.RawInput
+struct RawInput_t57525FE36CCA5B96579367086AA8A8553154D41D_marshaled_com
 {
 	int32_t* ___U3CJustPressedKeysU3Ek__BackingField_0;
 	int32_t* ___U3CPressedKeysU3Ek__BackingField_1;
@@ -4129,15 +4129,15 @@ public:
 };
 
 
-// Game.TypeCode
-struct TypeCode_t48739344F1360F542912B2F36F0D6907F87D48EC 
+// InternalAssets.Scripts.TypeCode
+struct TypeCode_t3C5FD70BC552375DE34052441CE76A77B696232B 
 {
 public:
-	// System.Int32 Game.TypeCode::value__
+	// System.Int32 InternalAssets.Scripts.TypeCode::value__
 	int32_t ___value___2;
 
 public:
-	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(TypeCode_t48739344F1360F542912B2F36F0D6907F87D48EC, ___value___2)); }
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(TypeCode_t3C5FD70BC552375DE34052441CE76A77B696232B, ___value___2)); }
 	inline int32_t get_value___2() const { return ___value___2; }
 	inline int32_t* get_address_of_value___2() { return &___value___2; }
 	inline void set_value___2(int32_t value)
@@ -5312,19 +5312,19 @@ public:
 };
 
 
-// Game.MainMenu.ChartParsing.TrackEvent
-struct TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA 
+// InternalAssets.Scripts.TrackEvent
+struct TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4 
 {
 public:
-	// System.Int32 Game.MainMenu.ChartParsing.TrackEvent::<Position>k__BackingField
+	// System.Int32 InternalAssets.Scripts.TrackEvent::<Position>k__BackingField
 	int32_t ___U3CPositionU3Ek__BackingField_0;
-	// Game.TypeCode Game.MainMenu.ChartParsing.TrackEvent::<Code>k__BackingField
+	// InternalAssets.Scripts.TypeCode InternalAssets.Scripts.TrackEvent::<Code>k__BackingField
 	int32_t ___U3CCodeU3Ek__BackingField_1;
-	// System.String[] Game.MainMenu.ChartParsing.TrackEvent::<Arguments>k__BackingField
+	// System.String[] InternalAssets.Scripts.TrackEvent::<Arguments>k__BackingField
 	StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* ___U3CArgumentsU3Ek__BackingField_2;
 
 public:
-	inline static int32_t get_offset_of_U3CPositionU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA, ___U3CPositionU3Ek__BackingField_0)); }
+	inline static int32_t get_offset_of_U3CPositionU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4, ___U3CPositionU3Ek__BackingField_0)); }
 	inline int32_t get_U3CPositionU3Ek__BackingField_0() const { return ___U3CPositionU3Ek__BackingField_0; }
 	inline int32_t* get_address_of_U3CPositionU3Ek__BackingField_0() { return &___U3CPositionU3Ek__BackingField_0; }
 	inline void set_U3CPositionU3Ek__BackingField_0(int32_t value)
@@ -5332,7 +5332,7 @@ public:
 		___U3CPositionU3Ek__BackingField_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CCodeU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA, ___U3CCodeU3Ek__BackingField_1)); }
+	inline static int32_t get_offset_of_U3CCodeU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4, ___U3CCodeU3Ek__BackingField_1)); }
 	inline int32_t get_U3CCodeU3Ek__BackingField_1() const { return ___U3CCodeU3Ek__BackingField_1; }
 	inline int32_t* get_address_of_U3CCodeU3Ek__BackingField_1() { return &___U3CCodeU3Ek__BackingField_1; }
 	inline void set_U3CCodeU3Ek__BackingField_1(int32_t value)
@@ -5340,7 +5340,7 @@ public:
 		___U3CCodeU3Ek__BackingField_1 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CArgumentsU3Ek__BackingField_2() { return static_cast<int32_t>(offsetof(TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA, ___U3CArgumentsU3Ek__BackingField_2)); }
+	inline static int32_t get_offset_of_U3CArgumentsU3Ek__BackingField_2() { return static_cast<int32_t>(offsetof(TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4, ___U3CArgumentsU3Ek__BackingField_2)); }
 	inline StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* get_U3CArgumentsU3Ek__BackingField_2() const { return ___U3CArgumentsU3Ek__BackingField_2; }
 	inline StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A** get_address_of_U3CArgumentsU3Ek__BackingField_2() { return &___U3CArgumentsU3Ek__BackingField_2; }
 	inline void set_U3CArgumentsU3Ek__BackingField_2(StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* value)
@@ -5350,15 +5350,15 @@ public:
 	}
 };
 
-// Native definition for P/Invoke marshalling of Game.MainMenu.ChartParsing.TrackEvent
-struct TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA_marshaled_pinvoke
+// Native definition for P/Invoke marshalling of InternalAssets.Scripts.TrackEvent
+struct TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4_marshaled_pinvoke
 {
 	int32_t ___U3CPositionU3Ek__BackingField_0;
 	int32_t ___U3CCodeU3Ek__BackingField_1;
 	char** ___U3CArgumentsU3Ek__BackingField_2;
 };
-// Native definition for COM marshalling of Game.MainMenu.ChartParsing.TrackEvent
-struct TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA_marshaled_com
+// Native definition for COM marshalling of InternalAssets.Scripts.TrackEvent
+struct TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4_marshaled_com
 {
 	int32_t ___U3CPositionU3Ek__BackingField_0;
 	int32_t ___U3CCodeU3Ek__BackingField_1;
@@ -6549,7 +6549,7 @@ static  int32_t UnresolvedVirtualCall_132 (RuntimeObject * __this, RuntimeObject
 	il2cpp_codegen_no_return();
 }
 
-static  int32_t UnresolvedVirtualCall_133 (RuntimeObject * __this, RuntimeObject * ___Object1, TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA  ___TrackEvent2, int32_t ___Int323, int32_t ___Int324, const RuntimeMethod* method)
+static  int32_t UnresolvedVirtualCall_133 (RuntimeObject * __this, RuntimeObject * ___Object1, TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4  ___TrackEvent2, int32_t ___Int323, int32_t ___Int324, const RuntimeMethod* method)
 {
 	il2cpp_codegen_raise_execution_engine_exception(method);
 	il2cpp_codegen_no_return();
@@ -6693,13 +6693,13 @@ static  int32_t UnresolvedVirtualCall_156 (RuntimeObject * __this, TimeSpan_t4F6
 	il2cpp_codegen_no_return();
 }
 
-static  int32_t UnresolvedVirtualCall_157 (RuntimeObject * __this, TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA  ___TrackEvent1, const RuntimeMethod* method)
+static  int32_t UnresolvedVirtualCall_157 (RuntimeObject * __this, TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4  ___TrackEvent1, const RuntimeMethod* method)
 {
 	il2cpp_codegen_raise_execution_engine_exception(method);
 	il2cpp_codegen_no_return();
 }
 
-static  int32_t UnresolvedVirtualCall_158 (RuntimeObject * __this, TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA  ___TrackEvent1, TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA  ___TrackEvent2, const RuntimeMethod* method)
+static  int32_t UnresolvedVirtualCall_158 (RuntimeObject * __this, TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4  ___TrackEvent1, TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4  ___TrackEvent2, const RuntimeMethod* method)
 {
 	il2cpp_codegen_raise_execution_engine_exception(method);
 	il2cpp_codegen_no_return();
@@ -7323,7 +7323,7 @@ static  PlayableOutput_tE735DC774F014DB1711310988F2F914C66520F82  UnresolvedVirt
 	il2cpp_codegen_no_return();
 }
 
-static  RawInput_t7615B6631EB0DDF778DDB547FA1EC8B870794466  UnresolvedVirtualCall_262 (RuntimeObject * __this, const RuntimeMethod* method)
+static  RawInput_t57525FE36CCA5B96579367086AA8A8553154D41D  UnresolvedVirtualCall_262 (RuntimeObject * __this, const RuntimeMethod* method)
 {
 	il2cpp_codegen_raise_execution_engine_exception(method);
 	il2cpp_codegen_no_return();
@@ -7707,13 +7707,13 @@ static  int8_t UnresolvedVirtualCall_325 (RuntimeObject * __this, TimeSpan_t4F6A
 	il2cpp_codegen_no_return();
 }
 
-static  int8_t UnresolvedVirtualCall_326 (RuntimeObject * __this, TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA  ___TrackEvent1, const RuntimeMethod* method)
+static  int8_t UnresolvedVirtualCall_326 (RuntimeObject * __this, TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4  ___TrackEvent1, const RuntimeMethod* method)
 {
 	il2cpp_codegen_raise_execution_engine_exception(method);
 	il2cpp_codegen_no_return();
 }
 
-static  int8_t UnresolvedVirtualCall_327 (RuntimeObject * __this, TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA  ___TrackEvent1, TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA  ___TrackEvent2, const RuntimeMethod* method)
+static  int8_t UnresolvedVirtualCall_327 (RuntimeObject * __this, TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4  ___TrackEvent1, TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4  ___TrackEvent2, const RuntimeMethod* method)
 {
 	il2cpp_codegen_raise_execution_engine_exception(method);
 	il2cpp_codegen_no_return();
@@ -7935,7 +7935,7 @@ static  Touch_tDEFED247540BCFA4AD452F1D37EEF4E09B4ACD8C  UnresolvedVirtualCall_3
 	il2cpp_codegen_no_return();
 }
 
-static  TrackEvent_tD58CFF392119878412A81D1F9C0E7AC4512484AA  UnresolvedVirtualCall_364 (RuntimeObject * __this, const RuntimeMethod* method)
+static  TrackEvent_t5F29A2DCD6268F3C17FD38FD79F97EAC43A1DAC4  UnresolvedVirtualCall_364 (RuntimeObject * __this, const RuntimeMethod* method)
 {
 	il2cpp_codegen_raise_execution_engine_exception(method);
 	il2cpp_codegen_no_return();
