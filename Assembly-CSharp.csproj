@@ -87,7 +87,7 @@
      <Compile Include="Assets\InternalAssets\Scripts\UI\RockHealth\RockHealthLine.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\UI\ComboBox\ComboCounter.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\Data\SongConfigInfo.cs" />
-     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\NotesDetector.cs" />
+     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\NotesHandler.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\MainTicker.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\Audio\MusicHandler.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\Pool\IPoolable\IPoolable.cs" />

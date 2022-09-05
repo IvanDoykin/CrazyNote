@@ -1278,6 +1278,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d248beff171821d45b640300a60c68bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animators:
+  - {fileID: 1198564987}
+  - {fileID: 1630322675}
+  - {fileID: 1279553836}
+  - {fileID: 627572000}
+  - {fileID: 1851086942}
+  _notesHandler: {fileID: 1559874494}
 --- !u!114 &356225028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4224,7 +4231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DEBUGhitsNmisses: {fileID: 57557030}
-  _detector: {fileID: 1559874494}
+  _handler: {fileID: 1559874494}
   _input: {fileID: 1559874490}
   DEBUG_MISSES: 0
 --- !u!114 &1559874494
@@ -4239,6 +4246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2854445107ffad4bb2051041dbe735f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _factory: {fileID: 1270973000}
 --- !u!1 &1630322672
 GameObject:
   m_ObjectHideFlags: 0

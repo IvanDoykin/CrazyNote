@@ -11,7 +11,7 @@ namespace InternalAssets.Scripts
         public Action<bool[]> InputHasChanged;
         
         [SerializeField] private TextMeshProUGUI DEBUGhitsNmisses;
-        [SerializeField] private NotesDetector _detector;
+        [SerializeField] private NotesHandler _handler;
         [SerializeField] private InputModifier _input;
         
         private int DEBUG_HITS;
@@ -19,16 +19,16 @@ namespace InternalAssets.Scripts
 
         private void Update()
         {
-            _detector.Tick();
+            _handler.Tick();
             var input = _input.GetModifiedInput();
-            var availableNotes = _detector.AvailableNotes;
+            var availableNotes = _handler.AvailableNotes;
 
             if (CompareInputWithNotes(input, availableNotes))
             {
                 Debug.Log("comparing successful");
                 input.RawInput.PressedKeys.Log();
 
-                TriggerNotes(input, _detector.AvailableNotes);
+                TriggerNotes(input, _handler.AvailableNotes);
                 InputHasChanged(input.ModifiedKeys);
             }
 
@@ -48,7 +48,7 @@ namespace InternalAssets.Scripts
 
             Debug.Log("ClosestVerticalPos = " + closestVerticalPos);
 
-            foreach (var registredNote in _detector.RegistredNotes)
+            foreach (var registredNote in _handler.RegistredNotes)
             {
                 if (registredNote.VerticalPosition == closestVerticalPos)
                 {
@@ -78,7 +78,7 @@ namespace InternalAssets.Scripts
                     continue;
                 }
 
-                var checkNotes = _detector.GetRegistredOneTimeNotes(note.VerticalPosition);
+                var checkNotes = _handler.GetRegistredOneTimeNotes(note.VerticalPosition);
                 checkNotes.Log();
 
                 if (CheckNotesOnPressed(input, checkNotes))
@@ -103,7 +103,7 @@ namespace InternalAssets.Scripts
             triggerNotes.ToArray().Log();
             for (var i = 0; i < triggerNotes.Count; i++)
             {
-                _detector.TriggerNote(triggerNotes[i]);
+                _handler.TriggerNote(triggerNotes[i]);
             }
         }
 

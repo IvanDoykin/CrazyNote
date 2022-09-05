@@ -5,8 +5,8 @@ namespace InternalAssets.Scripts
 {
     public class Note : MonoBehaviour, IPoolable
     {
-        public static Action<Note> HasInitialized;
-        public static Action<int, bool> HasHit;
+        public Action<Note> HasInitialized;
+        public Action<int, bool> HasHit;
 
         private NoteObjectPool _pool;
 
@@ -26,12 +26,7 @@ namespace InternalAssets.Scripts
             HorizontalPosition = horizontalPosition;
             VerticalPosition = verticalPosition;
 
-            Timer = NotesDetector.TimeToRegister;
-            Invoke(nameof(PostInitialize), NotesDetector.TimeToRegister);
-        }
-
-        private void PostInitialize()
-        {
+            Timer = 0f;
             HasInitialized?.Invoke(this);
         }
 

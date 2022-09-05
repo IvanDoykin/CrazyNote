@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace InternalAssets.Scripts
@@ -5,20 +6,20 @@ namespace InternalAssets.Scripts
     public class FireAnimator : MonoBehaviour
     {
         private const string fireAnimation = "Fire";
-        private Animator[] _animators;
+        [SerializeField] private Animator[] _animators;
+        [SerializeField] private NotesHandler _notesHandler;
 
-        private void Awake()
+        private void Start()
         {
-            _animators = GetComponentsInChildren<Animator>();
-            Note.HasHit += Fire;
+            _notesHandler.NoteHasHit += Fire;
         }
 
         private void OnDestroy()
         {
-            Note.HasHit -= Fire;
+            _notesHandler.NoteHasHit -= Fire;
         }
 
-        public void Fire(int index, bool hit)
+        private void Fire(int index, bool hit)
         {
             if (hit)
             {
