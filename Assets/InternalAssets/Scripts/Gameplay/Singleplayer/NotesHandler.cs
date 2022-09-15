@@ -11,87 +11,62 @@ namespace InternalAssets.Scripts
         public const float TimeToTrigger = 2.0f;
 
         public Action<int, bool> NoteHasHit;
-        public List<Note> AvailableNotes => RegistredNotes.Where(note => note.Timer >= TimeToTrigger).ToList();
-        public List<Note> RegistredNotes { get; } = new List<Note>();
+        public List<NoteGroup> RegistredNoteGroups { get; } = new List<NoteGroup>();
 
         [SerializeField] private DynamicObjectsFactory _factory;
 
         private void Start()
         {
-            _factory.NoteHasCreated += RegisterNote;
+            _factory.NoteGroupHasCreated += RegisterNoteGroup;
         }
 
         private void OnDestroy()
         {
-            _factory.NoteHasCreated -= RegisterNote;
+            _factory.NoteGroupHasCreated -= RegisterNoteGroup;
         }
 
-        private void RegisterNote(Note note)
-        {
-            Debug.Log("register note");
-            note.HasHit += (int horizontalPosition, bool hit) => NoteHasHit?.Invoke(horizontalPosition, hit);
-            RegistredNotes.Add(note);
-        }
-
-        private void UnregisterNote(Note note)
-        {
-            note.HasHit -= (int horizontalPosition, bool hit) => NoteHasHit?.Invoke(horizontalPosition, hit);
-            RegistredNotes.Remove(note);
-        }
-        
         public void Tick()
         {
-            TickRegistredNotes();
-        }
-
-        public Note[] GetRegistredOneTimeNotes(int verticalPosition)
-        {
-            var notes = new Note[5];
-            Debug.Log("Note pos = " + verticalPosition);
-            RegistredNotes.ToArray().Log();
-
-            for (var i = 0; i < RegistredNotes.Count; i++)
+            for (int i = 0; i < RegistredNoteGroups.Count; i++)
             {
-                if (RegistredNotes[i].VerticalPosition == verticalPosition)
+                RegistredNoteGroups[i].Tick();
+                if (RegistredNoteGroups[i].Timer > TimeToDestroy)
                 {
-                    notes[RegistredNotes[i].HorizontalPosition] = RegistredNotes[i];
+                    UnregisterNoteGroup(RegistredNoteGroups[i]);
                 }
             }
-
-            return notes;
         }
 
-        public void TriggerNote(Note note)
+        private void RegisterNoteGroup(NoteGroup group)
         {
-            if (RegistredNotes.Contains(note) && note.Timer >= TimeToTrigger)
+            Debug.Log("register note");
+            foreach (var note in group.Notes)
             {
-                note.Remove(true);
-                UnregisterNote(note);
+                note.HasHit += (int horizontalPosition, bool hit) => NoteHasHit?.Invoke(horizontalPosition, hit);
             }
+            RegistredNoteGroups.Add(group);
         }
 
-        private void TickRegistredNotes()
+        private void UnregisterNoteGroup(NoteGroup group)
         {
-            var miss = false;
-            for (var i = 0; i < RegistredNotes.Count; i++)
+            foreach (var note in group.Notes)
             {
-                if (RegistredNotes[i].gameObject.activeSelf)
-                {
-                    RegistredNotes[i].Tick();
-                    if (RegistredNotes[i].Timer >= TimeToDestroy)
-                    {
-                        miss = true;
-                        var note = RegistredNotes[i];
-                        note.Remove(false);
-                        UnregisterNote(note);
-                    }
-                }
+                note.HasHit -= (int horizontalPosition, bool hit) => NoteHasHit?.Invoke(horizontalPosition, hit);
+            }
+            group.Trigger(false);
+            RegistredNoteGroups.Remove(group);
+        }
+
+        public bool TryTriggerNoteGroup(NoteGroup group)
+        {
+            if (group.Timer >= TimeToTrigger)
+            {
+                group.Trigger(true);
+                UnregisterNoteGroup(group);
+                return true;
             }
 
-            if (miss)
-            {
-                FindObjectOfType<GuitarControl>().DEBUG_MISSES++;
-            }
+            return false;
         }
     }
 }

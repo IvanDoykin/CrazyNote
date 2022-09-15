@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace InternalAssets.Scripts
@@ -84,34 +85,63 @@ namespace InternalAssets.Scripts
                 _currentSyncIndex++;
 
                 if (_track.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.B)
+                {
                     SetBpm(float.Parse(_track.SyncTrack.TrackBlock.Infos[i].Arguments[0]) / 1000.0f);
+                }
+
                 if (_track.SyncTrack.TrackBlock.Infos[i].Code == TypeCode.TS)
+                {
                     SetTempo(int.Parse(_track.SyncTrack.TrackBlock.Infos[i].Arguments[0]));
+                }
 
                 i++;
-                if (_track.SyncTrack.TrackBlock.Infos.Count <= i) return;
+                if (_track.SyncTrack.TrackBlock.Infos.Count <= i)
+                {
+                    return;
+                }
             }
         }
 
         private void TickNotes(int tick)
         {
-            if (_track.Notes.TrackBlock.Infos.Count <= _currentNoteIndex) return;
+            if (_track.Notes.TrackBlock.Infos.Count <= _currentNoteIndex)
+            {
+                return;
+            }
 
             var temp = _currentNoteIndex;
+            
+            var notes = new List<Note>();
+            var position = -1;
+            bool afterBreak = false;
+            
             for (var i = temp; _track.Notes.TrackBlock.Infos[i].Position <= tick;)
             {
+                position = _track.Notes.TrackBlock.Infos[i].Position;
                 _currentNoteIndex++;
 
                 if (_track.Notes.TrackBlock.Infos[i].Code == TypeCode.N)
                 {
-                    if (int.Parse(_track.Notes.TrackBlock.Infos[i].Arguments[0]) > 4) return;
-                    _hasNote = true;
-                    _dynamicObjectsFactory.CreateNote(int.Parse(_track.Notes.TrackBlock.Infos[i].Arguments[0]),
-                        _track.Notes.TrackBlock.Infos[i].Position);
+                    if (int.Parse(_track.Notes.TrackBlock.Infos[i].Arguments[0]) <= 4)
+                    {
+                        _hasNote = true;
+                        
+                        notes.Add(_dynamicObjectsFactory.CreateNote(int.Parse(_track.Notes.TrackBlock.Infos[i]
+                            .Arguments[0])));
+                    }
                 }
 
                 i++;
-                if (_track.SyncTrack.TrackBlock.Infos.Count <= i) return;
+                
+                if (_track.Notes.TrackBlock.Infos.Count <= i)
+                {
+                    break;
+                }
+            }
+            
+            if (notes.Count > 0)
+            {
+                _dynamicObjectsFactory.CreateNotesGroup(notes.ToArray(), position);
             }
         }
     }

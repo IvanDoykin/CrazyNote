@@ -5,9 +5,9 @@ namespace InternalAssets.Scripts
 {
     public class DynamicObjectsFactory : MonoBehaviour
     {
-        public Action<Note> NoteHasCreated;
+        public Action<NoteGroup> NoteGroupHasCreated;
         public Action<Wide> WideHasCreated;
-        
+
         [SerializeField] private Transform _widePlace;
         [SerializeField] private NoteSpawnPlaces _notePlaces;
 
@@ -17,23 +17,34 @@ namespace InternalAssets.Scripts
         public Transform WidePlace => _widePlace;
         public NoteSpawnPlaces NotePlaces => _notePlaces;
 
-        public void CreateWide()
+        public Wide CreateWide()
         {
             var wideObj = _widePool.Create(_widePlace.position, _widePlace.rotation);
             
             var wide = wideObj.GetComponent<Wide>();
             wide.Initialize(_widePool);
             WideHasCreated?.Invoke(wide);
+
+            return wide;
         }
 
-        public void CreateNote(int id, int position)
+        public NoteGroup CreateNotesGroup(Note[] notes, int verticalPosition)
+        {
+            var group = new NoteGroup(notes, verticalPosition);
+            NoteGroupHasCreated?.Invoke(group);
+
+            return group;
+        }
+        
+        public Note CreateNote(int id)
         {
             var notePlace = _notePlaces.GetPlaceById(id);
             var noteObj = _notePool.Create(notePlace.position, notePlace.rotation, id);
             
             var note = noteObj.GetComponent<Note>();
-            note.Initialize(_notePool, id, position);
-            NoteHasCreated?.Invoke(note);
+            note.Initialize(_notePool, id);
+
+            return note;
         }
     }
 }

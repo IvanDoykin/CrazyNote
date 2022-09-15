@@ -21,104 +21,50 @@ namespace InternalAssets.Scripts
         {
             _handler.Tick();
             var input = _input.GetModifiedInput();
-            var availableNotes = _handler.AvailableNotes;
 
-            if (CompareInputWithNotes(input, availableNotes))
+            if (TryGetCloserNoteGroup(_handler.RegistredNoteGroups, out var group))
             {
                 Debug.Log("comparing successful");
                 input.RawInput.PressedKeys.Log();
 
-                TriggerNotes(input, _handler.AvailableNotes);
-                InputHasChanged(input.ModifiedKeys);
+                TriggerNoteGroup(input, group);
             }
 
             DEBUGhitsNmisses.text = "+" + DEBUG_HITS + " -" + DEBUG_MISSES;
         }
 
-        private bool CompareInputWithNotes(Input input, List<Note> notes)
+        private bool TryGetCloserNoteGroup(List<NoteGroup> noteGroups, out NoteGroup closerNoteGroup)
         {
-            if (notes.Count == 0) return false;
+            closerNoteGroup = null;
 
-            var shouldPressedNotes = new bool[input.RawInput.PressedKeys.Length];
+            if (noteGroups.Count == 0)
+            {
+                return false;
+            }
+
             var closestVerticalPos = int.MaxValue;
-            foreach (var note in notes.Where(note => note.VerticalPosition < closestVerticalPos))
+            foreach (var group in noteGroups)
             {
-                closestVerticalPos = note.VerticalPosition;
-            }
-
-            Debug.Log("ClosestVerticalPos = " + closestVerticalPos);
-
-            foreach (var registredNote in _handler.RegistredNotes)
-            {
-                if (registredNote.VerticalPosition == closestVerticalPos)
+                if (group.VerticalPosition < closestVerticalPos)
                 {
-                    shouldPressedNotes[registredNote.HorizontalPosition] = true;
-                }
-            }
-
-            for (var i = 0; i < input.ModifiedKeys.Length; i++)
-            {
-                if (input.ModifiedKeys[i] != shouldPressedNotes[i] && !input.ModifiedKeys[i])
-                {
-                    return false;
+                    closestVerticalPos = group.VerticalPosition;
+                    closerNoteGroup = group;
                 }
             }
 
             return true;
         }
 
-        private void TriggerNotes(Input input, List<Note> notes)
+        private void TriggerNoteGroup(Input input, NoteGroup group)
         {
-            var triggerNotes = new List<Note>();
-
-            foreach (var note in notes)
+            if (group.IsAllTriggered(input.ModifiedKeys))
             {
-                if (triggerNotes.Contains(note))
+                if (_handler.TryTriggerNoteGroup(group))
                 {
-                    continue;
-                }
-
-                var checkNotes = _handler.GetRegistredOneTimeNotes(note.VerticalPosition);
-                checkNotes.Log();
-
-                if (CheckNotesOnPressed(input, checkNotes))
-                {
-                    foreach (var checkNote in checkNotes)
-                    {
-                        if (checkNote == null)
-                        {
-                            continue;
-                        }
-
-                        if (!triggerNotes.Contains(checkNote))
-                        {
-                            triggerNotes.Add(checkNote);
-                        }
-                    }
+                    DEBUG_HITS++;
+                    InputHasChanged(input.ModifiedKeys);
                 }
             }
-
-            if (triggerNotes.Count > 0) DEBUG_HITS++;
-
-            triggerNotes.ToArray().Log();
-            for (var i = 0; i < triggerNotes.Count; i++)
-            {
-                _handler.TriggerNote(triggerNotes[i]);
-            }
-        }
-
-        private bool CheckNotesOnPressed(Input input, Note[] notes)
-        {
-            for (var i = 0; i < notes.Length; i++)
-            {
-                Debug.LogWarning("Input[" + i + "] = " + input.ModifiedKeys + " (notes[i] == null) = " + (notes[i] == null));
-                if (input.ModifiedKeys[i] == (notes[i] == null) && !input.ModifiedKeys[i])
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
     }
 }
