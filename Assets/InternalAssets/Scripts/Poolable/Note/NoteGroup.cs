@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace InternalAssets.Scripts
@@ -39,10 +40,9 @@ namespace InternalAssets.Scripts
         public bool IsAllTriggered(bool[] input)
         {
             Debug.Log("Notes count = " + Notes.Length);
-            foreach (var note in Notes)
+            for (int i = 0; i < input.Length; i++)
             {
-                input.Log();
-                if (!input[note.HorizontalPosition])
+                if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null != input[i])
                 {
                     return false;
                 }

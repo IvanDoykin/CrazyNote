@@ -17,6 +17,17 @@ namespace InternalAssets.Scripts
         private int DEBUG_HITS;
         public int DEBUG_MISSES;
 
+        private void Start()
+        {
+            _handler.NoteGroupHasHit += ((hit) =>
+            {
+                if (!hit)
+                {
+                    DEBUG_MISSES++;
+                }
+            });
+        }
+
         private void Update()
         {
             _handler.Tick();

@@ -113,7 +113,6 @@ namespace InternalAssets.Scripts
             
             var notes = new List<Note>();
             var position = -1;
-            bool afterBreak = false;
             
             for (var i = temp; _track.Notes.TrackBlock.Infos[i].Position <= tick;)
             {
@@ -125,9 +124,7 @@ namespace InternalAssets.Scripts
                     if (int.Parse(_track.Notes.TrackBlock.Infos[i].Arguments[0]) <= 4)
                     {
                         _hasNote = true;
-                        
-                        notes.Add(_dynamicObjectsFactory.CreateNote(int.Parse(_track.Notes.TrackBlock.Infos[i]
-                            .Arguments[0])));
+                        notes.Add(_dynamicObjectsFactory.CreateNote(int.Parse(_track.Notes.TrackBlock.Infos[i].Arguments[0])));
                     }
                 }
 

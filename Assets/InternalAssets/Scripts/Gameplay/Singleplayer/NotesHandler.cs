@@ -11,6 +11,8 @@ namespace InternalAssets.Scripts
         public const float TimeToTrigger = 2.0f;
 
         public Action<int, bool> NoteHasHit;
+        public Action<bool> NoteGroupHasHit;
+        
         public List<NoteGroup> RegistredNoteGroups { get; } = new List<NoteGroup>();
 
         [SerializeField] private DynamicObjectsFactory _factory;
@@ -32,7 +34,7 @@ namespace InternalAssets.Scripts
                 RegistredNoteGroups[i].Tick();
                 if (RegistredNoteGroups[i].Timer > TimeToDestroy)
                 {
-                    UnregisterNoteGroup(RegistredNoteGroups[i]);
+                    UnregisterNoteGroup(RegistredNoteGroups[i], false);
                 }
             }
         }
@@ -47,13 +49,16 @@ namespace InternalAssets.Scripts
             RegistredNoteGroups.Add(group);
         }
 
-        private void UnregisterNoteGroup(NoteGroup group)
+        private void UnregisterNoteGroup(NoteGroup group, bool hit)
         {
             foreach (var note in group.Notes)
             {
                 note.HasHit -= (int horizontalPosition, bool hit) => NoteHasHit?.Invoke(horizontalPosition, hit);
             }
-            group.Trigger(false);
+            
+            group.Trigger(hit);
+            NoteGroupHasHit?.Invoke(hit);
+            
             RegistredNoteGroups.Remove(group);
         }
 
@@ -62,7 +67,9 @@ namespace InternalAssets.Scripts
             if (group.Timer >= TimeToTrigger)
             {
                 group.Trigger(true);
-                UnregisterNoteGroup(group);
+                NoteGroupHasHit?.Invoke(true);
+
+                UnregisterNoteGroup(group, true);
                 return true;
             }
 
