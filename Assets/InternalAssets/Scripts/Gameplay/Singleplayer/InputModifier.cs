@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -75,10 +76,10 @@ namespace InternalAssets.Scripts
         public Input GetModifiedInput()
         {
             var input = _input.GetRawInput();
-
+            
             if (CompareOnPositiveChanges(input))
             {
-                SetReleasedNotes(input.PressedKeys);
+                StartCoroutine(DelayedReleaseNotes(input.PressedKeys));
             }
 
             _lastInputKeys = input.PressedKeys;
@@ -123,7 +124,19 @@ namespace InternalAssets.Scripts
                 }
             }
 
-            return new Input(input, filterPressedNotes);
+            var modifiedInput = new Input(input, filterPressedNotes);
+            return modifiedInput;
+        }
+
+        private IEnumerator DelayedReleaseNotes(bool[] releasedNotes)
+        {
+            yield return null;
+            yield return null;
+            yield return null;
+            yield return null;
+            yield return null;
+            
+            SetReleasedNotes(releasedNotes);
         }
 
         private void SetReleasedNotes(bool[] releasedNotes)
