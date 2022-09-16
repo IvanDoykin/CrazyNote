@@ -8,6 +8,7 @@ namespace InternalAssets.Scripts
 {
     public class GuitarControl : MonoBehaviour
     {
+        private const int triggeredNotesInRow = 2;
         public Action<bool[]> InputHasChanged;
         
         [SerializeField] private TextMeshProUGUI DEBUGhitsNmisses;
@@ -33,12 +34,15 @@ namespace InternalAssets.Scripts
             _handler.Tick();
             var input = _input.GetModifiedInput();
 
-            if (TryGetCloserNoteGroup(_handler.RegistredNoteGroups, out var group))
+            for (int i = 0; i < triggeredNotesInRow; i++)
             {
-                Debug.Log("comparing successful");
-                input.RawInput.PressedKeys.Log();
+                if (TryGetCloserNoteGroup(_handler.RegistredNoteGroups, out var group))
+                {
+                    Debug.Log("comparing successful");
+                    input.RawInput.PressedKeys.Log();
 
-                TriggerNoteGroup(input, group);
+                    TriggerNoteGroup(input, group);
+                }
             }
 
             DEBUGhitsNmisses.text = "+" + DEBUG_HITS + " -" + DEBUG_MISSES;
