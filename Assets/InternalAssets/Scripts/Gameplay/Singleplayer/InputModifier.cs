@@ -130,12 +130,12 @@ namespace InternalAssets.Scripts
 
         private IEnumerator DelayedReleaseNotes(bool[] releasedNotes)
         {
-            yield return null;
-            yield return null;
-            yield return null;
-            yield return null;
-            yield return null;
-            
+            int frameTimer = 0;
+            while (frameTimer < 5)
+            {
+                frameTimer++;
+                yield return null;
+            }
             SetReleasedNotes(releasedNotes);
         }
 
