@@ -46,6 +46,7 @@ namespace InternalAssets.Scripts
             {
                 note.HasHit += (int horizontalPosition, bool hit) => NoteHasHit?.Invoke(horizontalPosition, hit);
             }
+
             RegistredNoteGroups.Add(group);
         }
 
@@ -66,9 +67,6 @@ namespace InternalAssets.Scripts
         {
             if (group.Timer >= TimeToTrigger)
             {
-                group.Trigger(true);
-                NoteGroupHasHit?.Invoke(true);
-
                 UnregisterNoteGroup(group, true);
                 return true;
             }

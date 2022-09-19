@@ -219,27 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &54792294
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +364,7 @@ GameObject:
   - component: {fileID: 57557029}
   - component: {fileID: 57557031}
   - component: {fileID: 57557030}
+  - component: {fileID: 57557032}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -431,7 +411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: <sprite=0><sprite=0><sprite=0><sprite=0><sprite=0><sprite=0><sprite=0>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -458,10 +438,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.12
-  m_fontSizeBase: 35.12
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 49.99
   m_fontStyle: 0
@@ -508,6 +488,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57557028}
   m_CullTransparentMesh: 1
+--- !u!114 &57557032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57557028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47918ead5f6b42b42adb17aa8e99375d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 57557030}
 --- !u!1 &116350388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,7 +1774,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe5ae6b993e9945901ff3fb1c0a5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _image: {fileID: 0}
+  _boxView: {fileID: 594808198}
+  _sprites:
+  - {fileID: 21300000, guid: 08de70254b9a17141b08547f4494e180, type: 3}
+  - {fileID: 21300000, guid: 8a7fbab128eb548408f68abed2f1dd7f, type: 3}
+  - {fileID: 21300000, guid: b2b71b8d920eebb41a226313b47a3fdb, type: 3}
+  - {fileID: 21300000, guid: a1d69f8691783a64385ce5fbf1c574ad, type: 3}
+  _bonusSprites:
+  - {fileID: 21300000, guid: 4d9f29eaebba7094bbb9af9a163640b0, type: 3}
+  - {fileID: 21300000, guid: 5c59863b2646414469e57f6d9e406a67, type: 3}
+  - {fileID: 21300000, guid: 52cd7b4ea1e010945a30665c6158af30, type: 3}
+  - {fileID: 21300000, guid: 496d77e822c7e374baa1e130407bb569, type: 3}
 --- !u!1 &627571997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,6 +2164,7 @@ GameObject:
   - component: {fileID: 758934455}
   - component: {fileID: 758934456}
   - component: {fileID: 758934454}
+  - component: {fileID: 758934457}
   m_Layer: 0
   m_Name: '[GENERAL]'
   m_TagString: Untagged
@@ -2233,6 +2237,22 @@ MonoBehaviour:
   - {fileID: 8794293679310905712, guid: 6ba192e456c9a4144a2ea11c8ac802c0, type: 3}
   - {fileID: 9041627313079446052, guid: 6ba192e456c9a4144a2ea11c8ac802c0, type: 3}
   - {fileID: -243938744375676594, guid: 6ba192e456c9a4144a2ea11c8ac802c0, type: 3}
+--- !u!114 &758934457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758934452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f24ca1e95d9b83418bc4708613e7cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notesHandler: {fileID: 1559874494}
+  _scoreUI: {fileID: 57557032}
+  _comboUI: {fileID: 1487795304}
+  _multiplayerUI: {fileID: 594808200}
 --- !u!1 &762025029
 GameObject:
   m_ObjectHideFlags: 0
@@ -4154,6 +4174,7 @@ GameObject:
   - component: {fileID: 1559874490}
   - component: {fileID: 1559874494}
   - component: {fileID: 1559874493}
+  - component: {fileID: 1559874495}
   m_Layer: 0
   m_Name: '[CONTROL]'
   m_TagString: Untagged
@@ -4230,10 +4251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cebaeabb3b4544c8c22d290c6501ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEBUGhitsNmisses: {fileID: 57557030}
   _handler: {fileID: 1559874494}
   _input: {fileID: 1559874490}
-  DEBUG_MISSES: 0
 --- !u!114 &1559874494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4247,6 +4266,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _factory: {fileID: 1270973000}
+--- !u!114 &1559874495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559874489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f24ca1e95d9b83418bc4708613e7cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notesHandler: {fileID: 1559874494}
+  _scoreUI: {fileID: 57557032}
+  _comboUI: {fileID: 1487795304}
+  _multiplayerUI: {fileID: 594808200}
 --- !u!1 &1630322672
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,27 +4990,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!20 &1787780317
 Camera:
   m_ObjectHideFlags: 0

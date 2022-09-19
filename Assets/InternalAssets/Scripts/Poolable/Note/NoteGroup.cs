@@ -18,8 +18,6 @@ namespace InternalAssets.Scripts
             notes.CopyTo(Notes, 0);
 
             VerticalPosition = verticalPosition;
-            
-            Debug.Log("Created " + notes.Length + " notes with pos #" + verticalPosition);
         }
 
         public void Tick()
@@ -31,10 +29,8 @@ namespace InternalAssets.Scripts
         {
             for (int i = 0; i < Notes.Length; i++)
             {
-                Debug.Log("Remove note [" + i + "]");
                 Notes[i].Remove(hit);
             }
-            Debug.Log("Removed " + Notes.Length + " notes");
         }
         
         public bool IsAllTriggered(bool[] input)

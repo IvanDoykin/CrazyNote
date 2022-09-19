@@ -11,24 +11,9 @@ namespace InternalAssets.Scripts
         private const int triggeredNotesInRow = 2;
         public Action<bool[]> InputHasChanged;
         
-        [SerializeField] private TextMeshProUGUI DEBUGhitsNmisses;
         [SerializeField] private NotesHandler _handler;
         [SerializeField] private InputModifier _input;
         
-        private int DEBUG_HITS;
-        public int DEBUG_MISSES;
-
-        private void Start()
-        {
-            _handler.NoteGroupHasHit += ((hit) =>
-            {
-                if (!hit)
-                {
-                    DEBUG_MISSES++;
-                }
-            });
-        }
-
         private void Update()
         {
             _handler.Tick();
@@ -44,8 +29,6 @@ namespace InternalAssets.Scripts
                     TriggerNoteGroup(input, group);
                 }
             }
-
-            DEBUGhitsNmisses.text = "+" + DEBUG_HITS + " -" + DEBUG_MISSES;
         }
 
         private bool TryGetCloserNoteGroup(List<NoteGroup> noteGroups, out NoteGroup closerNoteGroup)
@@ -76,7 +59,6 @@ namespace InternalAssets.Scripts
             {
                 if (_handler.TryTriggerNoteGroup(group))
                 {
-                    DEBUG_HITS++;
                     InputHasChanged(input.ModifiedKeys);
                 }
             }
