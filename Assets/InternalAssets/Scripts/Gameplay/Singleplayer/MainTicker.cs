@@ -38,6 +38,7 @@ namespace InternalAssets.Scripts
 
             while (_secondsFromLastTick >= _secondsForOneTick)
             {
+                _ticksfromLastWide++;
                 _currentTick++;
                 _secondsFromLastTick -= _secondsForOneTick;
                 Tick(_currentTick);
@@ -45,12 +46,11 @@ namespace InternalAssets.Scripts
 
             if (_ticksfromLastWide >= _needTicksForWide && _needTicksForWide != 0 && _hasNote)
             {
-                _ticksfromLastWide = _track.Song.Resolution - 1;
-                //dynamicObjectsFactory.CreateWide();
+                _ticksfromLastWide = 0;
+                _dynamicObjectsFactory.CreateWide();
             }
 
             _secondsFromLastTick += Time.deltaTime;
-            _ticksfromLastWide++;
         }
 
         private void SetBpm(float bpm)
@@ -63,7 +63,7 @@ namespace InternalAssets.Scripts
         {
             if (_currentTick != 0)
             {
-                //singleplayerScene.CreateWide();
+                _dynamicObjectsFactory.CreateWide();
             }
 
             _needTicksForWide = _track.Song.Resolution * numerator;

@@ -102,6 +102,7 @@
      <Compile Include="Assets\InternalAssets\Scripts\Animators\FretsAnimator.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\UI\ScoreBox\ScoreCounter.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\Data\Notes.cs" />
+     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\ScoreHandler.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\Utilities\Logger.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\Parsers\TrackBlockParser.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\Poolable\Note\NoteGroup.cs" />
@@ -109,7 +110,6 @@
      <Compile Include="Assets\InternalAssets\Scripts\Pool\ObjectPool.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\UI\KeyboardSettings\KeyboardSettingsHandler.cs" />
      <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\MainMenuScene.cs" />
-     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\ScoreHandler.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

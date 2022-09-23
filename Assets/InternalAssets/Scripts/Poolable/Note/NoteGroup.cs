@@ -38,7 +38,7 @@ namespace InternalAssets.Scripts
             Debug.Log("Notes count = " + Notes.Length);
             for (int i = 0; i < input.Length; i++)
             {
-                if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null != input[i])
+                if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null && !input[i])
                 {
                     return false;
                 }
