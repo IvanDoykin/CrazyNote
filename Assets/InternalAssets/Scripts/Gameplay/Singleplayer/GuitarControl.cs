@@ -26,7 +26,7 @@ namespace InternalAssets.Scripts
                 TriggerNoteGroup(input, group);
             }
         }
-
+        
         private bool TryGetCloserNoteGroup(List<NoteGroup> noteGroups, out NoteGroup closerNoteGroup)
         {
             closerNoteGroup = null;
@@ -51,11 +51,19 @@ namespace InternalAssets.Scripts
 
         private void TriggerNoteGroup(Input input, NoteGroup group)
         {
-            if (group.IsAllTriggered(input.ModifiedKeys))
+            if (group.Timer > NotesHandler.TimeToTrigger)
             {
-                if (_handler.TryTriggerNoteGroup(group))
+                if (group.IsAllTriggered(input.ModifiedKeys, _handler.GetDetectedInput(group, input.ModifiedKeys.Length)))
                 {
-                    InputHasChanged(input.ModifiedKeys);
+                    if (_handler.TryTriggerNoteGroup(group))
+                    {
+                        bool[] modifiedInput = new bool[input.ModifiedKeys.Length];
+                        for (int i = 0; i < group.Notes.Length; i++)
+                        {
+                            modifiedInput[group.Notes[i].HorizontalPosition] = true;
+                        }
+                        InputHasChanged(modifiedInput);
+                    }
                 }
             }
         }

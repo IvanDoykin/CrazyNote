@@ -7,7 +7,9 @@ namespace InternalAssets.Scripts
 {
     public class NotesHandler : MonoBehaviour
     {
-        public const float TimeToDestroy = 2.13f;
+        public const float TimeToDestroy = 2.185f;
+        public const float TimeToDetect = 2.05f;
+        public const float DetectDifferenceTime = 0.75f;
         public const float TimeToTrigger = 2.0f;
 
         public Action<int, bool> NoteHasHit;
@@ -27,6 +29,32 @@ namespace InternalAssets.Scripts
             _factory.NoteGroupHasCreated -= RegisterNoteGroup;
         }
 
+        public bool[] GetDetectedInput(NoteGroup group, int inputLength)
+        {
+            bool[] detectedInput = new bool[inputLength];
+            NoteGroup closerNoteGroup = null;
+            float closerNoteGroupAbs = 0f;
+            foreach (var noteGroup in RegistredNoteGroups)
+            {
+                if (noteGroup.Notes.Length == 1)
+                {
+                    if (group != noteGroup && Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.13f) - Mathf.Clamp(noteGroup.Timer, 0f, 2.13f)) < DetectDifferenceTime && noteGroup.Timer > TimeToDetect)
+                    {
+                        closerNoteGroup = noteGroup;
+                        closerNoteGroupAbs = Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.13f) - Mathf.Clamp(noteGroup.Timer, 0f, 2.13f));
+                        detectedInput[noteGroup.Notes[0].HorizontalPosition] = true;
+                    }
+                }
+            }
+
+            if (closerNoteGroup != null)
+            {
+                Debug.Log("Abs behind #" + group.VerticalPosition + " and #" + closerNoteGroup.VerticalPosition + " = " + closerNoteGroupAbs);
+                detectedInput.Log();
+            }
+            return detectedInput;
+        }
+        
         public void Tick()
         {
             for (int i = 0; i < RegistredNoteGroups.Count; i++)

@@ -33,14 +33,17 @@ namespace InternalAssets.Scripts
             }
         }
         
-        public bool IsAllTriggered(bool[] input)
+        public bool IsAllTriggered(bool[] input, bool[] detectInput)
         {
             Debug.Log("Notes count = " + Notes.Length);
             for (int i = 0; i < input.Length; i++)
             {
-                if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null && !input[i])
+                if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null != input[i])
                 {
-                    return false;
+                    if (input[i] && !detectInput[i] || !input[i])
+                    {
+                        return false;
+                    }
                 }
             }
 

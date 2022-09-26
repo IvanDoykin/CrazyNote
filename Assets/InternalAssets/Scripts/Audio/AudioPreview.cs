@@ -71,6 +71,7 @@ namespace InternalAssets.Scripts
 
                 if (File.Exists(path))
                 {
+                    StopAllCoroutines();
                     StartCoroutine(SetAudioRequest(path, _songTypes[i]));
                 }
             }
@@ -90,6 +91,8 @@ namespace InternalAssets.Scripts
             {
                 _audio.clip = DownloadHandlerAudioClip.GetContent(www);
                 _audio.time = 0;
+                _audio.volume = 0f;
+                _waitForVolumeDown = false;
             }
         }
     }

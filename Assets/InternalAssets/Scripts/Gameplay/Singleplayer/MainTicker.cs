@@ -5,6 +5,9 @@ namespace InternalAssets.Scripts
 {
     public class MainTicker : MonoBehaviour
     {
+        public float Bpm { get; private set; }
+        public int DownbeatTicks => _track.Song.Resolution * 4;
+        
         [SerializeField] private DynamicObjectsFactory _dynamicObjectsFactory;
 
         private Track _track;
@@ -20,8 +23,6 @@ namespace InternalAssets.Scripts
 
         private double _secondsFromLastTick;
         private int _ticksfromLastWide;
-        
-        public float Bpm { get; private set; }
         
         public void Initialize(Track track)
         {
