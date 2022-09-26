@@ -12,7 +12,15 @@ namespace InternalAssets.Scripts
         
         [SerializeField] private NotesHandler _handler;
         [SerializeField] private InputModifier _input;
-        
+
+        private bool[] _lastSuccessfulInput;
+        public bool[] LastSuccessfulInput => _lastSuccessfulInput;
+
+        private void Start()
+        {
+            _lastSuccessfulInput = new bool[5];
+        }
+
         private void Update()
         {
             _handler.Tick();
@@ -20,9 +28,6 @@ namespace InternalAssets.Scripts
 
             if (TryGetCloserNoteGroup(_handler.RegistredNoteGroups, out var group))
             {
-                Debug.Log("comparing successful");
-                input.RawInput.PressedKeys.Log();
-
                 TriggerNoteGroup(input, group);
             }
         }
@@ -53,14 +58,22 @@ namespace InternalAssets.Scripts
         {
             if (group.Timer > NotesHandler.TimeToTrigger)
             {
-                if (group.IsAllTriggered(input.ModifiedKeys, _handler.GetDetectedInput(group, input.ModifiedKeys.Length)))
+                if (group.IsAllTriggered(_lastSuccessfulInput, _handler.GetDetectedInput(group, _lastSuccessfulInput.Length)))
+                {
+                    _handler.TryTriggerNoteGroup(group);
+                }
+
+                else if (group.IsAllTriggered(input.ModifiedKeys, _handler.GetDetectedInput(group, input.ModifiedKeys.Length)))
                 {
                     if (_handler.TryTriggerNoteGroup(group))
                     {
+                        _lastSuccessfulInput = new bool[input.ModifiedKeys.Length];
                         bool[] modifiedInput = new bool[input.ModifiedKeys.Length];
+
                         for (int i = 0; i < group.Notes.Length; i++)
                         {
                             modifiedInput[group.Notes[i].HorizontalPosition] = true;
+                            _lastSuccessfulInput[group.Notes[i].HorizontalPosition] = true;
                         }
                         InputHasChanged(modifiedInput);
                     }

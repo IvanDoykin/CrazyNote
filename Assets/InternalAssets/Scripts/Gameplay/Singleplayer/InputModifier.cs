@@ -100,9 +100,9 @@ namespace InternalAssets.Scripts
             SetReleasedNotes(input.ReleasedKeys);
             LastFilteredInput = filterPressedNotes;
 
-            for (var i = 0; i < filterPressedNotes.Length; i++)
+            for (var i = 0; i < _control.LastSuccessfulInput.Length; i++)
             {
-                if (filterPressedNotes[i])
+                if (_control.LastSuccessfulInput[i])
                 {
                     _modifiedImages[i].color = Color.red;
                 }
