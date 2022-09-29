@@ -8,6 +8,8 @@ namespace InternalAssets.Scripts
 {
     public class GuitarControl : MonoBehaviour
     {
+        private const float holdingTime = 0.1f;
+
         public Action<bool[]> InputHasChanged;
         
         [SerializeField] private NotesHandler _handler;
@@ -15,6 +17,9 @@ namespace InternalAssets.Scripts
 
         private bool[] _lastSuccessfulInput;
         public bool[] LastSuccessfulInput => _lastSuccessfulInput;
+
+        private bool _isHoldingInput = false;
+        private float _holdingTimer = 0f;
 
         private void Start()
         {
@@ -26,12 +31,49 @@ namespace InternalAssets.Scripts
             _handler.Tick();
             var input = _input.GetModifiedInput();
 
+            if (!IsInputEqualLastInput(input.RawInput.PressedKeys))
+            {
+                _lastSuccessfulInput = new bool[5];
+                _isHoldingInput = false;
+            }
+
+            if (_isHoldingInput)
+            {
+                _holdingTimer += Time.deltaTime;
+
+                if (_holdingTimer > holdingTime)
+                {
+                    _isHoldingInput = false;
+                    _lastSuccessfulInput = new bool[5];
+                }
+            }
+
             if (TryGetCloserNoteGroup(_handler.RegistredNoteGroups, out var group))
             {
                 TriggerNoteGroup(input, group);
             }
         }
-        
+
+        private bool IsInputEqualLastInput(bool[] input)
+        {
+            bool isEmpty = true;
+            bool isEqual = true;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i])
+                {
+                    isEmpty = false;
+                }
+
+                if (input[i] != _lastSuccessfulInput[i] && !isEqual)
+                {
+                    isEqual = false;
+                }
+            }
+
+            return isEmpty || (!isEmpty && isEqual);
+        }
+
         private bool TryGetCloserNoteGroup(List<NoteGroup> noteGroups, out NoteGroup closerNoteGroup)
         {
             closerNoteGroup = null;
@@ -58,16 +100,15 @@ namespace InternalAssets.Scripts
         {
             if (group.Timer > NotesHandler.TimeToTrigger)
             {
-                if (group.IsAllTriggered(_lastSuccessfulInput, _handler.GetDetectedInput(group, _lastSuccessfulInput.Length)))
-                {
-                    _handler.TryTriggerNoteGroup(group);
-                }
-
-                else if (group.IsAllTriggered(input.ModifiedKeys, _handler.GetDetectedInput(group, input.ModifiedKeys.Length)))
+                if (group.IsAllTriggered(input.ModifiedKeys, _handler.GetDetectedInput(group, input.ModifiedKeys.Length)))
                 {
                     if (_handler.TryTriggerNoteGroup(group))
                     {
+                        Debug.Log("TRIGGER NOTE");
+                        _holdingTimer = 0f;
                         _lastSuccessfulInput = new bool[input.ModifiedKeys.Length];
+                        _isHoldingInput = true;
+
                         bool[] modifiedInput = new bool[input.ModifiedKeys.Length];
 
                         for (int i = 0; i < group.Notes.Length; i++)
@@ -77,6 +118,11 @@ namespace InternalAssets.Scripts
                         }
                         InputHasChanged(modifiedInput);
                     }
+                }
+
+                else if (group.IsAllTriggered(_lastSuccessfulInput, _handler.GetDetectedInput(group, _lastSuccessfulInput.Length)))
+                {
+                    _handler.TryTriggerNoteGroup(group);
                 }
             }
         }

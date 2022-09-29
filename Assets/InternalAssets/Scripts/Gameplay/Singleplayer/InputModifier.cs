@@ -23,11 +23,11 @@ namespace InternalAssets.Scripts
     public class InputModifier : MonoBehaviour
     {
         [SerializeField] private GuitarControl _control;
-        
+
         [SerializeField] private List<Image> _rawInputImages;
         [SerializeField] private List<Image> _rawInputNeedUpImages;
         [SerializeField] private List<Image> _modifiedImages;
-        
+
         private GameInput _input;
         private bool[] _lastInputKeys;
         private bool[] _needReleaseKeys;
@@ -64,7 +64,7 @@ namespace InternalAssets.Scripts
         {
             for (var i = 0; i < currentInput.PressedKeys.Length; i++)
             {
-                if (!_lastInputKeys[i] && currentInput.PressedKeys[i])
+                if (_lastInputKeys[i] && !currentInput.PressedKeys[i])
                 {
                     return true;
                 }
@@ -76,10 +76,10 @@ namespace InternalAssets.Scripts
         public Input GetModifiedInput()
         {
             var input = _input.GetRawInput();
-            
+
             if (CompareOnPositiveChanges(input))
             {
-                StartCoroutine(DelayedReleaseNotes(input.PressedKeys));
+                SetReleasedNotes(input.ReleasedKeys);
             }
 
             _lastInputKeys = input.PressedKeys;
@@ -97,7 +97,7 @@ namespace InternalAssets.Scripts
             }
 
             var filterPressedNotes = FilterPressedNotes(input.PressedKeys);
-            SetReleasedNotes(input.ReleasedKeys);
+            //SetReleasedNotes(input.ReleasedKeys);
             LastFilteredInput = filterPressedNotes;
 
             for (var i = 0; i < _control.LastSuccessfulInput.Length; i++)
@@ -128,25 +128,11 @@ namespace InternalAssets.Scripts
             return modifiedInput;
         }
 
-        private IEnumerator DelayedReleaseNotes(bool[] releasedNotes)
-        {
-            int frameTimer = 0;
-            while (frameTimer < 5)
-            {
-                frameTimer++;
-                yield return null;
-            }
-            SetReleasedNotes(releasedNotes);
-        }
-
         private void SetReleasedNotes(bool[] releasedNotes)
         {
             for (var i = 0; i < releasedNotes.Length; i++)
             {
-                if (releasedNotes[i])
-                {
-                    _needReleaseKeys[i] = false;
-                }
+                _needReleaseKeys[i] = false;
             }
         }
 

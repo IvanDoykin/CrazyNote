@@ -8,9 +8,9 @@ namespace InternalAssets.Scripts
     public class NotesHandler : MonoBehaviour
     {
         public const float TimeToDestroy = 2.185f;
-        public const float TimeToDetect = 2.05f;
+        public const float TimeToDetect = 2.0f;
         public const float DetectDifferenceTime = 0.75f;
-        public const float TimeToTrigger = 2.0f;
+        public const float TimeToTrigger = 2.05f;
 
         public Action<int, bool> NoteHasHit;
         public Action<bool> NoteGroupHasHit;
