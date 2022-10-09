@@ -8,13 +8,15 @@ namespace InternalAssets.Scripts
 {
     public class MusicPlayer : MonoBehaviour
     {
-        private const float playDelay = 1.925f;
+        public const float PlayDelay = 1.925f;
         [SerializeField] private AudioSource _audio;
+
+        public float ClipTime => _audio.clip.length;
         
         public void Play(AudioClip clip)
         {
             _audio.clip = clip;
-            _audio.PlayDelayed(playDelay);
+            _audio.PlayDelayed(PlayDelay);
         }
     }
 }

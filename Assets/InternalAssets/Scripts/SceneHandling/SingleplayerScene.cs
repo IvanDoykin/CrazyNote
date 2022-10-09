@@ -6,6 +6,7 @@ namespace InternalAssets.Scripts
     {
         [SerializeField] private MusicPlayer _music;
         [SerializeField] private MainTicker _ticker;
+        [SerializeField] private TimeController _timer;
 
         private void Start()
         {
@@ -16,6 +17,7 @@ namespace InternalAssets.Scripts
         {
             _ticker.Initialize(track);
             _music.Play(track.Clip);
+            _timer.Initialize(track.Clip.length + MusicPlayer.PlayDelay);
         }
     }
 }

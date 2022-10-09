@@ -60,7 +60,7 @@ namespace InternalAssets.Scripts
             }
         }
 
-        private bool CompareOnPositiveChanges(RawInput currentInput)
+        private bool CompareOnNegativeChanges(RawInput currentInput)
         {
             for (var i = 0; i < currentInput.PressedKeys.Length; i++)
             {
@@ -77,7 +77,7 @@ namespace InternalAssets.Scripts
         {
             var input = _input.GetRawInput();
 
-            if (CompareOnPositiveChanges(input))
+            if (CompareOnNegativeChanges(input))
             {
                 SetReleasedNotes(input.ReleasedKeys);
             }
@@ -97,7 +97,6 @@ namespace InternalAssets.Scripts
             }
 
             var filterPressedNotes = FilterPressedNotes(input.PressedKeys);
-            //SetReleasedNotes(input.ReleasedKeys);
             LastFilteredInput = filterPressedNotes;
 
             for (var i = 0; i < _control.LastSuccessfulInput.Length; i++)
