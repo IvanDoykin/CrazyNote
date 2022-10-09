@@ -21,7 +21,7 @@ namespace InternalAssets.Scripts
 
         private void Start()
         {
-            _notesHandler.NoteGroupHasHit += HitNote;
+            _notesHandler.NoteGroupHasHit += HitNoteGroup;
             Reset();
         }
 
@@ -36,21 +36,21 @@ namespace InternalAssets.Scripts
             _multiplayerUI.SetMultiplayer(_multiplayer, false);
         }
         
-        private void HitNote(bool hit)
+        private void HitNoteGroup(int notesInGroup, bool hit)
         {
             if (hit)
             {
-                ApplyNote();
+                ApplyNoteGroup(notesInGroup);
             }
             else
             {
-                MissNote();
+                MissNoteGroup();
             }
         }
 
-        private void ApplyNote()
+        private void ApplyNoteGroup(int notesInGroup)
         {
-            _score += baseScoreForNote * _multiplayer;
+            _score += baseScoreForNote * notesInGroup * _multiplayer;
             _scoreUI.SetScore((int)_score);
 
             _combo++;
@@ -58,7 +58,7 @@ namespace InternalAssets.Scripts
 
             if (_multiplayer <= needNotesForMuliplayer.Length)
             {
-                if (_combo > needNotesForMuliplayer[_multiplayer - 1])
+                if (_combo == needNotesForMuliplayer[_multiplayer - 1])
                 {
                     _multiplayer++;
                     _multiplayerUI.SetMultiplayer(_multiplayer, false);
@@ -66,7 +66,7 @@ namespace InternalAssets.Scripts
             }
         }
 
-        private void MissNote()
+        private void MissNoteGroup()
         {
             _combo = 0;
             _multiplayer = 1;

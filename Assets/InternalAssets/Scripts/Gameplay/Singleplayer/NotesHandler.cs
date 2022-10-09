@@ -13,7 +13,7 @@ namespace InternalAssets.Scripts
         public const float TimeToTrigger = 2.05f;
 
         public Action<int, bool> NoteHasHit;
-        public Action<bool> NoteGroupHasHit;
+        public Action<int, bool> NoteGroupHasHit;
         
         public List<NoteGroup> RegistredNoteGroups { get; } = new List<NoteGroup>();
 
@@ -86,7 +86,7 @@ namespace InternalAssets.Scripts
             }
             
             group.Trigger(hit);
-            NoteGroupHasHit?.Invoke(hit);
+            NoteGroupHasHit?.Invoke(group.Notes.Length, hit);
             
             RegistredNoteGroups.Remove(group);
         }
