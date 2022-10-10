@@ -63,5 +63,15 @@ namespace InternalAssets.Scripts
             return new RawInput(new bool[GeneralSettings.KeysCount], new bool[GeneralSettings.KeysCount],
                 new bool[GeneralSettings.KeysCount]);
         }
+
+        public override ServiceInput GetServiceInput()
+        {
+            if (!_initialized)
+            {
+                return new ServiceInput(false);
+            }
+
+            return new ServiceInput(UnityEngine.Input.GetKeyDown(KeyCode.Escape));
+        }
     }
 }

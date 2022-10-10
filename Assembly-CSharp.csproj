@@ -117,6 +117,9 @@
     <Compile Include="Assets\InternalAssets\Scripts\Pool\ObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\KeyboardSettings\KeyboardSettingsHandler.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\MainMenuScene.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Input\ServiceInput.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\PauseController.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\PauseUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -746,9 +749,6 @@
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>

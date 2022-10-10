@@ -11,7 +11,8 @@ namespace InternalAssets.Scripts
         [SerializeField] private DynamicObjectsFactory _dynamicObjectsFactory;
 
         private Track _track;
-        
+        private bool _active = true;
+
         private int _currentNoteIndex;
         private int _currentSyncIndex;
 
@@ -30,9 +31,19 @@ namespace InternalAssets.Scripts
             Tick(0);
         }
 
+        public void SetActive()
+        {
+            _active = true;
+        }
+
+        public void SetInactive()
+        {
+            _active = false;
+        }
+
         private void Update()
         {
-            if (_track == null)
+            if (_track == null || !_active)
             {
                 return;
             }

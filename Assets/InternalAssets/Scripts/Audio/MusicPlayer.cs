@@ -13,6 +13,16 @@ namespace InternalAssets.Scripts
 
         public float ClipTime => _audio.clip.length;
         
+        public void Pause()
+        {
+            _audio.Pause();
+        }
+
+        public void Resume()
+        {
+            _audio.Play();
+        }
+
         public void Play(AudioClip clip)
         {
             _audio.clip = clip;

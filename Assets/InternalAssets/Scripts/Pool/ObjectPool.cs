@@ -23,6 +23,7 @@ namespace InternalAssets.Scripts
         public virtual GameObject Create(GameObject prefab, Vector3 position, Quaternion rotation)
         {
             for (var i = 0; i < objects.Count; i++)
+            {
                 if (!objects[i].activeSelf && objects[i].GetComponent<T>() != null)
                 {
                     objects[i].transform.position = position;
@@ -30,12 +31,16 @@ namespace InternalAssets.Scripts
                     objects[i].SetActive(true);
                     return objects[i];
                 }
+            }
 
             var go = Instantiate(prefab);
             go.transform.position = position;
             go.transform.rotation = rotation;
 
-            if (objects.Count <= poolCount) objects.Add(go);
+            if (objects.Count <= poolCount) 
+            { 
+                objects.Add(go); 
+            }
 
             return go;
         }
@@ -43,9 +48,13 @@ namespace InternalAssets.Scripts
         public void Delete(GameObject go)
         {
             if (objects.Contains(go))
+            {
                 go.SetActive(false);
+            }
             else
+            {
                 Destroy(go);
+            }
         }
     }
 }

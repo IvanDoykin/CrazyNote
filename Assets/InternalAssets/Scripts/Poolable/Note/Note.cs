@@ -8,6 +8,7 @@ namespace InternalAssets.Scripts
         public Action<Note> HasInitialized;
         public Action<int, bool> HasHit;
 
+        [SerializeField] private Mover _mover;
         private NoteObjectPool _pool;
 
         public int HorizontalPosition { get; private set; }
@@ -15,6 +16,16 @@ namespace InternalAssets.Scripts
         public void SetInPool()
         {
             _pool.Delete(gameObject);
+        }
+
+        public void SetActive()
+        {
+            _mover.SetActive();
+        }
+
+        public void SetInactive()
+        {
+            _mover.SetInactive();
         }
 
         public void Initialize(NoteObjectPool pool, int horizontalPosition)

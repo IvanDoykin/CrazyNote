@@ -14,6 +14,22 @@ namespace InternalAssets.Scripts
         private bool _active = false;
         private float _time = 0f;
 
+        public void Initialize(float time)
+        {
+            _time = time;
+            _active = true;
+        }
+
+        public void Pause()
+        {
+            _active = false;
+        }
+
+        public void Resume()
+        {
+            _active = true;
+        }
+
         private void Update()
         {
             if (_active)
@@ -35,12 +51,6 @@ namespace InternalAssets.Scripts
                     _text.text = TimeSpan.FromSeconds(_time).ToString(@"mm\:ss");
                 }
             }
-        }
-
-        public void Activate(float time)
-        {
-            _time = time;
-            _active = true;
         }
     }
 }

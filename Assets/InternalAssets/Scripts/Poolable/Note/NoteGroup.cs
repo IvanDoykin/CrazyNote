@@ -20,6 +20,22 @@ namespace InternalAssets.Scripts
             VerticalPosition = verticalPosition;
         }
 
+        public void SetActive()
+        {
+            foreach (var note in Notes)
+            {
+                note.SetActive();
+            }
+        }
+
+        public void SetInactive()
+        {
+            foreach (var note in Notes)
+            {
+                note.SetInactive();
+            }
+        }
+
         public void Tick()
         {
             Timer += Time.deltaTime;
@@ -33,29 +49,13 @@ namespace InternalAssets.Scripts
             }
         }
         
-        public bool IsAllTriggered(bool[] input, bool[] detectInput)
+        public bool IsAllTriggered(bool[] input, bool[] detectInput, bool[] holdingInput)
         {
             for (int i = 0; i < input.Length; i++)
             {
                 if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null != input[i])
                 {
-                    if (input[i] && !detectInput[i] || !input[i])
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
-
-        public bool IsAllHeld(bool[] holdInput, bool[] detectInput)
-        {
-            for (int i = 0; i < holdInput.Length; i++)
-            {
-                if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null != holdInput[i])
-                {
-                    if (holdInput[i] && !detectInput[i] || !holdInput[i])
+                    if (input[i] && !holdingInput[i] && !detectInput[i] || (!input[i] && !holdingInput[i]))
                     {
                         return false;
                     }

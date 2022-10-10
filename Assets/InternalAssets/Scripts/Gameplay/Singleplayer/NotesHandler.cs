@@ -29,6 +29,22 @@ namespace InternalAssets.Scripts
             _factory.NoteGroupHasCreated -= RegisterNoteGroup;
         }
 
+        public void SetActive()
+        {
+            foreach (var noteGroup in RegistredNoteGroups)
+            {
+                noteGroup.SetActive();
+            }
+        }
+
+        public void SetInactive()
+        {
+            foreach (var noteGroup in RegistredNoteGroups)
+            {
+                noteGroup.SetInactive();
+            }
+        }
+
         public bool[] GetDetectedInput(NoteGroup group, int inputLength)
         {
             bool[] detectedInput = new bool[inputLength];

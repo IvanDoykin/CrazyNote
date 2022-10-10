@@ -11,7 +11,17 @@ namespace InternalAssets.Scripts
 
         public void Initialize(float time)
         {
-            _clock.Activate(time);
+            _clock.Initialize(time);
+        }
+
+        public void SetActive()
+        {
+            _clock.Resume();
+        }
+
+        public void SetInactive()
+        {
+            _clock.Pause();
         }
     }
 }

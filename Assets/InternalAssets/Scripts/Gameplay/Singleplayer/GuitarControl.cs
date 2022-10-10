@@ -18,6 +18,7 @@ namespace InternalAssets.Scripts
         private bool[] _lastSuccessfulInput;
         public bool[] LastSuccessfulInput => _lastSuccessfulInput;
 
+        private bool _active = true;
         private bool _isHoldingInput = false;
         private float _holdingTimer = 0f;
 
@@ -26,15 +27,29 @@ namespace InternalAssets.Scripts
             _lastSuccessfulInput = new bool[5];
         }
 
+        public void SetActive()
+        {
+            _active = true;
+            _handler.SetActive();
+        }
+
+        public void SetInactive()
+        {
+            _active = false;
+            _handler.SetInactive();
+        }
+
         private void Update()
         {
+            if (!_active) return;
+
             _handler.Tick();
             var input = _input.GetModifiedInput();
 
             if (!IsInputEqualLastInput(input.RawInput.PressedKeys))
             {
                 _lastSuccessfulInput = new bool[5];
-                _isHoldingInput = false;
+                //_isHoldingInput = false;
             }
 
             if (_isHoldingInput)
@@ -100,7 +115,7 @@ namespace InternalAssets.Scripts
         {
             if (group.Timer > NotesHandler.TimeToTrigger)
             {
-                if (group.IsAllTriggered(input.ModifiedKeys, _handler.GetDetectedInput(group, input.ModifiedKeys.Length)))
+                if (group.IsAllTriggered(input.ModifiedKeys, _handler.GetDetectedInput(group, input.ModifiedKeys.Length), _lastSuccessfulInput))
                 {
                     if (_handler.TryTriggerNoteGroup(group))
                     {
@@ -120,7 +135,7 @@ namespace InternalAssets.Scripts
                     }
                 }
 
-                else if (group.IsAllTriggered(_lastSuccessfulInput, _handler.GetDetectedInput(group, _lastSuccessfulInput.Length)))
+                else if (group.IsAllTriggered(_lastSuccessfulInput, _handler.GetDetectedInput(group, _lastSuccessfulInput.Length), _lastSuccessfulInput))
                 {
                     _handler.TryTriggerNoteGroup(group);
                 }
