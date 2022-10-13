@@ -14,7 +14,7 @@ namespace InternalAssets.Scripts
 
         public Action<int, bool> NoteHasHit;
         public Action<int, bool> NoteGroupHasHit;
-        
+
         public List<NoteGroup> RegistredNoteGroups { get; } = new List<NoteGroup>();
 
         [SerializeField] private DynamicObjectsFactory _factory;
@@ -70,7 +70,7 @@ namespace InternalAssets.Scripts
             }
             return detectedInput;
         }
-        
+
         public void Tick()
         {
             for (int i = 0; i < RegistredNoteGroups.Count; i++)
@@ -100,22 +100,16 @@ namespace InternalAssets.Scripts
             {
                 note.HasHit -= (int horizontalPosition, bool hit) => NoteHasHit?.Invoke(horizontalPosition, hit);
             }
-            
+
             group.Trigger(hit);
             NoteGroupHasHit?.Invoke(group.Notes.Length, hit);
-            
+
             RegistredNoteGroups.Remove(group);
         }
 
-        public bool TryTriggerNoteGroup(NoteGroup group)
+        public void TriggerNoteGroup(NoteGroup group)
         {
-            if (group.Timer >= TimeToTrigger)
-            {
-                UnregisterNoteGroup(group, true);
-                return true;
-            }
-
-            return false;
+            UnregisterNoteGroup(group, true);
         }
     }
 }

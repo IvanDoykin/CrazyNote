@@ -99,18 +99,6 @@ namespace InternalAssets.Scripts
             var filterPressedNotes = FilterPressedNotes(input.PressedKeys);
             LastFilteredInput = filterPressedNotes;
 
-            for (var i = 0; i < _control.LastSuccessfulInput.Length; i++)
-            {
-                if (_control.LastSuccessfulInput[i])
-                {
-                    _modifiedImages[i].color = Color.red;
-                }
-                else
-                {
-                    _modifiedImages[i].color = Color.white;
-                }
-            }
-
             for (var i = 0; i < _needReleaseKeys.Length; i++)
             {
                 if (_needReleaseKeys[i])

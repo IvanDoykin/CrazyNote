@@ -11,7 +11,7 @@ namespace InternalAssets.Scripts
         public int VerticalPosition { get; private set; }
 
         public float Timer { get; private set; } = 0f;
-        
+
         public NoteGroup(Note[] notes, int verticalPosition)
         {
             Notes = new Note[notes.Length];
@@ -48,17 +48,14 @@ namespace InternalAssets.Scripts
                 Notes[i].Remove(hit);
             }
         }
-        
-        public bool IsAllTriggered(bool[] input, bool[] detectInput, bool[] holdingInput)
+
+        public bool IsAllTriggered(bool[] input)
         {
             for (int i = 0; i < input.Length; i++)
             {
                 if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null != input[i])
                 {
-                    if (input[i] && !holdingInput[i] && !detectInput[i] || (!input[i] && !holdingInput[i]))
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
 
