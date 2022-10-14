@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - InternalAssets.Scripts.FretsAnimator
     - InternalAssets.Scripts.GuitarAnimator
     - InternalAssets.Scripts.GuitarControl
+    - InternalAssets.Scripts.InputHolder
     - InternalAssets.Scripts.InputModifier
     - InternalAssets.Scripts.KeyboardInput
     - InternalAssets.Scripts.KeyboardInputPanel
@@ -317,7 +318,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4354}
     - Class: 114
-      Script: {instanceID: 21696}
+      Script: {instanceID: 21474}
+    - Class: 114
+      Script: {instanceID: 27184}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -613,7 +616,7 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
-      Hash: 3f668210ce36e0165bebb31a77aa07c0
+      Hash: f4d2f98c82f93956fe38f050669c41fc
     assemblyName: Assembly-CSharp.dll
     namespaceName: InternalAssets.Scripts
     className: GuitarControl
@@ -995,6 +998,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: InternalAssets.Scripts
     className: MainMenuScene
+  - hash:
+      serializedVersion: 2
+      Hash: 8b55d4ac1835afc9a6d030e0b08fb9eb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InternalAssets.Scripts
+    className: InputHolder
   platform: 5
   scenePathNames:
   - Assets/InternalAssets/Scenes/Core.unity

@@ -9,7 +9,7 @@ namespace InternalAssets.Scripts
     {
         public const float TimeToDestroy = 2.185f;
         public const float TimeToDetect = 2.0f;
-        public const float DetectDifferenceTime = 0.75f;
+        public const float DetectDifferenceTime = 0.4f;
         public const float TimeToTrigger = 2.05f;
 
         public Action<int, bool> NoteHasHit;
@@ -52,13 +52,13 @@ namespace InternalAssets.Scripts
             float closerNoteGroupAbs = 0f;
             foreach (var noteGroup in RegistredNoteGroups)
             {
-                if (noteGroup.Notes.Length == 1)
+                if (group != noteGroup && Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.13f) - Mathf.Clamp(noteGroup.Timer, 0f, 2.13f)) < DetectDifferenceTime && noteGroup.Timer > TimeToDetect)
                 {
-                    if (group != noteGroup && Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.13f) - Mathf.Clamp(noteGroup.Timer, 0f, 2.13f)) < DetectDifferenceTime && noteGroup.Timer > TimeToDetect)
+                    closerNoteGroup = noteGroup;
+                    closerNoteGroupAbs = Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.13f) - Mathf.Clamp(noteGroup.Timer, 0f, 2.13f));
+                    for (int i = 0; i < noteGroup.Notes.Length; i++)
                     {
-                        closerNoteGroup = noteGroup;
-                        closerNoteGroupAbs = Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.13f) - Mathf.Clamp(noteGroup.Timer, 0f, 2.13f));
-                        detectedInput[noteGroup.Notes[0].HorizontalPosition] = true;
+                        detectedInput[noteGroup.Notes[i].HorizontalPosition] = true;
                     }
                 }
             }

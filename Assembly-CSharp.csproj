@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\InternalAssets\Scripts\Input\ServiceInput.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\Track.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\KeyboardInput.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\Audio\MusicPlayer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\ScoreBox\MultiplayerBox.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\Patchnote.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\PauseController.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\Events.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\SongPanel\SongPanel.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\InputModifier.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\Audio\MusicHandler.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Poolable\IPoolable.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\NoteSpawnPlaces.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\PauseUI.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\SceneLoader.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Poolable\Note\Note.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\Difficulty.cs" />
@@ -117,9 +120,8 @@
     <Compile Include="Assets\InternalAssets\Scripts\Pool\ObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\KeyboardSettings\KeyboardSettingsHandler.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\MainMenuScene.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Input\ServiceInput.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\PauseController.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\PauseUI.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\InputHolder.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Utilities\EqualsExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

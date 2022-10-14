@@ -4747,6 +4747,7 @@ GameObject:
   - component: {fileID: 1559874495}
   - component: {fileID: 1559874496}
   - component: {fileID: 1559874497}
+  - component: {fileID: 1559874498}
   m_Layer: 0
   m_Name: '[CONTROL]'
   m_TagString: Untagged
@@ -4823,6 +4824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cebaeabb3b4544c8c22d290c6501ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _holder: {fileID: 1559874498}
   _handler: {fileID: 1559874494}
   _input: {fileID: 1559874490}
 --- !u!114 &1559874494
@@ -4882,6 +4884,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ui: {fileID: 381114000}
   _guitarAnimator: {fileID: 762025034}
+--- !u!114 &1559874498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559874489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239dd5714ad8ad64ba1f50f6f2eed28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _control: {fileID: 1559874493}
 --- !u!1 &1630322672
 GameObject:
   m_ObjectHideFlags: 0

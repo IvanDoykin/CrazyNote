@@ -9,7 +9,8 @@ namespace InternalAssets.Scripts
     public class GuitarControl : MonoBehaviour
     {
         public Action<bool[]> InputHasChanged;
-        
+
+        [SerializeField] private InputHolder _holder;
         [SerializeField] private NotesHandler _handler;
         [SerializeField] private InputModifier _input;
 
@@ -29,14 +30,33 @@ namespace InternalAssets.Scripts
 
         private void Update()
         {
-            if (!_active) return;
+            if (!_active) 
+            {
+                return; 
+            }
 
+            _holder.Tick();
             _handler.Tick();
-            var input = _input.GetModifiedInput();
 
+            var input = _input.GetModifiedInput();
             if (TryGetCloserNoteGroup(_handler.RegistredNoteGroups, out var group))
             {
-                TriggerNoteGroup(input, group);
+                var detectedKeys = group.Notes.Length;
+
+                var inputKeys = 0;
+                foreach (var key in input.RawInput.PressedKeys)
+                {
+                    if (key)
+                    {
+                        inputKeys++;
+                    }
+                }
+
+                Debug.Log("INPUT = " + inputKeys + ". NEED = " + detectedKeys);
+                if (inputKeys <= Mathf.Max(2, detectedKeys))
+                {
+                    TriggerNoteGroup(input, group);
+                }
             }
         }
 
@@ -64,10 +84,34 @@ namespace InternalAssets.Scripts
 
         private void TriggerNoteGroup(Input input, NoteGroup group)
         {
-            if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys))
+            if (_holder.Initialized)
             {
-                _handler.TriggerNoteGroup(group);
-                InputHasChanged(input.ModifiedKeys);
+                if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys, _holder.HoldingKeys))
+                {
+                    _handler.TriggerNoteGroup(group);
+
+                    var modifiedInput = new bool[input.ModifiedKeys.Length];
+                    for (int i = 0; i < group.Notes.Length; i++)
+                    {
+                        modifiedInput[group.Notes[i].HorizontalPosition] = true;
+                    }
+                    InputHasChanged(input.ModifiedKeys);
+                }
+            }
+
+            else
+            {
+                if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys))
+                {
+                    _handler.TriggerNoteGroup(group);
+
+                    var modifiedInput = new bool[input.ModifiedKeys.Length];
+                    for (int i = 0; i < group.Notes.Length; i++)
+                    {
+                        modifiedInput[group.Notes[i].HorizontalPosition] = true;
+                    }
+                    InputHasChanged(input.ModifiedKeys);
+                }
             }
         }
     }

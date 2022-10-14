@@ -53,7 +53,20 @@ namespace InternalAssets.Scripts
         {
             for (int i = 0; i < input.Length; i++)
             {
-                if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null != input[i])
+                if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null && !input[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public bool IsAllTriggered(bool[] input, bool[] holdingInput)
+        {
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (Notes.FirstOrDefault(note => note.HorizontalPosition == i) != null && !input[i] && !holdingInput[i])
                 {
                     return false;
                 }
