@@ -7,7 +7,7 @@ namespace InternalAssets.Scripts
 {
     public class ScoreHandler : MonoBehaviour
     {
-        private const int baseScoreForNote = 10;
+        private const int baseScoreForNote = 1;
         private readonly int[] needNotesForMuliplayer = { 5, 10, 15 };
 
         [SerializeField] private NotesHandler _notesHandler;

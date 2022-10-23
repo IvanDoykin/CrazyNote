@@ -73,6 +73,22 @@ namespace InternalAssets.Scripts
             return false;
         }
 
+        public void SetHoldingInfo(bool[] holdingInput)
+        {
+            for (var i = 0; i < holdingInput.Length; i++)
+            {
+                if (holdingInput[i])
+                {
+                    _modifiedImages[i].color = Color.red;
+                }
+                else
+                {
+                    _modifiedImages[i].color = Color.white;
+                }
+            }
+
+        }
+
         public Input GetModifiedInput()
         {
             var input = _input.GetRawInput();

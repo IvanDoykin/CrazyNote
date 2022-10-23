@@ -39,8 +39,13 @@ namespace InternalAssets.Scripts
             _handler.Tick();
 
             var input = _input.GetModifiedInput();
-            if (TryGetCloserNoteGroup(_handler.RegistredNoteGroups, out var group))
+            for (int i = 0; i < _handler.RegistredNoteGroups.Count; i++)
             {
+                var group = _handler.RegistredNoteGroups[i];
+                if (group.Timer < NotesHandler.TimeToDetect)
+                {
+                    continue;
+                }
                 var detectedKeys = group.Notes.Length;
 
                 var inputKeys = 0;
