@@ -19,6 +19,7 @@ namespace InternalAssets.Scripts
         [SerializeField] private AudioSource _audio;
         private bool _waitForVolumeDown;
 
+        private LoadAudioFactory _loadAudio = new LoadAudioFactory();
         private void Update()
         {
             if (_audio.clip != null)
@@ -72,7 +73,8 @@ namespace InternalAssets.Scripts
                 if (File.Exists(path))
                 {
                     StopAllCoroutines();
-                    StartCoroutine(SetAudioRequest(path, _songTypes[i]));
+                    _loadAudio.LoadAndSetAudio(path, _songTypes[i], _audio);
+                    //  StartCoroutine(SetAudioRequest(path, _songTypes[i]));
                 }
             }
         }
