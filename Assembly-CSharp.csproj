@@ -73,6 +73,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\Pool\NoteObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\KeyboardSettings\KeyboardInputPanel.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\Song.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\InputHolder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Settings\DefaultKeyboardSettingsInitializer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\SyncTrack.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\RawInput.cs" />
@@ -120,7 +121,6 @@
     <Compile Include="Assets\InternalAssets\Scripts\Pool\ObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\KeyboardSettings\KeyboardSettingsHandler.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\MainMenuScene.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\InputHolder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Utilities\EqualsExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
