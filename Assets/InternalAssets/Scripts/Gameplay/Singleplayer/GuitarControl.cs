@@ -30,9 +30,9 @@ namespace InternalAssets.Scripts
 
         private void Update()
         {
-            if (!_active) 
+            if (!_active)
             {
-                return; 
+                return;
             }
 
             _holder.Tick();
@@ -65,28 +65,6 @@ namespace InternalAssets.Scripts
             }
         }
 
-        private bool TryGetCloserNoteGroup(List<NoteGroup> noteGroups, out NoteGroup closerNoteGroup)
-        {
-            closerNoteGroup = null;
-
-            if (noteGroups.Count == 0)
-            {
-                return false;
-            }
-
-            var closestVerticalPos = int.MaxValue;
-            foreach (var group in noteGroups)
-            {
-                if (group.VerticalPosition < closestVerticalPos)
-                {
-                    closestVerticalPos = group.VerticalPosition;
-                    closerNoteGroup = group;
-                }
-            }
-
-            return true;
-        }
-
         private void TriggerNoteGroup(Input input, NoteGroup group)
         {
             if (_holder.Initialized)
@@ -94,29 +72,58 @@ namespace InternalAssets.Scripts
                 if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys, _holder.HoldingKeys))
                 {
                     _handler.TriggerNoteGroup(group);
+                }
 
-                    var modifiedInput = new bool[input.ModifiedKeys.Length];
-                    for (int i = 0; i < group.Notes.Length; i++)
+                if (group.Timer > NotesHandler.TimeToTrigger - 0.067f / Mover.Speed && group.IsAllTriggered(input.ModifiedKeys, _holder.HoldingKeys))
+                {
+                    bool emptyInput = true;
+                    for (int i = 0; i < input.ModifiedKeys.Length; i++)
                     {
-                        modifiedInput[group.Notes[i].HorizontalPosition] = true;
+                        if (input.ModifiedKeys[i])
+                        {
+                            emptyInput = false;
+                            break;
+                        }
                     }
-                    InputHasChanged(input.ModifiedKeys);
+
+                    if (!emptyInput)
+                    {
+                        var modifiedInput = new bool[input.ModifiedKeys.Length];
+                        for (int i = 0; i < group.Notes.Length; i++)
+                        {
+                            modifiedInput[group.Notes[i].HorizontalPosition] = true;
+                        }
+
+                        _holder.HoldInput(modifiedInput);
+                    }
                 }
             }
 
             else
             {
-                if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys))
+                if (group.Timer > NotesHandler.TimeToTrigger - 0.067f / Mover.Speed && group.IsAllTriggered(input.ModifiedKeys))
                 {
-                    _handler.TriggerNoteGroup(group);
-
                     var modifiedInput = new bool[input.ModifiedKeys.Length];
                     for (int i = 0; i < group.Notes.Length; i++)
                     {
                         modifiedInput[group.Notes[i].HorizontalPosition] = true;
                     }
-                    InputHasChanged(input.ModifiedKeys);
+
+                    _holder.HoldInput(modifiedInput);
                 }
+            }
+
+            if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys))
+            {
+                _handler.TriggerNoteGroup(group);
+
+                var modifiedInput = new bool[input.ModifiedKeys.Length];
+                for (int i = 0; i < group.Notes.Length; i++)
+                {
+                    modifiedInput[group.Notes[i].HorizontalPosition] = true;
+                }
+
+                InputHasChanged(input.ModifiedKeys);
             }
         }
     }

@@ -8,7 +8,7 @@ namespace InternalAssets.Scripts
 {
     public class MusicPlayer : MonoBehaviour
     {
-        public const float PlayDelay = 1.925f / 1.000f;
+        public static float PlayDelay = 1.925f / Mover.Speed;
         [SerializeField] private AudioSource _audio;
 
         public float ClipTime => _audio.clip.length;

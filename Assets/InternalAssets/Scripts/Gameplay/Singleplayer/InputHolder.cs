@@ -6,7 +6,7 @@ namespace InternalAssets.Scripts
 {
     public class InputHolder : MonoBehaviour
     {
-        private const float startHoldingTime = 0.025f;
+        private const float startHoldingTime = 0.067f;
 
         [SerializeField] private GuitarControl _control;
 
@@ -32,24 +32,21 @@ namespace InternalAssets.Scripts
         private float[] _holdingTimes;
         public bool Initialized { get; private set; } = false;
 
-
-        private void Start()
-        {
-            _control.InputHasChanged += HoldInput;
-        }
-
-        private void OnDestroy()
-        {
-            _control.InputHasChanged -= HoldInput;
-        }
-
         private void Initialize(int inputLength)
         {
             Initialized = true;
             _holdingTimes = new float[inputLength];
         }
 
-        private void HoldInput(bool[] input)
+        public void ResetHolding()
+        {
+            for (int i = 0; i < _holdingTimes.Length; i++)
+            {
+                _holdingTimes[i] = 0f;
+            }
+        }
+
+        public void HoldInput(bool[] input)
         {
             if (!Initialized)
             {

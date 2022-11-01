@@ -7,10 +7,10 @@ namespace InternalAssets.Scripts
 {
     public class NotesHandler : MonoBehaviour
     {
-        public const float TimeToDestroy = 2.2f / 1.000f;
-        public const float TimeToDetect = 2.0f / 1.000f;
-        public const float DetectDifferenceTime = 0.4f / 1.000f;
-        public const float TimeToTrigger = 2.05f / 1.000f;
+        public static float TimeToDestroy = 2.2f / Mover.Speed;
+        public static float TimeToDetect = 2.0f / Mover.Speed;
+        public static float DetectDifferenceTime = 0.4f / Mover.Speed;
+        public static float TimeToTrigger = 2.05f / Mover.Speed;
 
         public Action<int, bool> NoteHasHit;
         public Action<int, bool> NoteGroupHasHit;
@@ -52,10 +52,10 @@ namespace InternalAssets.Scripts
             float closerNoteGroupAbs = 0f;
             foreach (var noteGroup in RegistredNoteGroups)
             {
-                if (group != noteGroup && Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.12f/ 1.000f) - Mathf.Clamp(noteGroup.Timer, 0f, 2.12f/ 1.000f)) < DetectDifferenceTime && noteGroup.Timer > TimeToDetect)
+                if (group != noteGroup && Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.12f/ Mover.Speed) - Mathf.Clamp(noteGroup.Timer, 0f, 2.12f/ Mover.Speed)) < DetectDifferenceTime && noteGroup.Timer > TimeToDetect)
                 {
                     closerNoteGroup = noteGroup;
-                    closerNoteGroupAbs = Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.12f/ 1.000f) - Mathf.Clamp(noteGroup.Timer, 0f, 2.12f/ 1.000f));
+                    closerNoteGroupAbs = Mathf.Abs(Mathf.Clamp(group.Timer, 0f, 2.12f/ Mover.Speed) - Mathf.Clamp(noteGroup.Timer, 0f, 2.12f/ Mover.Speed));
                     for (int i = 0; i < noteGroup.Notes.Length; i++)
                     {
                         detectedInput[noteGroup.Notes[i].HorizontalPosition] = true;
