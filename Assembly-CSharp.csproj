@@ -60,6 +60,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\Track.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\KeyboardInput.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Audio\LoadAudio\LoadAudioMP3NLayer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Animators\GuitarAnimator.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Pool\WideObjectPool.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Audio\MusicPlayer.cs" />
@@ -81,10 +82,13 @@
     <Compile Include="Assets\InternalAssets\Scripts\Data\SongAdditionalInfo.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Parsers\BlockParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\TypeCode.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Audio\LoadAudio\ILoaderAudio.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Parsers\SongBlockParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\GameInput.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Settings\PlayerPrefsSettings.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\TrackEvent.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Audio\LoadAudio\LoadAudioVorbisNVorbis.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Audio\LoadAudio\LoadAudioFactory.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\GuitarControl.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Settings\GeneralSettings.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Parsers\SongsInfoParser.cs" />
@@ -122,10 +126,6 @@
     <Compile Include="Assets\InternalAssets\Scripts\UI\KeyboardSettings\KeyboardSettingsHandler.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\MainMenuScene.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Utilities\EqualsExtensions.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Audio\LoadAudio\LoadAudioVorbisNVorbis.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Audio\LoadAudio\LoadAudioFactory.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Audio\LoadAudio\ILoaderAudio.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Audio\LoadAudio\LoadAudioMP3MP3Lib.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -154,6 +154,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\InternalAssets\Scripts\Audio\LoadAudio\NLayer\NLayer.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
@@ -390,6 +391,9 @@
     </Reference>
     <Reference Include="System.Buffers">
       <HintPath>Assets\InternalAssets\Scripts\Audio\LoadAudio\NVorbisLib\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="NLayer">
+      <HintPath>Assets\InternalAssets\Scripts\Audio\LoadAudio\NLayer\NLayer.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:\Programs\Unity\2020.3.32f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>

@@ -6,12 +6,13 @@ using UnityEngine;
 public class LoadAudioFactory
 {
     private LoadAudioVorbisNVorbis _loadVorbis;
-    private LoadAudioMP3MP3Lib _loadMP3;
+    private LoadAudioMP3NLayer _loadMP3;
 
     private ILoaderAudio _currentLoader;
     public LoadAudioFactory()
     {
         _loadVorbis = new LoadAudioVorbisNVorbis();
+        _loadMP3 = new LoadAudioMP3NLayer();
     }
     public void LoadAndSetAudio(string path, string songFormat, AudioSource audio)
     {
@@ -29,7 +30,9 @@ public class LoadAudioFactory
         }
         else if(songFormat == "MPEG")
         {
-            Debug.LogWarning("Load for MPEG not implemented!");
+            _loadMP3.LoadAudio(path, audio);
+            _currentLoader = _loadMP3;
+            audio.Play();
         }
         else
         {
