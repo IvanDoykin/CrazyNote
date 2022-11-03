@@ -21,7 +21,7 @@ public class LoadAudioMP3NLayer : ILoaderAudio
         channels = stream.Channels;
         frequency = stream.SampleRate;
         isStream = true;
-        AudioClip clip = AudioClip.Create(clipName, lengthSamples, channels, frequency, isStream, PcmRead);
+        AudioClip clip = AudioClip.Create(clipName, lengthSamples, channels, frequency, isStream, PcmRead, PcmSetPosition);
         audio.clip = clip;
     }
     private void PcmRead(float[] data)
@@ -29,6 +29,10 @@ public class LoadAudioMP3NLayer : ILoaderAudio
         if (stream != null)
             stream.ReadSamples(data, 0, data.Length);
 
+    }
+    private void PcmSetPosition(int postition)
+    {
+        stream.Position = postition;
     }
     public void Dispose()
     {

@@ -22,13 +22,17 @@ public class LoadAudioVorbisNVorbis : ILoaderAudio
         frequency = vorbisStream.SampleRate;
         isStream = true;
 
-        AudioClip clip = AudioClip.Create(clipName, lengthSamples, channels, frequency, isStream, PcmRead);
+        AudioClip clip = AudioClip.Create(clipName, lengthSamples, channels, frequency, isStream, PcmRead, PcmSetPosition);
         audio.clip = clip;
     }
     private void PcmRead(float[] data)
     {
         if(vorbisStream != null)
             vorbisStream.ReadSamples(data, 0, data.Length);
+    }
+    private void PcmSetPosition(int postition)
+    {
+        vorbisStream.SamplePosition = postition;
     }
     public void Dispose()
     {
