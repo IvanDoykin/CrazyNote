@@ -63,37 +63,12 @@ namespace InternalAssets.Scripts
             }
         }
 
-        public void SetPreview(string directory)
+        public void SetPreview(AudioClip clip)
         {
-            for (var i = 0; i < _songNames.Length; i++)
-            {
-                var path = directory + _songNames[i];
-
-                if (File.Exists(path))
-                {
-                    StopAllCoroutines();
-                    StartCoroutine(SetAudioRequest(path, _songTypes[i]));
-                }
-            }
-        }
-
-        private IEnumerator SetAudioRequest(string path, string songType)
-        {
-            using var www = UnityWebRequestMultimedia.GetAudioClip(filePathHeader + path,
-                (AudioType)Enum.Parse(typeof(AudioType), songType));
-            yield return www.SendWebRequest();
-
-            if (www.result == UnityWebRequest.Result.ConnectionError)
-            {
-                Debug.Log(www.error);
-            }
-            else
-            {
-                _audio.clip = DownloadHandlerAudioClip.GetContent(www);
-                _audio.time = 0;
-                _audio.volume = 0f;
-                _waitForVolumeDown = false;
-            }
+            _audio.clip = clip;
+            _audio.time = 0;
+            _audio.volume = 0f;
+            _waitForVolumeDown = false;
         }
     }
 }

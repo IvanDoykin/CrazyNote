@@ -14,6 +14,8 @@ namespace InternalAssets.Scripts
         [SerializeField] private NotesHandler _handler;
         [SerializeField] private InputModifier _input;
 
+        [SerializeField] private AudioSource _source;
+
         private bool _active = true;
 
         public void SetActive()
@@ -39,6 +41,10 @@ namespace InternalAssets.Scripts
             _handler.Tick();
 
             var input = _input.GetModifiedInput();
+
+            bool[] failCheck = new bool[input.ModifiedKeys.Length];
+            input.ModifiedKeys.CopyTo(failCheck, 0);
+
             for (int i = 0; i < _handler.RegistredNoteGroups.Count; i++)
             {
                 var group = _handler.RegistredNoteGroups[i];
@@ -60,20 +66,32 @@ namespace InternalAssets.Scripts
                 Debug.Log("INPUT = " + inputKeys + ". NEED = " + detectedKeys);
                 if (inputKeys <= Mathf.Max(2, detectedKeys))
                 {
-                    TriggerNoteGroup(input, group);
+                    TriggerNoteGroup(input, group, ref failCheck);
+                }
+            }
+
+            for (int i = 0; i < failCheck.Length; i++)
+            {
+                if (failCheck[i] && (!_holder.Initialized || !_holder.HoldingKeys[i]))
+                {
+                    _source.Play();
+                    return;
                 }
             }
         }
 
-        private void TriggerNoteGroup(Input input, NoteGroup group)
+        private void UpdateFailInput(ref bool[] failCheck, Note[] inputNotes)
+        {
+            for (int i = 0; i < inputNotes.Length; i++)
+            {
+                failCheck[inputNotes[i].HorizontalPosition] = false;
+            }
+        }
+
+        private void TriggerNoteGroup(Input input, NoteGroup group, ref bool[] failCheck)
         {
             if (_holder.Initialized)
             {
-                if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys, _holder.HoldingKeys))
-                {
-                    _handler.TriggerNoteGroup(group);
-                }
-
                 if (group.Timer > NotesHandler.TimeToTrigger - 0.067f / Mover.Speed && group.IsAllTriggered(input.ModifiedKeys, _holder.HoldingKeys))
                 {
                     bool emptyInput = true;
@@ -94,8 +112,16 @@ namespace InternalAssets.Scripts
                             modifiedInput[group.Notes[i].HorizontalPosition] = true;
                         }
 
+                        UpdateFailInput(ref failCheck, group.Notes);
                         _holder.HoldInput(modifiedInput);
                     }
+                }
+
+                if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys, _holder.HoldingKeys))
+                {
+                    InputHasChanged(input.ModifiedKeys);
+                    _handler.TriggerNoteGroup(group);
+                    UpdateFailInput(ref failCheck, group.Notes);
                 }
             }
 
@@ -109,21 +135,23 @@ namespace InternalAssets.Scripts
                         modifiedInput[group.Notes[i].HorizontalPosition] = true;
                     }
 
+                    UpdateFailInput(ref failCheck, group.Notes);
                     _holder.HoldInput(modifiedInput);
                 }
-            }
 
-            if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys))
-            {
-                _handler.TriggerNoteGroup(group);
-
-                var modifiedInput = new bool[input.ModifiedKeys.Length];
-                for (int i = 0; i < group.Notes.Length; i++)
+                if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys))
                 {
-                    modifiedInput[group.Notes[i].HorizontalPosition] = true;
-                }
+                    UpdateFailInput(ref failCheck, group.Notes);
+                    _handler.TriggerNoteGroup(group);
 
-                InputHasChanged(input.ModifiedKeys);
+                    var modifiedInput = new bool[input.ModifiedKeys.Length];
+                    for (int i = 0; i < group.Notes.Length; i++)
+                    {
+                        modifiedInput[group.Notes[i].HorizontalPosition] = true;
+                    }
+
+                    InputHasChanged(input.ModifiedKeys);
+                }
             }
         }
     }

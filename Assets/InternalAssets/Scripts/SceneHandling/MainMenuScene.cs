@@ -37,8 +37,9 @@ namespace InternalAssets.Scripts
         private void SetClip(AudioClip clip)
         {
             _clip = clip;
+            _audio.SetPreview(clip);
         }
-        
+
         private void StartGame()
         {
             if (_directory != "" && _clip != null)
@@ -55,7 +56,6 @@ namespace InternalAssets.Scripts
         private void HandlePanel(SongPanel panel)
         {
             _music.GetMusic(panel.Directory);
-            _audio.SetPreview(panel.Directory);
             _directory = panel.Directory;
         }
         
