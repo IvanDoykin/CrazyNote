@@ -48,6 +48,8 @@ namespace InternalAssets.Scripts
 
             var input = _input.GetModifiedInput();
 
+            _handler.AvailableNoteInRows.Log();
+
             if (IsError(input.RawInput.JustPressedKeys))
             {
                 _source.Play();
@@ -74,7 +76,7 @@ namespace InternalAssets.Scripts
                 }
 
                 Debug.Log("INPUT = " + inputKeys + ". NEED = " + detectedKeys);
-                if (inputKeys <= Mathf.Max(2, detectedKeys))
+                if (inputKeys <= Mathf.Max(3, detectedKeys))
                 {
                     TriggerNoteGroup(input, group);
                 }
@@ -85,7 +87,7 @@ namespace InternalAssets.Scripts
         {
             for (int i = 0; i < justPressedKeys.Length; i++)
             {
-                if (justPressedKeys[i] && !_handler.AvailableNoteInRows[i] &&!_holder.HoldingKeys[i])
+                if (justPressedKeys[i] && !_handler.AvailableNoteInRows[i] && !_holder.HoldingKeys[i])
                 {
                     return true;
                 }

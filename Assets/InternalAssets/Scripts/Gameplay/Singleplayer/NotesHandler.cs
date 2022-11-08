@@ -8,9 +8,10 @@ namespace InternalAssets.Scripts
     public class NotesHandler : MonoBehaviour
     {
         public static float TimeToDestroy = 2.2f / Mover.Speed;
-        public static float TimeToDetect = 2.0f / Mover.Speed;
+        public static float TimeToDetect = 1.9f / Mover.Speed;
         public static float DetectDifferenceTime = 0.4f / Mover.Speed;
         public static float TimeToTrigger = 2.05f / Mover.Speed;
+        public static float TimeToError = 1.95f / Mover.Speed;
 
         public Action<int, bool> NoteHasHit;
         public Action<int, bool> NoteGroupHasHit;
@@ -84,8 +85,9 @@ namespace InternalAssets.Scripts
                 if (RegistredNoteGroups[i].Timer > TimeToDestroy)
                 {
                     UnregisterNoteGroup(RegistredNoteGroups[i], false);
+                    continue;
                 }
-                if (RegistredNoteGroups[i].Timer > TimeToTrigger - 0.067f && !_availableNoteGroups.Contains(RegistredNoteGroups[i]))
+                if (RegistredNoteGroups[i].Timer > TimeToError && !_availableNoteGroups.Contains(RegistredNoteGroups[i]))
                 {
                     AddAvailableNotesInRows(RegistredNoteGroups[i]);
                 }
