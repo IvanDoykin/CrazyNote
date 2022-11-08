@@ -25,8 +25,7 @@ namespace InternalAssets.Scripts
             var keysDown = new bool[GeneralSettings.KeysCount];
             for (var i = 0; i < GeneralSettings.KeysCount; i++)
             {
-                Debug.Log(_trackingButtons[i].ToString());
-                keysDown[i] = false;
+                keysDown[i] = UnityEngine.Input.GetKeyDown(_trackingButtons[i]);
             }
             return keysDown;
         }

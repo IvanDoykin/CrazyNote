@@ -16,12 +16,17 @@ namespace InternalAssets.Scripts
         public Action<int, bool> NoteGroupHasHit;
 
         public List<NoteGroup> RegistredNoteGroups { get; } = new List<NoteGroup>();
+        public bool[] AvailableNoteInRows { get; private set; }
 
         [SerializeField] private DynamicObjectsFactory _factory;
+        private List<NoteGroup> _availableNoteGroups { get; } = new List<NoteGroup>();
+        private int[] _availableNotesInRows;
 
-        private void Start()
+        public void Initialize(int groupSize)
         {
             _factory.NoteGroupHasCreated += RegisterNoteGroup;
+            AvailableNoteInRows = new bool[groupSize];
+            _availableNotesInRows = new int[groupSize];
         }
 
         private void OnDestroy()
@@ -80,6 +85,42 @@ namespace InternalAssets.Scripts
                 {
                     UnregisterNoteGroup(RegistredNoteGroups[i], false);
                 }
+                if (RegistredNoteGroups[i].Timer > TimeToTrigger - 0.067f && !_availableNoteGroups.Contains(RegistredNoteGroups[i]))
+                {
+                    AddAvailableNotesInRows(RegistredNoteGroups[i]);
+                }
+            }
+        }
+
+        private void AddAvailableNotesInRows(NoteGroup group)
+        {
+            _availableNoteGroups.Add(group);
+
+            foreach (var note in group.Notes)
+            {
+                _availableNotesInRows[note.HorizontalPosition]++;
+            }
+
+            UpdateAvailableNotesInRows();
+        }
+
+        private void RemoveAvailableNotesInRows(NoteGroup group)
+        {
+            _availableNoteGroups.Remove(group);
+
+            foreach (var note in group.Notes)
+            {
+                _availableNotesInRows[note.HorizontalPosition]--;
+            }
+
+            UpdateAvailableNotesInRows();
+        }
+
+        private void UpdateAvailableNotesInRows()
+        {
+            for (int i = 0; i < _availableNotesInRows.Length; i++)
+            {
+                AvailableNoteInRows[i] = _availableNotesInRows[i] > 0;
             }
         }
 
@@ -104,6 +145,7 @@ namespace InternalAssets.Scripts
             group.Trigger(hit);
             NoteGroupHasHit?.Invoke(group.Notes.Length, hit);
 
+            RemoveAvailableNotesInRows(group);
             RegistredNoteGroups.Remove(group);
         }
 

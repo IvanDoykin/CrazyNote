@@ -18,6 +18,12 @@ namespace InternalAssets.Scripts
 
         private bool _active = true;
 
+        private void Start()
+        {
+            _holder.Initialize(_input.GetModifiedInput().ModifiedKeys.Length);
+            _handler.Initialize(_input.GetModifiedInput().ModifiedKeys.Length);
+        }
+
         public void SetActive()
         {
             _active = true;
@@ -42,8 +48,12 @@ namespace InternalAssets.Scripts
 
             var input = _input.GetModifiedInput();
 
-            bool[] failCheck = new bool[input.ModifiedKeys.Length];
-            input.ModifiedKeys.CopyTo(failCheck, 0);
+            if (IsError(input.RawInput.JustPressedKeys))
+            {
+                _source.Play();
+                InputHasChanged(input.RawInput.JustPressedKeys);
+                return;
+            }
 
             for (int i = 0; i < _handler.RegistredNoteGroups.Count; i++)
             {
@@ -66,29 +76,24 @@ namespace InternalAssets.Scripts
                 Debug.Log("INPUT = " + inputKeys + ". NEED = " + detectedKeys);
                 if (inputKeys <= Mathf.Max(2, detectedKeys))
                 {
-                    TriggerNoteGroup(input, group, ref failCheck);
-                }
-            }
-
-            for (int i = 0; i < failCheck.Length; i++)
-            {
-                if (failCheck[i] && (!_holder.Initialized || !_holder.HoldingKeys[i]))
-                {
-                    _source.Play();
-                    return;
+                    TriggerNoteGroup(input, group);
                 }
             }
         }
 
-        private void UpdateFailInput(ref bool[] failCheck, Note[] inputNotes)
+        private bool IsError(bool[] justPressedKeys)
         {
-            for (int i = 0; i < inputNotes.Length; i++)
+            for (int i = 0; i < justPressedKeys.Length; i++)
             {
-                failCheck[inputNotes[i].HorizontalPosition] = false;
+                if (justPressedKeys[i] && !_handler.AvailableNoteInRows[i] &&!_holder.HoldingKeys[i])
+                {
+                    return true;
+                }
             }
+            return false;
         }
 
-        private void TriggerNoteGroup(Input input, NoteGroup group, ref bool[] failCheck)
+        private void TriggerNoteGroup(Input input, NoteGroup group)
         {
             if (_holder.Initialized)
             {
@@ -112,7 +117,6 @@ namespace InternalAssets.Scripts
                             modifiedInput[group.Notes[i].HorizontalPosition] = true;
                         }
 
-                        UpdateFailInput(ref failCheck, group.Notes);
                         _holder.HoldInput(modifiedInput);
                     }
                 }
@@ -121,7 +125,6 @@ namespace InternalAssets.Scripts
                 {
                     InputHasChanged(input.ModifiedKeys);
                     _handler.TriggerNoteGroup(group);
-                    UpdateFailInput(ref failCheck, group.Notes);
                 }
             }
 
@@ -135,13 +138,11 @@ namespace InternalAssets.Scripts
                         modifiedInput[group.Notes[i].HorizontalPosition] = true;
                     }
 
-                    UpdateFailInput(ref failCheck, group.Notes);
                     _holder.HoldInput(modifiedInput);
                 }
 
                 if (group.Timer > NotesHandler.TimeToTrigger && group.IsAllTriggered(input.ModifiedKeys))
                 {
-                    UpdateFailInput(ref failCheck, group.Notes);
                     _handler.TriggerNoteGroup(group);
 
                     var modifiedInput = new bool[input.ModifiedKeys.Length];

@@ -32,7 +32,7 @@ namespace InternalAssets.Scripts
         private float[] _holdingTimes;
         public bool Initialized { get; private set; } = false;
 
-        private void Initialize(int inputLength)
+        public void Initialize(int inputLength)
         {
             Initialized = true;
             _holdingTimes = new float[inputLength];
@@ -48,11 +48,6 @@ namespace InternalAssets.Scripts
 
         public void HoldInput(bool[] input)
         {
-            if (!Initialized)
-            {
-                Initialize(input.Length);
-            }
-
             for (int i = 0; i < input.Length; i++)
             {
                 if (input[i])
