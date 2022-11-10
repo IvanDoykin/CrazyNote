@@ -29,7 +29,6 @@ namespace InternalAssets.Scripts
 
                 if (line.Contains(resolutionField))
                 {
-                    Debug.Log(line.Trim());
                     resolution = int.Parse(line.Trim().Replace(resolutionField, "").Trim(' ', '=', '"'));
                 }
             }

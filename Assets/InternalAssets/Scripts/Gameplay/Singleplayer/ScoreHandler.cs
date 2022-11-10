@@ -50,8 +50,6 @@ namespace InternalAssets.Scripts
 
         private void ApplyNoteGroup(int notesInGroup)
         {
-            Debug.Log("combo");
-
             _score += baseScoreForNote * notesInGroup * _multiplayer;
             _scoreUI.SetScore((int)_score);
 

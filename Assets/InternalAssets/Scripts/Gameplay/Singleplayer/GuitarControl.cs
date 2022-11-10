@@ -47,12 +47,10 @@ namespace InternalAssets.Scripts
             _handler.Tick();
 
             var input = _input.GetModifiedInput();
-
-            _handler.AvailableNoteInRows.Log();
-
             if (IsError(input.RawInput.JustPressedKeys))
             {
                 _source.Play();
+                _handler.NoteGroupHasHit?.Invoke(0, false);
                 InputHasChanged(input.RawInput.JustPressedKeys);
                 return;
             }
@@ -75,7 +73,6 @@ namespace InternalAssets.Scripts
                     }
                 }
 
-                Debug.Log("INPUT = " + inputKeys + ". NEED = " + detectedKeys);
                 if (inputKeys <= Mathf.Max(3, detectedKeys))
                 {
                     TriggerNoteGroup(input, group);

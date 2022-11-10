@@ -56,72 +56,75 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\InternalAssets\Scripts\Audio\AudioPreview.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\ServiceInput.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\MainMenuUI.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Poolable\Wide.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\Track.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\KeyboardInput.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Animators\GuitarAnimator.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Pool\WideObjectPool.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Poolable\Note\Mover.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\SongPanel\SongPanelView.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Audio\MusicPlayer.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\ScoreBox\MultiplayerBox.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\RockBox\RockHealthLine.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\ScoreBox\ComboCounter.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\Patchnote.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\PauseController.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Data\SongConfigInfo.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\NotesHandler.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\Events.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\SongPanel\SongPanel.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\MainTicker.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\InputModifier.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\TimeController.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Audio\MusicHandler.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Poolable\IPoolable.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Pool\NoteObjectPool.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\NoteSpawnPlaces.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\PauseUI.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\KeyboardSettings\KeyboardInputPanel.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\Song.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\SceneLoader.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Poolable\Note\Note.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\InputHolder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Settings\DefaultKeyboardSettingsInitializer.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Data\Difficulty.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\SyncTrack.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\RawInput.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\DynamicObjectsFactory.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Utilities\LogExtensions.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\SingleplayerScene.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\SongPanel\SongsPanelsHandler.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Data\TrackBlock.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Animators\FretsAnimator.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\SongAdditionalInfo.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Parsers\BlockParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\TypeCode.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\ScoreBox\ScoreCounter.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Data\Notes.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\ScoreHandler.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Parsers\SongBlockParser.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\Clock.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Utilities\Logger.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Parsers\TrackBlockParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\GameInput.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Settings\PlayerPrefsSettings.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\TrackEvent.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\GuitarControl.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Settings\GeneralSettings.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Parsers\SongsInfoParser.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Animators\FireAnimator.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Audio\AudioPreview.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Poolable\Wide.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Poolable\Note\Mover.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\UI\SongPanel\SongPanelView.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\UI\RockBox\RockHealthLine.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\UI\ScoreBox\ComboCounter.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Data\SongConfigInfo.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\NotesHandler.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\MainTicker.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Audio\MusicHandler.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Poolable\IPoolable.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\NoteSpawnPlaces.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\PauseUI.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\SceneLoader.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Poolable\Note\Note.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Data\Difficulty.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\DynamicObjectsFactory.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Utilities\LogExtensions.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\SingleplayerScene.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Data\TrackBlock.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Animators\FretsAnimator.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\UI\ScoreBox\ScoreCounter.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Data\Notes.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\ScoreHandler.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\UI\Clock.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Utilities\Logger.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Parsers\TrackBlockParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Poolable\Note\NoteGroup.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\SongPanel\SongsFinder.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Pool\ObjectPool.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Settings\GeneralSettings.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Parsers\SongsInfoParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\KeyboardSettings\KeyboardSettingsHandler.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Animators\FireAnimator.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\MainMenuScene.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Utilities\EqualsExtensions.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\SingleplayerDebug.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\TimeZonesView.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\HoldingView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -748,9 +751,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
