@@ -44,7 +44,7 @@ namespace InternalAssets.Scripts
         {
             if (_directory != "" && _clip != null)
             {
-                _loader.StartSingleplayerTrack(new Track(_directory, _difficulty, _clip));
+                _loader.LoadSingleplayerTrack(new Track(_directory, _difficulty, _clip));
             }
         }
         

@@ -4,7 +4,7 @@ namespace InternalAssets.Scripts
 {
     public class Mover : MonoBehaviour
     {
-        public static float Speed = 1.2f;
+        public static float Speed = 1f;
         private readonly float speed = 6.255f * Speed;
 
         private bool _active = true;

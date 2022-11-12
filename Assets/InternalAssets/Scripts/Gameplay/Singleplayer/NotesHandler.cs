@@ -7,10 +7,11 @@ namespace InternalAssets.Scripts
 {
     public class NotesHandler : MonoBehaviour
     {
-        public static float TimeToDestroy = 2.23f / Mover.Speed;
         public static float TimeToDetect = 1.9f / Mover.Speed;
+        public static float TimeToTrigger = 2.0925f / Mover.Speed;
+        public static float TimeToDestroy = 2.23f / Mover.Speed;
+
         public static float DetectDifferenceTime = 0.4f / Mover.Speed;
-        public static float TimeToTrigger = 2.05f / Mover.Speed;
 
         public Action<int, bool> NoteHasHit;
         public Action<int, bool> NoteGroupHasHit;

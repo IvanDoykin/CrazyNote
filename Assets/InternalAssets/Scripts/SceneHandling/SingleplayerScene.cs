@@ -62,7 +62,7 @@ namespace InternalAssets.Scripts
 
         public void ExitMenu()
         {
-            _loader.StartMainMenu();
+            _loader.LoadMainMenu();
         }
 
         private void Initialize(Track track)

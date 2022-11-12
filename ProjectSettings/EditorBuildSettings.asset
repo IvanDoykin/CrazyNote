@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/InternalAssets/Scenes/Singleplayer.unity
     guid: b5163af3c6c16b1499c30b4e6e4f377c
+  - enabled: 1
+    path: Assets/InternalAssets/Scenes/StartMenu.unity
+    guid: 59b98e58896fd96468aef194d035df05
   m_configObjects: {}

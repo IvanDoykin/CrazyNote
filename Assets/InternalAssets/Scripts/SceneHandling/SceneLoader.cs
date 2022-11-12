@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,23 +8,25 @@ namespace InternalAssets.Scripts
 {
     public class SceneLoader : MonoBehaviour
     {
-        public static Action<Track> SingleplayerHasLoaded;
-        public static Action MainMenuHasLoaded;
-        
         private const string singleplayer = "Singleplayer";
         private const string mainMenu = "MainMenu";
+        private const string startMenu = "StartMenu";
 
+        public static Action<Track> SingleplayerHasLoaded;
+        public static Action MainMenuHasLoaded;
+        public static Action StartMenuHasLoaded;
+        
         [SerializeField] private GameObject _loadingScreen;
 
-        private Scene _currentScene;
-        private bool _firstLoading = true;
-
-        private void Start()
+        public void LoadStartMenu()
         {
-            StartMainMenu();
+            StartCoroutine(AsyncLoadScene(startMenu, () =>
+            {
+                StartMenuHasLoaded?.Invoke();
+            }));
         }
 
-        public void StartMainMenu()
+        public void LoadMainMenu()
         {
             StartCoroutine(AsyncLoadScene(mainMenu, () =>
             {
@@ -31,30 +34,21 @@ namespace InternalAssets.Scripts
             }));
         }
 
-        public void StartSingleplayerTrack(Track track)
+        public void LoadSingleplayerTrack(Track track)
         {
             StartCoroutine(AsyncLoadScene(singleplayer, () =>
             {
                 SingleplayerHasLoaded?.Invoke(track);
             }));
         }
+        public void UnloadScene(string sceneName)
+        {
+            StartCoroutine(AsyncUnloadScene(sceneName));
+        }
 
         private IEnumerator AsyncLoadScene(string sceneName, Action callback)
         {
-            _loadingScreen.SetActive(true);
-
-            if (!_firstLoading)
-            {
-                AsyncOperation unloadingOldScene = SceneManager.UnloadSceneAsync(_currentScene);
-                while (!unloadingOldScene.isDone)
-                {
-                    yield return null;
-                }
-            }
-            else
-            {
-                _firstLoading = false;
-            }
+            _loadingScreen.SetActive(sceneName != startMenu);
 
             AsyncOperation loading = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
             while (!loading.isDone)
@@ -62,11 +56,22 @@ namespace InternalAssets.Scripts
                 yield return null;
             }
 
-            _currentScene = SceneManager.GetSceneByName(sceneName);
-            SceneManager.SetActiveScene(_currentScene);
+            var loadedScene = SceneManager.GetSceneByName(sceneName);
+            SceneManager.SetActiveScene(loadedScene);
 
             _loadingScreen.SetActive(false);
             callback?.Invoke();
+        }
+
+        private IEnumerator AsyncUnloadScene(string sceneName)
+        {
+            var unloadingScene = SceneManager.GetSceneByName(sceneName);
+
+            AsyncOperation unloading = SceneManager.UnloadSceneAsync(sceneName);
+            while (!unloading.isDone)
+            {
+                yield return null;
+            }
         }
     }
 }

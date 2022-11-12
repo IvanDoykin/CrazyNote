@@ -93,7 +93,10 @@
     <Compile Include="Assets\InternalAssets\Scripts\Data\Difficulty.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\SyncTrack.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\RawInput.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\HoldingView.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\SingleplayerDebug.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\DynamicObjectsFactory.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Utilities\UIExtensions.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Utilities\LogExtensions.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\SingleplayerScene.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\SongPanel\SongsPanelsHandler.cs" />
@@ -120,11 +123,15 @@
     <Compile Include="Assets\InternalAssets\Scripts\Parsers\SongsInfoParser.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\KeyboardSettings\KeyboardSettingsHandler.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Animators\FireAnimator.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\TimeZonesView.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\StartMenu\LogoAnimation.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\MainMenuScene.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Utilities\EqualsExtensions.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\SingleplayerDebug.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\TimeZonesView.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\HoldingView.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\StartMenu\LoadingPanel.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\StartMenu\StartMenuBackground.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\StartMenu\StartMenuSound.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\StartMenu\StartMenu.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\Entrance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

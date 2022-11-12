@@ -6,7 +6,7 @@ namespace InternalAssets.Scripts
 {
     public class SingleplayerDebug : MonoBehaviour
     {
-        [SerializeField] private bool _active;
+        private bool _active = false;
         [SerializeField] private GameObject _debug;
 
         private void Start()

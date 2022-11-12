@@ -9,12 +9,14 @@ ScriptsOnlyBuild:
     - InternalAssets.Scripts.FretsAnimator
     - InternalAssets.Scripts.GuitarAnimator
     - InternalAssets.Scripts.GuitarControl
+    - InternalAssets.Scripts.HoldingView
     - InternalAssets.Scripts.InputHolder
     - InternalAssets.Scripts.InputModifier
     - InternalAssets.Scripts.KeyboardInput
     - InternalAssets.Scripts.KeyboardInputPanel
     - InternalAssets.Scripts.KeyboardSettingsHandler
     - InternalAssets.Scripts.Logger
+    - InternalAssets.Scripts.LogoAnimation
     - InternalAssets.Scripts.MainMenuScene
     - InternalAssets.Scripts.MainMenuUI
     - InternalAssets.Scripts.MainTicker
@@ -33,11 +35,13 @@ ScriptsOnlyBuild:
     - InternalAssets.Scripts.SceneLoader
     - InternalAssets.Scripts.ScoreCounter
     - InternalAssets.Scripts.ScoreHandler
+    - InternalAssets.Scripts.SingleplayerDebug
     - InternalAssets.Scripts.SingleplayerScene
     - InternalAssets.Scripts.SongPanel
     - InternalAssets.Scripts.SongPanelView
     - InternalAssets.Scripts.SongsPanelsHandler
     - InternalAssets.Scripts.TimeController
+    - InternalAssets.Scripts.TimeZonesView
     - InternalAssets.Scripts.Wide
     - InternalAssets.Scripts.WideObjectPool
     Unity.TextMeshPro.dll:
@@ -73,8 +77,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 4
       Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
     - Class: 28
@@ -83,7 +85,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -96,21 +110,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2344}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2748}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2792}
     - Class: 114
-      Script: {instanceID: 2914}
+      Script: {instanceID: 2920}
     - Class: 114
-      Script: {instanceID: 2968}
+      Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 3114}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3138}
+      Script: {instanceID: 3144}
     - Class: 114
-      Script: {instanceID: 3210}
+      Script: {instanceID: 3216}
     - Class: 114
-      Script: {instanceID: 3438}
+      Script: {instanceID: 3444}
+    - Class: 114
+      Script: {instanceID: 3710}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -173,25 +189,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2496}
     - Class: 114
-      Script: {instanceID: 2670}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2748}
     - Class: 114
-      Script: {instanceID: 2872}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 2914}
+      Script: {instanceID: 2920}
     - Class: 114
-      Script: {instanceID: 2968}
+      Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 3138}
+      Script: {instanceID: 3144}
     - Class: 114
-      Script: {instanceID: 3438}
+      Script: {instanceID: 3444}
     - Class: 114
-      Script: {instanceID: 3578}
+      Script: {instanceID: 3584}
     - Class: 114
-      Script: {instanceID: 3636}
+      Script: {instanceID: 3642}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 3716}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -236,6 +252,8 @@ ScriptsOnlyBuild:
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -290,37 +308,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2484}
     - Class: 114
+      Script: {instanceID: 2624}
+    - Class: 114
+      Script: {instanceID: 2728}
+    - Class: 114
       Script: {instanceID: 2736}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2748}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 2914}
+      Script: {instanceID: 2920}
     - Class: 114
-      Script: {instanceID: 2918}
+      Script: {instanceID: 2924}
     - Class: 114
-      Script: {instanceID: 2968}
+      Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 3070}
     - Class: 114
-      Script: {instanceID: 3094}
+      Script: {instanceID: 3100}
     - Class: 114
-      Script: {instanceID: 3114}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3138}
+      Script: {instanceID: 3144}
     - Class: 114
-      Script: {instanceID: 3174}
+      Script: {instanceID: 3180}
     - Class: 114
-      Script: {instanceID: 3438}
+      Script: {instanceID: 3444}
     - Class: 114
-      Script: {instanceID: 3440}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 3578}
+      Script: {instanceID: 3584}
     - Class: 114
-      Script: {instanceID: 3644}
+      Script: {instanceID: 3650}
     - Class: 114
-      Script: {instanceID: 18808}
+      Script: {instanceID: 3702}
+    - Class: 114
+      Script: {instanceID: 19986}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -718,6 +742,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: ae665ad2118f8851969bcb51df9a386d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InternalAssets.Scripts
+    className: HoldingView
+  - hash:
+      serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -740,6 +770,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 638aa82361dfe556be5b864932568d7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InternalAssets.Scripts
+    className: SingleplayerDebug
   - hash:
       serializedVersion: 2
       Hash: 7542884c5c21dac5c8a39e21eb1977ae
@@ -916,7 +952,7 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
-      Hash: f4d2f98c82f93956fe38f050669c41fc
+      Hash: 003bf80a952c6567cc60c01d2547bf75
     assemblyName: Assembly-CSharp.dll
     namespaceName: InternalAssets.Scripts
     className: GuitarControl
@@ -994,10 +1030,22 @@ ScriptsOnlyBuild:
     className: FireAnimator
   - hash:
       serializedVersion: 2
+      Hash: 230f2d2d8fa29d4c44f195d9a5ead7e3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InternalAssets.Scripts
+    className: TimeZonesView
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: c2abc621f3cf9a33923b533a6bd42c79
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InternalAssets.Scripts
+    className: LogoAnimation
   - hash:
       serializedVersion: 2
       Hash: 8f85dee20e7902c9df51ac040b677172
@@ -1009,4 +1057,4 @@ ScriptsOnlyBuild:
   - Assets/InternalAssets/Scenes/Core.unity
   - Assets/InternalAssets/Scenes/MainMenu.unity
   - Assets/InternalAssets/Scenes/Singleplayer.unity
-  playerPath: D:/Desktop/Build/CrazyNote.exe
+  playerPath: D:/Desktop/Build/FlamingStrums.exe
