@@ -17,6 +17,15 @@ namespace InternalAssets.Scripts
             {
                 _startMenu = FindObjectOfType<StartMenu>();
 
+                _startMenu.SoundHasPreEnd += () =>
+                {
+                    _startMenu.gameObject.SetActive(false);
+                };
+                _startMenu.SoundHasEnd += () =>
+                {
+                    _loader.UnloadScene(SceneLoader.StartMenu);
+                };
+
                 _startMenu.LoadingMenuStage();
                 StartCoroutine(DelayedLoadMenu());
             };

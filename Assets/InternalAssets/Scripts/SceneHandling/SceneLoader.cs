@@ -8,9 +8,9 @@ namespace InternalAssets.Scripts
 {
     public class SceneLoader : MonoBehaviour
     {
-        private const string singleplayer = "Singleplayer";
-        private const string mainMenu = "MainMenu";
-        private const string startMenu = "StartMenu";
+        public const string Singleplayer = "Singleplayer";
+        public const string MainMenu = "MainMenu";
+        public const string StartMenu = "StartMenu";
 
         public static Action<Track> SingleplayerHasLoaded;
         public static Action MainMenuHasLoaded;
@@ -20,7 +20,7 @@ namespace InternalAssets.Scripts
 
         public void LoadStartMenu()
         {
-            StartCoroutine(AsyncLoadScene(startMenu, () =>
+            StartCoroutine(AsyncLoadScene(StartMenu, () =>
             {
                 StartMenuHasLoaded?.Invoke();
             }));
@@ -28,7 +28,7 @@ namespace InternalAssets.Scripts
 
         public void LoadMainMenu()
         {
-            StartCoroutine(AsyncLoadScene(mainMenu, () =>
+            StartCoroutine(AsyncLoadScene(MainMenu, () =>
             {
                 MainMenuHasLoaded?.Invoke();
             }));
@@ -36,7 +36,7 @@ namespace InternalAssets.Scripts
 
         public void LoadSingleplayerTrack(Track track)
         {
-            StartCoroutine(AsyncLoadScene(singleplayer, () =>
+            StartCoroutine(AsyncLoadScene(Singleplayer, () =>
             {
                 SingleplayerHasLoaded?.Invoke(track);
             }));
@@ -48,7 +48,7 @@ namespace InternalAssets.Scripts
 
         private IEnumerator AsyncLoadScene(string sceneName, Action callback)
         {
-            _loadingScreen.SetActive(sceneName != startMenu);
+            _loadingScreen.SetActive(sceneName != StartMenu);
 
             AsyncOperation loading = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
             while (!loading.isDone)
