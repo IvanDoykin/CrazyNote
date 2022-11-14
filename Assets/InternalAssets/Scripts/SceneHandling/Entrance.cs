@@ -24,6 +24,7 @@ namespace InternalAssets.Scripts
                 _startMenu.SoundHasEnd += () =>
                 {
                     _loader.UnloadScene(SceneLoader.StartMenu);
+                    Destroy(gameObject);
                 };
 
                 _startMenu.LoadingMenuStage();

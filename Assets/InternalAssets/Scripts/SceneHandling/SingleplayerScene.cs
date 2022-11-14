@@ -18,6 +18,11 @@ namespace InternalAssets.Scripts
 
         private void Start()
         {
+            SceneLoader.MainMenuHasLoaded += () =>
+            {
+                _loader.UnloadScene(SceneLoader.Singleplayer);
+            };
+
             SceneLoader.SingleplayerHasLoaded += Initialize;
 
             _pause.GameHasPaused += Pause;

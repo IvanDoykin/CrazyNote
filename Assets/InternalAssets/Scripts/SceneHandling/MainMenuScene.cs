@@ -25,6 +25,11 @@ namespace InternalAssets.Scripts
 
         private void Start()
         {
+            SceneLoader.SingleplayerHasLoaded += (Track track) =>
+            {
+                _loader.UnloadScene(SceneLoader.MainMenu);
+            };
+
             _music.ClipHasGot += SetClip;
             
             _ui.DifficultyHasSelected += SetDifficulty;
