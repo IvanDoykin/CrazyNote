@@ -96,12 +96,12 @@ namespace InternalAssets.Scripts
         {
             if (_holder.Initialized)
             {
-                if (group.Timer > NotesHandler.TimeToTrigger - 0.067f / Mover.Speed && group.IsAllTriggered(input.ModifiedKeys, _holder.HoldingKeys))
+                if (group.Timer > NotesHandler.TimeToTrigger - 0.067f / Mover.Speed)
                 {
                     bool emptyInput = true;
-                    for (int i = 0; i < input.ModifiedKeys.Length; i++)
+                    for (int i = 0; i < group.Notes.Length; i++)
                     {
-                        if (input.ModifiedKeys[i])
+                        if (input.ModifiedKeys[group.Notes[i].HorizontalPosition])
                         {
                             emptyInput = false;
                             break;

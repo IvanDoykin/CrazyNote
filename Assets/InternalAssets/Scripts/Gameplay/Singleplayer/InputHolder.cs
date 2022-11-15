@@ -6,7 +6,7 @@ namespace InternalAssets.Scripts
 {
     public class InputHolder : MonoBehaviour
     {
-        public const float startHoldingTime = 0.075f;
+        public const float startHoldingTime = 0.1f;
 
         [SerializeField] private GuitarControl _control;
 

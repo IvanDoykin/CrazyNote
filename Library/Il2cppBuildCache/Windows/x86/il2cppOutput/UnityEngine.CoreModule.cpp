@@ -351,8 +351,6 @@ struct Component_t62FBC8D2420DA4BE9037AFE430740F6B3EECA684;
 struct ComputeShader_tBEFDB4D759632A61AC138B2DAA292332BE7DAD30;
 // System.Reflection.ConstructorInfo
 struct ConstructorInfo_t449AEC508DCA508EE46784C4F2716545488ACD5B;
-// UnityEngine.ContextMenu
-struct ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861;
 // UnityEngine.Coroutine
 struct Coroutine_t899D5232EF542CB8BA70AF9ECEECA494FAA9CCB7;
 // UnityEngine.Cubemap
@@ -4049,38 +4047,8 @@ public:
 struct ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861  : public Attribute_t037CA9D9F3B742C063DB364D2EEBBF9FC5772C71
 {
 public:
-	// System.String UnityEngine.ContextMenu::menuItem
-	String_t* ___menuItem_0;
-	// System.Boolean UnityEngine.ContextMenu::validate
-	bool ___validate_1;
-	// System.Int32 UnityEngine.ContextMenu::priority
-	int32_t ___priority_2;
 
 public:
-	inline static int32_t get_offset_of_menuItem_0() { return static_cast<int32_t>(offsetof(ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861, ___menuItem_0)); }
-	inline String_t* get_menuItem_0() const { return ___menuItem_0; }
-	inline String_t** get_address_of_menuItem_0() { return &___menuItem_0; }
-	inline void set_menuItem_0(String_t* value)
-	{
-		___menuItem_0 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___menuItem_0), (void*)value);
-	}
-
-	inline static int32_t get_offset_of_validate_1() { return static_cast<int32_t>(offsetof(ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861, ___validate_1)); }
-	inline bool get_validate_1() const { return ___validate_1; }
-	inline bool* get_address_of_validate_1() { return &___validate_1; }
-	inline void set_validate_1(bool value)
-	{
-		___validate_1 = value;
-	}
-
-	inline static int32_t get_offset_of_priority_2() { return static_cast<int32_t>(offsetof(ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861, ___priority_2)); }
-	inline int32_t get_priority_2() const { return ___priority_2; }
-	inline int32_t* get_address_of_priority_2() { return &___priority_2; }
-	inline void set_priority_2(int32_t value)
-	{
-		___priority_2 = value;
-	}
 };
 
 
@@ -14696,10 +14664,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Component_t62FBC8D2420DA4BE9037AFE430740F6B3E
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Component_GetComponentsForListInternal_mEC716300A7894D57F9AF6C98FA1A69C12AB4F036 (Component_t62FBC8D2420DA4BE9037AFE430740F6B3EECA684 * __this, Type_t * ___searchType0, RuntimeObject * ___resultList1, const RuntimeMethod* method);
 // System.Void UnityEngine.Object::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_m4DCF5CDB32C2C69290894101A81F473865169279 (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A * __this, const RuntimeMethod* method);
-// System.Void UnityEngine.ContextMenu::.ctor(System.String,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ContextMenu__ctor_m2A623D0967274884B6D6BBB1E6242CBE60130D90 (ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861 * __this, String_t* ___itemName0, bool ___isValidateFunction1, const RuntimeMethod* method);
-// System.Void UnityEngine.ContextMenu::.ctor(System.String,System.Boolean,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ContextMenu__ctor_mEF09B48BBF72E9A910B6DA5FB59721B15C6DAD36 (ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861 * __this, String_t* ___itemName0, bool ___isValidateFunction1, int32_t ___priority2, const RuntimeMethod* method);
 // System.Void UnityEngine.Coroutine::ReleaseCoroutine(System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Coroutine_ReleaseCoroutine_m2C46DD57BDB3BB7B64204EA229F4C5CDE342B18B (intptr_t ___ptr0, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Cubemap::Internal_CreateImpl(UnityEngine.Cubemap,System.Int32,System.Int32,UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.Experimental.Rendering.TextureCreationFlags,System.IntPtr)
@@ -21484,39 +21448,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ComputeShader_FindKernel_mCA2683905A5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void UnityEngine.ContextMenu::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ContextMenu__ctor_m8A50A6FFBB330E0DB6F6587FBAAA7850D8DBDA7B (ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861 * __this, String_t* ___itemName0, const RuntimeMethod* method)
-{
-	{
-		String_t* L_0 = ___itemName0;
-		ContextMenu__ctor_m2A623D0967274884B6D6BBB1E6242CBE60130D90(__this, L_0, (bool)0, /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.ContextMenu::.ctor(System.String,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ContextMenu__ctor_m2A623D0967274884B6D6BBB1E6242CBE60130D90 (ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861 * __this, String_t* ___itemName0, bool ___isValidateFunction1, const RuntimeMethod* method)
-{
-	{
-		String_t* L_0 = ___itemName0;
-		bool L_1 = ___isValidateFunction1;
-		ContextMenu__ctor_mEF09B48BBF72E9A910B6DA5FB59721B15C6DAD36(__this, L_0, L_1, ((int32_t)1000000), /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.ContextMenu::.ctor(System.String,System.Boolean,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ContextMenu__ctor_mEF09B48BBF72E9A910B6DA5FB59721B15C6DAD36 (ContextMenu_tA743E775BCF043B77AB6D4872E90FC4D7AE8E861 * __this, String_t* ___itemName0, bool ___isValidateFunction1, int32_t ___priority2, const RuntimeMethod* method)
-{
-	{
-		Attribute__ctor_m5C1862A7DFC2C25A4797A8C5F681FBB5CB53ECE1(__this, /*hidden argument*/NULL);
-		String_t* L_0 = ___itemName0;
-		__this->set_menuItem_0(L_0);
-		bool L_1 = ___isValidateFunction1;
-		__this->set_validate_1(L_1);
-		int32_t L_2 = ___priority2;
-		__this->set_priority_2(L_2);
-		return;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
