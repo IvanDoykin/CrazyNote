@@ -8,9 +8,11 @@ namespace InternalAssets.Scripts
 {
     public class MainMenuScene : MonoBehaviour
     {
+        [SerializeField] private MenuAudio _audio;
         [SerializeField] private MusicHandler _music;
-        [SerializeField] private AudioPreview _audio;
-        [SerializeField] private MainMenuUI _ui;
+        [SerializeField] private AudioPreview _preview;
+        [SerializeField] private MainMenu _mainMenuUI;
+        [SerializeField] private Options _optionsUI;
         [SerializeField] private SongsPanelsHandler _songsPanelsHandler;
 
         private AudioClip _clip;
@@ -25,24 +27,30 @@ namespace InternalAssets.Scripts
 
         private void Start()
         {
-            SceneLoader.SingleplayerHasLoaded += (Track track) =>
-            {
-                _loader.UnloadScene(SceneLoader.MainMenu);
-            };
+            _optionsUI.AnyButtonHasSelected += _audio.PlayButtonSelected;
+            _optionsUI.AnyButtonHasClicked += _audio.PlayNext;
+            _optionsUI.BackHasClicked += _audio.PlayBack;
+
+            _mainMenuUI.AnyButtonHasSelected += _audio.PlayButtonSelected;
+            _mainMenuUI.AnyButtonHasClicked += _audio.PlayNext;
 
             _music.ClipHasGot += SetClip;
             
-            _ui.DifficultyHasSelected += SetDifficulty;
-            _ui.ExitButtonHasClicked += ExitGame;
-            _ui.StartGameHasClicked += StartGame;
+            _mainMenuUI.ExitHasClicked += ExitGame;
 
             _songsPanelsHandler.PanelHasClicked += HandlePanel;
+        }
+
+        public void Initialize()
+        {
+            _audio.FirstPlay();
+            _mainMenuUI.Stretch();
         }
 
         private void SetClip(AudioClip clip)
         {
             _clip = clip;
-            _audio.SetPreview(clip);
+            _preview.SetPreview(clip);
         }
 
         private void StartGame()

@@ -20,6 +20,7 @@ namespace InternalAssets.Scripts
                 _startMenu.SoundHasPreEnd += () =>
                 {
                     _startMenu.gameObject.SetActive(false);
+                    FindObjectOfType<MainMenuScene>().Initialize();
                 };
                 _startMenu.SoundHasEnd += () =>
                 {

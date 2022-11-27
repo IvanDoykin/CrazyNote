@@ -18,6 +18,14 @@ namespace InternalAssets.Scripts
         
         [SerializeField] private GameObject _loadingScreen;
 
+        private void Awake()
+        {
+            SingleplayerHasLoaded += (Track track) =>
+            {
+                UnloadScene(MainMenu);
+            };
+        }
+
         public void LoadStartMenu()
         {
             StartCoroutine(AsyncLoadScene(StartMenu, () =>
@@ -44,6 +52,7 @@ namespace InternalAssets.Scripts
                 SingleplayerHasLoaded = null;
             }));
         }
+
         public void UnloadScene(string sceneName)
         {
             StartCoroutine(AsyncUnloadScene(sceneName));
