@@ -21,7 +21,11 @@ namespace InternalAssets.Scripts
             foreach (var button in _buttons)
             {
                 button.HasSelected += () => AnyButtonHasSelected?.Invoke();
-                button.HasClicked += () => AnyButtonHasClicked?.Invoke();
+
+                if (button.Button != _back)
+                {
+                    button.HasClicked += () => AnyButtonHasClicked?.Invoke();
+                }
             }
 
             _back.onClick.AddListener(() =>

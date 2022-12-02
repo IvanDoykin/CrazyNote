@@ -10,8 +10,8 @@ namespace InternalAssets.Scripts
     {
         public Action AnyButtonHasSelected;
         public Action AnyButtonHasClicked;
+        public Action BackButtonHasClicked;
         public Action ExitHasClicked;
-        public Action OptionsHasClicked;
 
         [SerializeField] private Button _exit;
         [SerializeField] private Button _options;
@@ -21,25 +21,34 @@ namespace InternalAssets.Scripts
 
         private void Awake()
         {
-            _buttons = GetComponentsInChildren<SelectableButton>();
+            _buttons = FindObjectsOfType<SelectableButton>(true);
             foreach (var button in _buttons)
             {
                 button.HasSelected += () => AnyButtonHasSelected?.Invoke();
-                button.HasClicked += () => AnyButtonHasClicked?.Invoke();
+
+                if (button.GetComponent<BackButton>() != null)
+                {
+                    button.HasClicked += () => BackButtonHasClicked?.Invoke();
+                }
+                else
+                {
+                    button.HasClicked += () => AnyButtonHasClicked?.Invoke();
+                }
             }
 
             _exit.onClick.AddListener(() =>
             {
                 ExitHasClicked?.Invoke();
             });
-
-            _options.onClick.AddListener(() =>
-            {
-                OptionsHasClicked?.Invoke();
-            });
         }
 
-        public void Stretch()
+        public void Open()
+        {
+            gameObject.SetActive(true);
+            Stretch();
+        }
+
+        private void Stretch()
         {
             _background.Stretch();
         }

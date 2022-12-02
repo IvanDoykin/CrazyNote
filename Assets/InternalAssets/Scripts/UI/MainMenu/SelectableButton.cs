@@ -9,7 +9,9 @@ namespace InternalAssets.Scripts
     {
         public Action HasSelected;
         public Action HasClicked;
+
         [SerializeField] protected Button _button;
+        public Button Button => _button;
 
         protected void Initialize()
         {

@@ -12,11 +12,10 @@ namespace InternalAssets.Scripts
         [SerializeField] private MusicHandler _music;
         [SerializeField] private AudioPreview _preview;
         [SerializeField] private MainMenu _mainMenuUI;
-        [SerializeField] private Options _optionsUI;
         [SerializeField] private SongsPanelsHandler _songsPanelsHandler;
 
         private AudioClip _clip;
-        private Difficulty _difficulty;
+        private Difficulty _difficulty = Difficulty.Expert;
         private string _directory = "";
         private SceneLoader _loader;
 
@@ -27,12 +26,9 @@ namespace InternalAssets.Scripts
 
         private void Start()
         {
-            _optionsUI.AnyButtonHasSelected += _audio.PlayButtonSelected;
-            _optionsUI.AnyButtonHasClicked += _audio.PlayNext;
-            _optionsUI.BackHasClicked += _audio.PlayBack;
-
             _mainMenuUI.AnyButtonHasSelected += _audio.PlayButtonSelected;
             _mainMenuUI.AnyButtonHasClicked += _audio.PlayNext;
+            _mainMenuUI.BackButtonHasClicked += _audio.PlayBack;
 
             _music.ClipHasGot += SetClip;
             
@@ -44,7 +40,7 @@ namespace InternalAssets.Scripts
         public void Initialize()
         {
             _audio.FirstPlay();
-            _mainMenuUI.Stretch();
+            _mainMenuUI.Open();
         }
 
         private void SetClip(AudioClip clip)
@@ -53,7 +49,7 @@ namespace InternalAssets.Scripts
             _preview.SetPreview(clip);
         }
 
-        private void StartGame()
+        public void StartGame()
         {
             if (_directory != "" && _clip != null)
             {

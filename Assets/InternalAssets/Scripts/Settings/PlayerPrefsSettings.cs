@@ -4,5 +4,6 @@ namespace InternalAssets.Scripts
     {
         public const string PlayAnyTime = "PlayAnyTime";
         public const string Keyboard = "Keyboard";
+        public const string Speed = "Speed";
     }
 }
