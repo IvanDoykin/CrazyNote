@@ -10,7 +10,12 @@ namespace InternalAssets.Scripts
         [SerializeField] private GameObject _songPanelPrefab;
         [SerializeField] private Transform _songsPanelsPlace;
         private bool _isLoaded = false;
-        
+
+        private void Start()
+        {
+            Load();
+        }
+
         public void Load()
         {
             gameObject.SetActive(true);
