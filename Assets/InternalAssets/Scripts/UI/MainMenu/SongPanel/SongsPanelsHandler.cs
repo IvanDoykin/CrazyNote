@@ -9,10 +9,17 @@ namespace InternalAssets.Scripts
 
         [SerializeField] private GameObject _songPanelPrefab;
         [SerializeField] private Transform _songsPanelsPlace;
+        private bool _isLoaded = false;
         
-        private void Start()
+        public void Load()
         {
-            CreatePanels();
+            gameObject.SetActive(true);
+
+            if (!_isLoaded)
+            {
+                CreatePanels();
+                _isLoaded = true;
+            }
         }
 
         private void OnPanelClicked(SongPanel panel)

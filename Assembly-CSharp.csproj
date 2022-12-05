@@ -71,6 +71,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\UI\MainMenu\Options.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\ScoreBox\MultiplayerBox.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\RockBox\RockHealthLine.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\UI\MainMenu\DifficultyMenu.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\ScoreBox\ComboCounter.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\MainMenu\SelectableButton.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\UI\MainMenu\Patchnote.cs" />
@@ -141,7 +142,6 @@
     <Compile Include="Assets\InternalAssets\Scripts\UI\StartMenu\LogoAnimation.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\MainMenuScene.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Utilities\EqualsExtensions.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\UI\MainMenu\DifficultyMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
