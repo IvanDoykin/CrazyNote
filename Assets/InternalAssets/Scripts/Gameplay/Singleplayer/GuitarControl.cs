@@ -96,7 +96,7 @@ namespace InternalAssets.Scripts
         {
             if (_holder.Initialized)
             {
-                if (group.Timer > NotesHandler.TimeToTrigger - 0.067f / Mover.Speed)
+                if (group.Timer > NotesHandler.TimeToTrigger - 0.067f / GriefSettings.Speed)
                 {
                     bool emptyInput = true;
                     for (int i = 0; i < group.Notes.Length; i++)
@@ -129,7 +129,7 @@ namespace InternalAssets.Scripts
 
             else
             {
-                if (group.Timer > NotesHandler.TimeToTrigger - 0.067f / Mover.Speed && group.IsAllTriggered(input.ModifiedKeys))
+                if (group.Timer > NotesHandler.TimeToTrigger - 0.067f / GriefSettings.Speed && group.IsAllTriggered(input.ModifiedKeys))
                 {
                     var modifiedInput = new bool[input.ModifiedKeys.Length];
                     for (int i = 0; i < group.Notes.Length; i++)

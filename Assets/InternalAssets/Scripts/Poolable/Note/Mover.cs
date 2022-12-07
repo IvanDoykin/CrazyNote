@@ -4,8 +4,7 @@ namespace InternalAssets.Scripts
 {
     public class Mover : MonoBehaviour
     {
-        public static float Speed;
-        private readonly float speed = 6.255f * Speed;
+        private readonly float speed = 6.255f * GriefSettings.Speed;
 
         private bool _active = true;
 

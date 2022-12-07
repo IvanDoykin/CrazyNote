@@ -7,31 +7,33 @@ namespace InternalAssets.Scripts
 {
     public class GriefSettings : MonoBehaviour
     {
+        public static float Speed;
         [SerializeField] private TextMeshProUGUI _text;
 
         private void Start()
         {
             if (PlayerPrefs.GetFloat(PlayerPrefsSettings.Speed, -1) != -1)
             {
-                Mover.Speed = PlayerPrefs.GetFloat(PlayerPrefsSettings.Speed);
+                Speed = PlayerPrefs.GetFloat(PlayerPrefsSettings.Speed);
             }
             else
             {
-                Mover.Speed = 1f;
-                PlayerPrefs.SetFloat(PlayerPrefsSettings.Speed, Mover.Speed);
+                Speed = 1f;
+                PlayerPrefs.SetFloat(PlayerPrefsSettings.Speed, Speed);
             }
-            _text.text = Mover.Speed.ToString();
+            if (GetComponent<SceneLoader>() != null) return;
+            _text.text = Speed.ToString();
         }
 
         public void AddSpeed()
         {
-            Mover.Speed += 0.25f;
-            if (Mover.Speed > 2f)
+            Speed += 0.25f;
+            if (Speed > 2f)
             {
-                Mover.Speed = 1f;
+                Speed = 1f;
             }
-            PlayerPrefs.SetFloat(PlayerPrefsSettings.Speed, Mover.Speed);
-            _text.text = Mover.Speed.ToString();
+            PlayerPrefs.SetFloat(PlayerPrefsSettings.Speed, Speed);
+            _text.text = Speed.ToString();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace InternalAssets.Scripts
     public abstract class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         public Action HasSelected;
+        public Action HasDeselected;
         public Action HasClicked;
 
         [SerializeField] protected Button _button;
@@ -31,6 +32,10 @@ namespace InternalAssets.Scripts
 
         public virtual void OnPointerExit(PointerEventData eventData)
         {
+            if (_button.interactable)
+            {
+                HasDeselected?.Invoke();
+            }
         }
     }
 }

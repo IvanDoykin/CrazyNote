@@ -49,11 +49,11 @@ namespace InternalAssets.Scripts
             _preview.SetPreview(clip);
         }
 
-        public void StartGame()
+        public void StartGame(string directory, AudioClip clip)
         {
-            if (_directory != "" && _clip != null)
+            if (directory != "" && clip != null)
             {
-                _loader.LoadSingleplayerTrack(new Track(_directory, _difficulty, _clip));
+                _loader.LoadSingleplayerTrack(new Track(directory, _difficulty, clip));
             }
         }
         
@@ -64,7 +64,7 @@ namespace InternalAssets.Scripts
         
         private void HandlePanel(SongPanel panel)
         {
-            _music.GetMusic(panel.Directory);
+            _music.SetPreview(panel.Directory);
             _directory = panel.Directory;
         }
         

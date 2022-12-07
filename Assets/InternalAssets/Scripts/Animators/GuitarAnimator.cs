@@ -4,7 +4,7 @@ namespace InternalAssets.Scripts
 {
     public class GuitarAnimator : MonoBehaviour
     {
-        private float movementSpeed = 0.45f * Mover.Speed;
+        private float movementSpeed = 0.45f * GriefSettings.Speed;
         private const string textureProperty = "_MainTex";
 
         [SerializeField] private Renderer _renderer;

@@ -29,6 +29,7 @@ namespace InternalAssets.Scripts
 
         private void OnPanelClicked(SongPanel panel)
         {
+            Debug.Log("click panel");
             PanelHasClicked?.Invoke(panel);    
         }
 
@@ -40,7 +41,7 @@ namespace InternalAssets.Scripts
                 var songPanel = songPanelObj.GetComponent<SongPanel>();
                 songPanel.CreateFromDirectory(songDirectory + "\\");
 
-                songPanel.HasClicked += OnPanelClicked;
+                songPanel.HasSelected += OnPanelClicked;
             }
         }
     }

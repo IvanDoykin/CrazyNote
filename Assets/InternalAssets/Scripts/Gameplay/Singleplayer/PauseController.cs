@@ -49,6 +49,12 @@ namespace InternalAssets.Scripts
         private void Resume()
         {
             _ui.Disable();
+            StartCoroutine(ResumeInTime());
+        }
+
+        private IEnumerator ResumeInTime()
+        {
+            yield return new WaitForSeconds(2f);
             _guitarAnimator.SetActive();
             _pause = false;
             GameHasResume?.Invoke();
@@ -56,6 +62,7 @@ namespace InternalAssets.Scripts
 
         private void Pause()
         {
+            StopAllCoroutines();
             _ui.Enable();
             _guitarAnimator.SetInactive();
             _pause = true;

@@ -10,25 +10,21 @@ namespace InternalAssets.Scripts
     public class MusicHandler : MonoBehaviour
     {
         private const string filePathHeader = "file:///";
-
-        private readonly string[] _songNames = new string[2] { "song.ogg", "song.mp3" };
-        private readonly string[] _songTypes = new string[2] { "OGGVORBIS", "MPEG" };
+        private const string songName = "Preview.mp3";
+        private const string songType = "MPEG";
 
         public Action<AudioClip> ClipHasGot;
-        
-        public void GetMusic(string directory)
-        {
-            for (var i = 0; i < _songNames.Length; i++)
-            {
-                var path = directory + _songNames[i];
 
-                if (File.Exists(path))
-                {
-                    StartCoroutine(SetAudioRequest(path, _songTypes[i]));
-                }
+        public void SetPreview(string directory)
+        {
+            var path = directory + songName;
+
+            if (File.Exists(path))
+            {
+                StartCoroutine(SetAudioRequest(path, songType));
             }
         }
-        
+
         private IEnumerator SetAudioRequest(string path, string songType)
         {
             using (var www = UnityWebRequestMultimedia.GetAudioClip(filePathHeader + path,
