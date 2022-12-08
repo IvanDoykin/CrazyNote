@@ -14,15 +14,32 @@ namespace InternalAssets.Scripts
         [SerializeField] private ScoreCounter _scoreUI;
         [SerializeField] private ComboCounter _comboUI;
         [SerializeField] private MultiplayerBox _multiplayerUI;
+        [SerializeField] private FinalUI _final;
 
         private float _score = 0f;
         private int _combo = 0;
         private int _multiplayer = 1;
 
+        private int _maxCombo = 0;
+
+        private float _hitNotes = 0f;
+        private float _allNotes = 0f;
+
         private void Start()
         {
             _notesHandler.NoteGroupHasHit += HitNoteGroup;
             Reset();
+        }
+
+        public void Final()
+        {
+            StartCoroutine(DelayFinalize());
+        }
+
+        private IEnumerator DelayFinalize()
+        {
+            yield return new WaitForSeconds(3f);
+            _final.Initialize((int)_score, _hitNotes / _allNotes, _maxCombo);
         }
 
         private void Reset()
@@ -40,12 +57,14 @@ namespace InternalAssets.Scripts
         {
             if (hit)
             {
+                _hitNotes++;
                 ApplyNoteGroup(notesInGroup);
             }
             else
             {
                 MissNoteGroup();
             }
+            _allNotes++;
         }
 
         private void ApplyNoteGroup(int notesInGroup)
@@ -54,6 +73,11 @@ namespace InternalAssets.Scripts
             _scoreUI.SetScore((int)_score);
 
             _combo++;
+            if (_combo > _maxCombo)
+            {
+                _maxCombo = _combo;
+            }
+
             _comboUI.SetCombo(_combo);
 
             if (_multiplayer <= needNotesForMuliplayer.Length)

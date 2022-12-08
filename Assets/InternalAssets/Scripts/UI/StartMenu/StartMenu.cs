@@ -33,7 +33,7 @@ namespace InternalAssets.Scripts
             _background.FadeOutTo(0.5f);
         }
 
-        public void CompletedStage()
+        public void PlayLogo()
         {
             _background.InstantFadeIn();
             _loading.gameObject.SetActive(false);

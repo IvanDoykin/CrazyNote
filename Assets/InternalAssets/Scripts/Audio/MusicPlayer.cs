@@ -9,10 +9,24 @@ namespace InternalAssets.Scripts
     public class MusicPlayer : MonoBehaviour
     {
         public static float PlayDelay = 1.925f / GriefSettings.Speed;
-        [SerializeField] private AudioSource _audio;
 
-        public float ClipTime => _audio.clip.length;
-        
+        public Action MusicHasDone;
+
+        [SerializeField] private AudioSource _audio;
+        private bool _isEnd = false;
+
+        private void Update()
+        {
+            if (_audio.clip != null)
+            {
+                if (!_isEnd && _audio.time > _audio.clip.length - 0.1f)
+                {
+                    _isEnd = true;
+                    MusicHasDone?.Invoke();
+                }
+            }
+        }
+
         public void Pause()
         {
             _audio.Pause();

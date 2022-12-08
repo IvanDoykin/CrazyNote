@@ -13,31 +13,39 @@ namespace InternalAssets.Scripts
 
         private void Start()
         {
-            SceneLoader.StartMenuHasLoaded += () =>
-            {
-                _startMenu = FindObjectOfType<StartMenu>();
-
-                _startMenu.SoundHasPreEnd += () =>
-                {
-                    _startMenu.gameObject.SetActive(false);
-                    FindObjectOfType<MainMenuScene>().Initialize();
-                };
-                _startMenu.SoundHasEnd += () =>
-                {
-                    _loader.UnloadScene(SceneLoader.StartMenu);
-                    Destroy(gameObject);
-                };
-
-                _startMenu.LoadingMenuStage();
-                StartCoroutine(DelayedLoadMenu());
-            };
-
-            SceneLoader.MainMenuHasLoaded += () =>
-            {
-                _startMenu.CompletedStage();
-            };
+            SceneLoader.StartMenuHasLoaded += Initialize;
+            SceneLoader.MainMenuHasLoaded += PlayIntro;
 
             _loader.LoadStartMenu();
+        }
+
+        private void OnDestroy()
+        {
+            SceneLoader.MainMenuHasLoaded -= PlayIntro;
+        }
+
+        private void Initialize()
+        {
+            _startMenu = FindObjectOfType<StartMenu>();
+
+            _startMenu.SoundHasPreEnd += () =>
+            {
+                _startMenu.gameObject.SetActive(false);
+                FindObjectOfType<MainMenuScene>().Initialize();
+            };
+            _startMenu.SoundHasEnd += () =>
+            {
+                _loader.UnloadScene(SceneLoader.StartMenu);
+                Destroy(gameObject);
+            };
+
+            _startMenu.LoadingMenuStage();
+            StartCoroutine(DelayedLoadMenu());
+        }
+
+        private void PlayIntro()
+        {
+            _startMenu.PlayLogo();
         }
 
         private IEnumerator DelayedLoadMenu()

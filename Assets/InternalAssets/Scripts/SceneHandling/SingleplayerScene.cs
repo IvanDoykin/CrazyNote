@@ -9,6 +9,7 @@ namespace InternalAssets.Scripts
         [SerializeField] private TimeController _timer;
         [SerializeField] private GuitarControl _control;
         [SerializeField] private PauseController _pause;
+        [SerializeField] private ScoreHandler _score;
         private SceneLoader _loader;
 
         private void Awake()
@@ -18,20 +19,24 @@ namespace InternalAssets.Scripts
 
         private void Start()
         {
-            SceneLoader.MainMenuHasLoaded += () =>
-            {
-                _loader.UnloadScene(SceneLoader.Singleplayer);
-            };
-
+            SceneLoader.MainMenuHasLoaded += Unload;
             SceneLoader.SingleplayerHasLoaded += Initialize;
 
             _pause.GameHasPaused += Pause;
             _pause.GameHasResume += Resume;
             _pause.GameExitedToMainMenu += ExitMenu;
+
+            _music.MusicHasDone += _score.Final;
+        }
+
+        private void Unload()
+        {
+            _loader.UnloadScene(SceneLoader.Singleplayer);
         }
 
         private void OnDestroy()
         {
+            SceneLoader.MainMenuHasLoaded -= Unload;
             SceneLoader.SingleplayerHasLoaded -= Initialize;
 
             _pause.GameHasPaused -= Pause;

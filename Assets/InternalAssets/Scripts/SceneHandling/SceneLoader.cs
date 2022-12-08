@@ -31,7 +31,6 @@ namespace InternalAssets.Scripts
             StartCoroutine(AsyncLoadScene(StartMenu, () =>
             {
                 StartMenuHasLoaded?.Invoke();
-                StartMenuHasLoaded = null;
             }));
         }
 
@@ -40,7 +39,6 @@ namespace InternalAssets.Scripts
             StartCoroutine(AsyncLoadScene(MainMenu, () =>
             {
                 MainMenuHasLoaded?.Invoke();
-                MainMenuHasLoaded = null;
             }));
         }
 
@@ -49,7 +47,6 @@ namespace InternalAssets.Scripts
             StartCoroutine(AsyncLoadScene(Singleplayer, () =>
             {
                 SingleplayerHasLoaded?.Invoke(track);
-                SingleplayerHasLoaded = null;
             }));
         }
 
