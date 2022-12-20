@@ -13,7 +13,7 @@ namespace InternalAssets.Scripts
 
         private void OnEnable()
         {
-            float speed = GriefSettings.Speed * 6.255f;
+            float speed = Mover.Speed * 6.255f;
 
             _undetectZone.transform.localScale = new Vector3(1f, 1f, (NotesHandler.TimeToDetect) * speed);
             _undetectZone.transform.localPosition = new Vector3(0f, 0f, _undetectZone.transform.localScale.z / 2);

@@ -105,7 +105,6 @@
     <Compile Include="Assets\InternalAssets\Scripts\Data\SyncTrack.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\RawInput.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\HoldingView.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\UI\MainMenu\GriefSettings.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\Entrance.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\Debug\SingleplayerDebug.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\DynamicObjectsFactory.cs" />
@@ -126,6 +125,7 @@
     <Compile Include="Assets\InternalAssets\Scripts\UI\Clock.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Utilities\Logger.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Parsers\TrackBlockParser.cs" />
+    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\FinalUI.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Input\GameInput.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Settings\PlayerPrefsSettings.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Data\TrackEvent.cs" />
@@ -142,7 +142,6 @@
     <Compile Include="Assets\InternalAssets\Scripts\UI\StartMenu\LogoAnimation.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\SceneHandling\MainMenuScene.cs" />
     <Compile Include="Assets\InternalAssets\Scripts\Utilities\EqualsExtensions.cs" />
-    <Compile Include="Assets\InternalAssets\Scripts\Gameplay\Singleplayer\FinalUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

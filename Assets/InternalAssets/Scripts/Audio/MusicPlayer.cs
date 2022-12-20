@@ -8,7 +8,7 @@ namespace InternalAssets.Scripts
 {
     public class MusicPlayer : MonoBehaviour
     {
-        public static float PlayDelay = 1.925f / GriefSettings.Speed;
+        public const float PlayDelay = 1.925f;
 
         public Action MusicHasDone;
 

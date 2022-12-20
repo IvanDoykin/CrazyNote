@@ -4,7 +4,7 @@ namespace InternalAssets.Scripts
 {
     public class Mover : MonoBehaviour
     {
-        private readonly float speed = 6.255f * GriefSettings.Speed;
+        public const float Speed = 6.255f;
 
         private bool _active = true;
 
@@ -12,7 +12,7 @@ namespace InternalAssets.Scripts
         {
             if (_active)
             {
-                transform.position -= new Vector3(0, 0, speed * Time.deltaTime);
+                transform.position -= new Vector3(0, 0, Speed * Time.deltaTime);
             }
         }
 

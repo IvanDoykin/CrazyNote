@@ -10,7 +10,7 @@ namespace InternalAssets.Scripts
 
         private void OnEnable()
         {
-            _holdingView.transform.localScale = new Vector3(0.523f, 1f, 6.255f * GriefSettings.Speed * InputHolder.startHoldingTime);
+            _holdingView.transform.localScale = new Vector3(0.523f, 1f, 6.255f * Mover.Speed * InputHolder.startHoldingTime);
             _holdingView.transform.localPosition = new Vector3(0f, 0f, _holdingView.transform.localScale.z / 2f - 0.063f);
         }
     }

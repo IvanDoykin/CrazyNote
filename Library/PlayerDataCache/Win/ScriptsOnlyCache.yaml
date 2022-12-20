@@ -130,7 +130,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3246}
     - Class: 114
-      Script: {instanceID: 3476}
+      Script: {instanceID: 3478}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -221,15 +221,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 3444}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 3476}
+      Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 3616}
+      Script: {instanceID: 3618}
     - Class: 114
-      Script: {instanceID: 3674}
+      Script: {instanceID: 3676}
     - Class: 114
-      Script: {instanceID: 3748}
+      Script: {instanceID: 3750}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -354,19 +354,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3210}
     - Class: 114
-      Script: {instanceID: 3476}
+      Script: {instanceID: 3310}
     - Class: 114
       Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 3616}
+      Script: {instanceID: 3480}
     - Class: 114
-      Script: {instanceID: 3682}
+      Script: {instanceID: 3618}
     - Class: 114
-      Script: {instanceID: 3734}
+      Script: {instanceID: 3684}
     - Class: 114
-      Script: {instanceID: 15830}
+      Script: {instanceID: 3736}
     - Class: 114
-      Script: {instanceID: 52388}
+      Script: {instanceID: 20132}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -433,7 +433,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 3742}
+      Script: {instanceID: 3744}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1101,6 +1101,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: 3769221faae4e6ddb1bcb0035ddcaa64
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FinalUI
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -1219,12 +1225,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: InternalAssets.Scripts
     className: MainMenuScene
-  - hash:
-      serializedVersion: 2
-      Hash: 3769221faae4e6ddb1bcb0035ddcaa64
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FinalUI
   platform: 5
   scenePathNames:
   - Assets/InternalAssets/Scenes/Core.unity
