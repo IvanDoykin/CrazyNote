@@ -1,3 +1,0 @@
-{"msg":"init","dagFile":"artifacts\\tundra.dag","targets":[]}
-{"msg":"enqueueNode","enqueuedNodeAnnotation":"all_tundra_nodes","enqueuedNodeIndex":0}
-{"msg":"enqueueNode","enqueuedNodeAnnotation":"Il2Cpp C:/Users/1/Documents/GitHub/CrazyNote/Library/Il2cppBuildCache/Windows/x86/Native/GameAssembly.dll","enqueuedNodeIndex":1,"enqueueingNodeAnnotation":"all_tundra_nodes","enqueueingNodeIndex":0}
