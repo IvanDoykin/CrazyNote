@@ -13,8 +13,8 @@ namespace InternalAssets.Scripts
         [SerializeField] private InputHolder _holder;
         [SerializeField] private NotesHandler _handler;
         [SerializeField] private InputModifier _input;
-
-        [SerializeField] private AudioSource _source;
+        //some change test
+        [SerializeField] private AudioSource _source; 
 
         private bool _active = true;
 
