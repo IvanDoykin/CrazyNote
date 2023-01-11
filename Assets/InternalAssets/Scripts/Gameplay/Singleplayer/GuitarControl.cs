@@ -14,7 +14,7 @@ namespace InternalAssets.Scripts
         [SerializeField] private NotesHandler _handler;
         [SerializeField] private InputModifier _input;
 
-        [SerializeField] private AudioSource _source;
+        [SerializeField] private AudioSource _source; // issue #3 : Audio play need transfer to another class, because GuitarControl it is not audio plaing - only input handling.
 
         private bool _active = true;
 
